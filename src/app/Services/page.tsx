@@ -43,7 +43,7 @@ const Page: React.FC = () => {
               </li>
             ))}
           </ul> */}
-          {servicesdata.map((item, index) => (
+          {servicesdata.map((item:any, index) => (
             <div key={index} className="grid gap-8">
               <div className="flex flex-wrap md:justify-center items-start xl:gap-20 md:gap-10 gap-6">
                 <div className="flex gap-2 items-center ">

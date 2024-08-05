@@ -32,8 +32,8 @@ const blogdata = [
   },
 ];
 const Page: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState<HTMLDivElement>(1);
-  const [itemsPerPage, setItemsPerPage] = useState<HTMLDivElement>(6); // Default items per page
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [itemsPerPage, setItemsPerPage] = useState<number>(6); // Default items per page
 
   useEffect(() => {
     // Update itemsPerPage based on screen size
@@ -116,6 +116,7 @@ const Page: React.FC = () => {
           className="px-2 py-2 text-white bg-black rounded-full font-semibold  disabled:bg-black cursor-pointer"
         >
           <FaChevronLeft />
+          {""}
         </button>
         <span
           className="flex items-center font-semibold font-sans">
@@ -126,6 +127,7 @@ const Page: React.FC = () => {
           disabled={currentPage === totalPages}
           className="px-2 py-2 text-white bg-black rounded-full disabled:bg-black cursor-pointer"
         >
+          {""}
           <FaChevronRight />
         </button>
       </div>
