@@ -71,8 +71,8 @@ const OurServices: React.FC = () => {
 
 
 
-   <div>
-     <div ref={containerRef} className="w-full md:block hidden overflow-x-hidden">
+   <div className="overflow-x-hidden">
+     <div ref={containerRef} className="w-full md:block hidden ">
       <main
         ref={mainRef}
         className="md:pl-24 my-10 md:flex items-center sm:gap-20 gap-8  "
