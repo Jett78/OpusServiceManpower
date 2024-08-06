@@ -31,7 +31,7 @@ const MobileButtons = () => {
 
   return (
     <main>
-      <div className="bg-gradient-to-t from-[#26538C] via-[#26538C] to-[#0d99cb] w-full h-16 z-[999] fixed bottom-0 sm:hidden flex justify-between px-6 items-center ">
+      <div className="bg-black w-full h-16 z-[999] fixed bottom-0 sm:hidden flex justify-between px-6 items-center ">
         {navitems.map((item, index) => (
           <div key={index} className="flex justify-center items-center">
             <Link
