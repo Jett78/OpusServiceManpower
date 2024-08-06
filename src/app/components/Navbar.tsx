@@ -63,7 +63,7 @@ const Navbar = () => {
     <Headroom>
       <div className="overflow-hidden w-full z-[200]">
         <main
-          className={`relative overflow-hidden bg-[#224a7f] bg-opacity-90 bg-blend-overlay bg-clip-padding backdrop-filter backdrop-blur-xl  text-white flex justify-end  top-0 left-0 w-full items-center py-6 lg:px-20 md:px-10 px-6 z-50`}
+          className={`relative overflow-hidden bg-black bg-opacity-90 bg-blend-overlay bg-clip-padding backdrop-filter backdrop-blur-xl  text-white flex justify-end  top-0 left-0 w-full items-center py-6 lg:px-20 md:px-10 px-6 z-50`}
         >
           <figure className="absolute sm:left-10 left-2">
             <Image

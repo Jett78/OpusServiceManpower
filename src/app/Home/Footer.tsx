@@ -63,7 +63,7 @@ const anotherlink = [
 
 const Footer: React.FC = () => {
   return (
-    <main className="bg-[#224a7f] text-white">
+    <main className="bg-black text-white">
       <footer className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 md:gap-20  gap-10 py-14 lg:px-28 md:px-14 px-4 border-b border-gray-100">
         <section className="md:space-y-0 space-y-4 grid place-items-center relative">
           <figure className="absolute lg:-top-10 md:-top-10 sm:-top-24 -top-20 -left-6">
