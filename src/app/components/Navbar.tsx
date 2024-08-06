@@ -100,7 +100,7 @@ const Navbar = () => {
           <div
             className={`${
               isMenuOpen ? "translate-y-0" : "-translate-y-full"
-            } ease-in-out duration-300 absolute bg-[#224a7f] w-full h-screen top-0 pt-10 inset-0 overflow-x-hidden`}
+            } ease-in-out duration-300 absolute bg-black w-full h-screen top-0 pt-10 inset-0 overflow-x-hidden`}
           >
             <div className="grid place-items-center justify-center gap-8 pt-28">
               {navdata.map((items, index) => (
@@ -108,7 +108,7 @@ const Navbar = () => {
                   <Link
                     href={items.path}
                     className={`font-semibold text-white text-3xl ${
-                      router === items.path ? "text-[#00AFF0] font-bold" : "text-white"
+                      router === items.path ? "text-tertiary font-bold" : "text-white"
                     }`}
                   >
                     {items.title}
