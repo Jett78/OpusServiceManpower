@@ -1,14 +1,21 @@
 "use client";
-
-import { useEffect } from 'react';
-import type { Metadata } from "next";
+import { useEffect, Suspense } from 'react';
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./Home/Footer";
 import Lenis from 'lenis';
 import Headroom from 'react-headroom';
 import MobileButtons from './components/MobileButtons';
+import dynamic from 'next/dynamic';
+import Loader from './components/Loader';
 
+// const FooterDynamic = dynamic(() => import('./Home/Footer'), {
+//   ssr: false,
+// });
+
+// const NavbarDynamic = dynamic(() => import('./components/Navbar'), {
+//   ssr: false,
+// });
 // Initialize Lenis once the component is mounted
 function initializeLenis() {
   const lenis = new Lenis();
@@ -37,10 +44,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-          <Navbar />
-        {children}
-        <Footer />
-        <div className='z-100 fixed botom-0'>
+      <Navbar/>
+      <Suspense fallback={<Loader />}>
+          {children}
+        </Suspense>
+      <Footer/>
+      <div className='z-[999] fixed botom-0'>
         <MobileButtons/>
         </div>
       </body>

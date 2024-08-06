@@ -1,23 +1,18 @@
 import React from 'react'
-import Vision from "./Vision"
-import OurTeam from './OurTeam'
-import TrustComponent from './TrustComponent'
-import HowweWork from './HowweWork'
-import Certificates from './Certificates'
-import Countries from './Countries'
+import ABoutContainer from './ABoutContainer'
+import Loader from '../components/Loader'
+import dynamic from 'next/dynamic'
 
-const Page = () => {
+const DynamicAbout = dynamic(() => import ('./ABoutContainer'),{
+  ssr:false,
+  loading:() => <Loader/>
+})
+const page = () => {
   return (
-    <div className='pt-10'>
-      <Vision/>
-      <HowweWork/>
-      <TrustComponent/>
-      <OurTeam/>
-      <Countries/>
-      <Certificates/>
-  
+    <div>
+      <DynamicAbout/>
     </div>
   )
 }
 
-export default Page
+export default page

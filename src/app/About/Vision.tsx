@@ -18,7 +18,7 @@ const Vision = () => {
             Outsourcing and outstaffing solutions for sustainable
             <span className="text-gradient"> Business Growth.</span>
           </h1>
-          <p className="about-desc font-medium xl:text-xl md:text-l text-sm text-lighttext my-6">
+          <p className="about-desc font-medium xl:text-l md:text-l text-sm text-lighttext my-6">
             In today’s rapidly evolving business landscape, companies are
             increasingly turning to outsourcing and outstaffing as strategic
             solutions to drive growth, optimize operations, and maintain a
@@ -26,6 +26,14 @@ const Vision = () => {
             contribute to sustainable business growth, yet they cater to
             different needs and objectives. Outsourcing involves delegating
             specific business processes or tasks to external service providers,
+            allowing companies to leverage specialized expertise, reduce costs,
+            and focus on core competencies. This model is particularly
+            beneficial for functions such as IT support, customer service, and
+            accounting, where external providers can offer high-quality services
+            at a lower cost compared to maintaining an in-house team. By
+            outsourcing non-core activities, companies can streamline
+            operations, enhance efficiency, and allocate resources more
+            effectively to strategic initiatives.
             allowing companies to leverage specialized expertise, reduce costs,
             and focus on core competencies. This model is particularly
             beneficial for functions such as IT support, customer service, and
@@ -64,6 +72,8 @@ const Vision = () => {
         </div>
       </div>
 
+
+
       <div className=" md:py-40 py-20  bg-gray-50">
         <div className="w-11/12 mx-auto flex flex-wrap justify-center md:gap-8 gap-12">
         {aboutdata.map((item, index) => (
@@ -81,7 +91,8 @@ const Vision = () => {
               <p className="font-semibold text-black italic text-sm my-4 leading-6 group-hover:text-white relative z-50">
                 {item.desc}
               </p>
-              <div className="z-0 absolute bg-gradient-to-r from-primary via-secondary to-tertiary w-full right-0 group-hover:h-full rounded-lg bottom-0 duration-500 ease-in-out transform scale-x-0  group-hover:scale-x-100 origin-bottom" />
+              <div className="z-0 absolute bg-gradient-to-r from-primary
+              33333 via-secondary to-tertiary w-full right-0 group-hover:h-full rounded-lg bottom-0 duration-500 ease-in-out transform scale-x-0  group-hover:scale-x-100 origin-bottom" />
             </div>
           </div>
         ))}
