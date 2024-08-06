@@ -77,9 +77,9 @@ const OurTeam = () => {
               <Image
                 src={item.img}
                 alt="team"
-                width={700}
+                width={1000}
                 height={1000}
-                className={`h-[42vh] w-full object-cover ease-in-out duration-300 ${
+                className={`h-[42vh] object-cover ease-in-out duration-300 shadow-md ${
                   hoveredIndex2 === index ? "grayscale scale-105" : ""
                 }`}
               />
@@ -151,30 +151,30 @@ const teamdata = [
   },
   {
     name: "Alander Doe",
-    img: "/team/team1.jpg",
+    img: "/team/team2.jpg",
     role: "Chief Marketting Officer",
   },
 ];
 const teamdata2 = [
   {
     name: "Jane Doe",
-    img: "/team/team1.jpg",
-    role: "Chief Executive Officer",
+    img: "/team/team3.jpg",
+    role: "Counsellor",
   },
   {
     name: "Alander Donald",
-    img: "/team/team1.jpg",
-    role: "Chief Marketting Officer",
+    img: "/team/team4.jpg",
+    role: "Receptionist",
   },
   {
     name: "Rajesh Hamal",
     img: "/team/team1.jpg",
-    role: "Chief Technical Officer",
+    role: "Counsellor",
   },
   {
     name: "Jane Doe",
-    img: "/team/team1.jpg",
-    role: "Chief Executive Officer",
+    img: "/team/team2.jpg",
+    role: "SEO SPecialist",
   },
 ];
 const teamdata3 = [

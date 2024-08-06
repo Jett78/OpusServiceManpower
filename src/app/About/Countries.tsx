@@ -102,9 +102,6 @@ const countryflags = [
     img: "/flags/flag8.png",
   },
   {
-    img: "/flags/flag16.png",
-  },
-  {
     img: "/flags/flag10.png",
   },
   {

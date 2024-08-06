@@ -2,8 +2,8 @@ import React from "react";
 
 const HowweWork = () => {
   return (
-    <main className="md:my-20 my-10">
-      <div className="lg:w-8/12 w-11/12 mx-auto flex flex-wrap justify-center gap-20">
+    <main className="md:py-20 text-white py-10 bg-black">
+      <div className="lg:w-9/12 w-11/12 mx-auto flex flex-wrap justify-center gap-20">
        <div className="xl:w-[50%] ">
        <section className="sticky top-[5em]">
           <h2 className="text-gradient uppercase font-bold text-xl  w-fit my-4">How we work</h2>
@@ -17,14 +17,14 @@ const HowweWork = () => {
        </div>
 
 
-        <section className="grid gap-6 xl:grid-cols-1 md:grid-cols-2">
+        <section className="grid gap-10 xl:grid-cols-1 md:grid-cols-2 ">
             {howwork.map((item,index) => (
                 <div key={index} className="flex items-start gap-4">
-                      <div className="gradient h-4 w-4 rounded-full mt-3"></div>
-                      <div>
+                      {/* <div className="gradient h-4 w-4 rounded-full mt-3"></div> */}
+                      <div className=" shadow-md p-3 rounded-lg">
                           <div className="flex gap-2">
-                            <h2 className="font-bold text-2xl font-sans">{item.num}.</h2>
-                            <h2 className="font-bold text-2xl font-sans">{item.title}</h2>
+                            <h2 className="font-bold text-2xl font-sans text-gradient">{item.num}.</h2>
+                            <h2 className="font-bold text-2xl font-sans text-gradient">{item.title}</h2>
                           </div>
                           <p className="font-semibold md:text-md text-sm leading-6 max-w-[25em] py-2">{item.desc}</p>
                       </div>
