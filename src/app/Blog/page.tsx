@@ -5,14 +5,15 @@ import Loader from '../components/Loader'
 
 
 export default function Page() {
-  const DynamicBlog = dynamic(() => import ('./BlogContainer'),{
-    ssr:false,
-    loading:() => <Loader/>
-  })
+  // const DynamicBlog = dynamic(() => import ('./BlogContainer'),{
+  //   ssr:false,
+  //   loading:() => <Loader/>
+  // })
   return (
 
     <div>
-      <DynamicBlog/>
+      {/* <DynamicBlog/> */}
+      hello
     </div>
   )
 }
