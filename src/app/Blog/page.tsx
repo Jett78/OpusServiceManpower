@@ -7,7 +7,8 @@ const DynamicBlog = dynamic(() => import ('./BlogContainer'),{
   ssr:false,
   loading:() => <Loader/>
 })
-const page = () => {
+export default function Page() {
+
   return (
     <div>
       <DynamicBlog/>
@@ -15,4 +16,4 @@ const page = () => {
   )
 }
 
-export default page
+
