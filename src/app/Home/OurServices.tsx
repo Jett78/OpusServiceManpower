@@ -80,7 +80,7 @@ const OurServices: React.FC = () => {
         <section className="md:flex hidden flex-col justify-between sm:gap-20 ">
           <div className="md:pl-0 pl-4">
             <div className="flex items-center gap-4 w-[25em]">
-              <h2 className="font-bold sm:text-4xl text-center text-2xl text-gradient uppercase">
+              <h2 className="font-bold sm:text-4xl text-center text-2xl text-gradient uppercase ">
                 Our Services
               </h2>
               <p className="border-2 border-primary rounded-full h-10 w-10 md:flex hidden justify-center items-center">
@@ -102,7 +102,7 @@ const OurServices: React.FC = () => {
           {services.map((item, index) => (
             <div
               key={index}
-              className="relative sm:w-[32em] w-[20em] h-[20em] sm:h-[35em] flex-shrink-0 hover:scale-90 duration-300 ease-in-out cursor-pointer overflow-hidden"
+              className="relative group sm:w-[32em] w-[20em] h-[20em] sm:h-[35em] flex-shrink-0  duration-300 ease-in-out cursor-pointer overflow-hidden"
             >
               <Link href="/Services">
                 <Image
@@ -110,14 +110,15 @@ const OurServices: React.FC = () => {
                   alt="scroll-images"
                   layout="fill"
                   objectFit="cover"
-                  className="rounded-2xl hover:scale-110 ease-in-out duration-300"
+                  className="rounded-2xl group-hover:brightness-50 ease-in-out duration-300"
                 />
 
                 <div className="w-full h-full absolute inset-0 text-white rounded-3xl  bg-gradient-to-b from-transparent via-transparent bg-black bg-blend-overlay bg-opacity-30 to-black">
-                  <div className="absolute bottom-12 left-8">
+                  <div className="absolute bottom-12 translate-y-60 group-hover:translate-y-0 ease-in-out duration-700  left-8">
                     <h2 className="font-bold sm:text-2xl text-xl">
                       {item.title}
                     </h2>
+                    <p className="py-10">{item.desc}</p>
                   </div>
                 </div>
               </Link>
@@ -190,37 +191,37 @@ export default OurServices;
 const services = [
   {
     title: "Oil & Gases",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendisodio aut porro provident placeat, aliquid tempora ea unde earumneque incidunt est, ratione nostrum. Expedita consequatur doloremlabore beatae aut!",
+    desc: "We are dedicated to powering the oil industry withnges and demands that address the complex and evolving needs of the oil and gas industry. With a deep understanding of industry-specific requirements and a network of highly skilled professionals, we strive to be a trusted partner to oil and gas companies worldwide. By leveraging our expertise and insights.",
     img: "/servicesimg/oil.png",
   },
   {
     title: "Construction Service",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendisodio aut porro provident placeat, aliquid tempora ea unde earumneque incidunt est, ratione nostrum. Expedita consequatur doloremlabore beatae aut!",
+    desc: "Our construction staffing services are meticulously ysupervisors to general laborers and specialized tradespeople. Recognizing the critical need for timely and efficient project execution, we focus on delivering staffing solutions that enhance productivity, ensure safety, and uphold quality standards. Whether you are overseeing a large infrastructure project",
     img: "/servicesimg/construction.png",
   },
   {
     title: "Industrial Services",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendisodio aut porro provident placeat, aliquid tempora ea unde earumneque incidunt est, ratione nostrum. Expedita consequatur doloremlabore beatae aut!",
+    desc: "We are dedicated to powering the oil industry with challenges and dema of the oil and gas industry. With a deep understanding of industry-specific requirements and a network of highly skilled professionals, we strive to be a trusted partner to oil and gas companies worldwide. By leveraging our expertise and insights, we aim to support companies in achieving their operational goals",
     img: "/servicesimg/industrial.png",
   },
   {
     title: "Health Services",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendisodio aut porro provident placeat, aliquid tempora ea unde earumneque incidunt est, ratione nostrum. Expedita consequatur doloremlabore beatae aut!",
+    desc: "In the healthcare sector, the demand for skilled staffed with the right talent is crucialhealthcare organizations with a diverse range of medical professionals, including doctors, nurses, technicians, and administrative staff. Our staffing solutions are designed to meet the fluctuating needs of healthcare facilities, whether you require temporary staff to cover short-term needs",
     img: "/servicesimg/health.png",
   },
   {
     title: "Information & Technology",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendisodio aut porro provident placeat, aliquid tempora ea unde earumneque incidunt est, ratione nostrum. Expedita consequatur doloremlabore beatae aut!",
+    desc: "In the rapidly evolving field of information technology, .network administration, cybersecurity, and IT support. We specialize in sourcing and placing highly skilled professionals who are proficient in the latest technologies and methodologies. Whether you need temporary support for a specific project or long-term staff augmentation.",
     img: "/servicesimg/technology.png",
   },
   {
     title: "Accomodation & Transformation",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendisodio aut porro provident placeat, aliquid tempora ea unde earumneque incidunt est, ratione nostrum. Expedita consequatur doloremlabore beatae aut!",
+    desc: "Our transportation services are meticulously .  distribution, fleet management, and logistics coordination. Our commitment is to optimize your supply chain operations, reduce costs, and enhance delivery efficiency through our tailored staffing and operational solutions. With a focus on reliability and innovation and transportation.",
     img: "/servicesimg/transportation.png",
   },
   {
     title: "Blue-Collar & White-Collar Services",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendisodio aut porro provident placeat, aliquid tempora ea unde earumneque incidunt est, ratione nostrum. Expedita consequatur doloremlabore beatae aut!",
+    desc: "Our blue-collar staffing  skilled labor for positions such as manufacturing, construction, maintenance, and logistics. Understanding the critical role that a reliable and proficient workforce plays in operational efficiency and productivity, we offer comprehensive services that include recruitment, training, and on-site support.",
     img: "/servicesimg/services3.jpg",
   },
 ];
