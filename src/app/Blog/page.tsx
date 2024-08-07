@@ -3,13 +3,14 @@ import React from 'react'
 import Loader from '../components/Loader'
 
 
-const DynamicBlog = dynamic(() => import ('./BlogContainer'),{
-  ssr:false,
-  loading:() => <Loader/>
-})
-export default function Page() {
 
+export default function Page() {
+  const DynamicBlog = dynamic(() => import ('./BlogContainer'),{
+    ssr:false,
+    loading:() => <Loader/>
+  })
   return (
+
     <div>
       <DynamicBlog/>
     </div>
