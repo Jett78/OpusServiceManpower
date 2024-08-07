@@ -17,8 +17,8 @@ const ServiceContainer: React.FC = () => {
 
   return (
     <div className="w-11/12 mx-auto pt-10">
-      <h2 className="font-extrabold text-3xl uppercase text-gradient w-fit mx-auto">
-        Our Services
+      <h2 className="font-extrabold text-3xl uppercase text-black w-fit mx-auto">
+        Our <span className="text-gradient">Services</span>
       </h2>
       <p className="font-medium text-md max-w-[60em] md:mx-auto mx-2 sm:text-l text-sm py-2 text-center">
         Explore our comprehensive range of services designed to meet your
@@ -26,7 +26,7 @@ const ServiceContainer: React.FC = () => {
         construction services.
       </p>
 
-      <div className="my-10">
+      <div className="my-16">
         <div className="grid gap-20">
           {/* <ul className="grid gap-2 sticky top-[10em]">
             {servicesdata.map((item, index) => (
@@ -45,8 +45,8 @@ const ServiceContainer: React.FC = () => {
           </ul> */}
           {servicesdata.map((item:any, index) => (
             <div key={index} className="grid gap-8">
-              <div className="flex flex-wrap md:justify-center items-start xl:gap-20 md:gap-10 gap-6">
-                <div className="flex gap-2 items-center ">
+              <div className={` flex flex-wrap md:justify-center items-start xl:gap-20 md:gap-10 gap-6 ${index % 2 ==1 ?" flex-row-reverse":""}`}>
+                <div className={`flex gap-2 items-center `}>
                   <h2 className="font-extrabold lg:text-9xl md:text-6xl sm:text-4xl text-4xl font-sans text-gradient">
                     {item.num}
                   </h2>
@@ -54,7 +54,7 @@ const ServiceContainer: React.FC = () => {
                 </div>
 
                 <div className="xl:max-w-[40em]">
-                  <p className="font-medium lg:text-lg text-[14px] text-lighttext">{item.desc}</p>
+                  <p className="font-medium lg:text-l text-[14px] text-lighttext">{item.desc}</p>
                 </div>
               </div>
               <figure>

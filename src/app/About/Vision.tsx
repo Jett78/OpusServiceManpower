@@ -8,8 +8,8 @@ import { useInView } from 'react-intersection-observer';
 const Vision = () => {
   return (
     <main className="">
-      <h2 className="text-gradient uppercase font-extrabold text-3xl w-fit mx-auto md:mb-10 ">
-        About Us
+      <h2 className="text-black uppercase font-extrabold text-3xl w-fit mx-auto md:mb-10 ">
+        <span className="text-gradient">About {""}</span> 
       </h2>
       <section className="w-11/12 mx-auto flex flex-wrap flex-row-reverse justify-center gap-8 items-start">
         <div className="md:w-[50%]">
@@ -91,8 +91,7 @@ const Vision = () => {
               <p className="font-semibold text-black italic text-sm my-4 leading-6 group-hover:text-white relative z-50">
                 {item.desc}
               </p>
-              <div className="z-0 absolute bg-gradient-to-r from-primary
-              33333 via-secondary to-tertiary w-full right-0 group-hover:h-full rounded-lg bottom-0 duration-500 ease-in-out transform scale-x-0  group-hover:scale-x-100 origin-bottom" />
+              <div className="z-0 absolute bg-gradient-to-r from-[#26538C]  to-[#00AFF0]  w-full right-0 group-hover:h-full rounded-lg bottom-0 duration-500 ease-in-out transform scale-x-0  group-hover:scale-x-100 origin-bottom" />
             </div>
           </div>
         ))}

@@ -8,6 +8,12 @@ import { RiStarSFill } from "react-icons/ri";
 import { ImQuotesLeft } from "react-icons/im";
 import { ImQuotesRight } from "react-icons/im";
 import Image from "next/image";
+import gsap from "gsap";
+import { ScrollTrigger} from "gsap/ScrollTrigger";
+
+
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Testimoinals:React.FC = () => {
   const settings:Settings = {
@@ -19,8 +25,8 @@ const Testimoinals:React.FC = () => {
     arrows: false,
     autoplay:true,
     autoplaySpeed: 2000,
-    
   };
+  
   return (
     <main className=" md:my-20 my-6 ">
       <div className="rounded-lg sm:py-20 py-4 bg-[url('/globe.jpeg')] bg-center bg-white bg-blend-lighten bg-opacity-50">

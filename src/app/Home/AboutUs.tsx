@@ -110,7 +110,7 @@ const AboutUs: React.FC = () => {
 
           <div className="about-img-animate sm:max-w-[50%]">
 
-            <p className="about-desc font-medium md:text-xl text-sm text-lighttext my-6">
+            <p className="about-desc font-medium md:text-lg text-sm text-lighttext my-6">
               In todays rapidly evolving business landscape, companies are
               increasingly turning to outsourcing and outstaffing as strategic
               solutions to drive growth, optimize operations, and maintain a

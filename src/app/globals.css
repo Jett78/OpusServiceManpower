@@ -20,20 +20,24 @@ input::placeholder {
   font-weight: bold;
   font-size: 14px;
 }
+
+.hero-section {
+  /* animation: zoomIn 10s ease-in-out infinite alternate; */
+  transition: background-image 1s ease-in-out;
+}
+
 .text-gradient{
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#CC1587] via-[#26538C] to-[#00AFF0];
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#26538C]  to-[#00AFF0];
 }
 .button-gradient{
-  @apply px-8 py-3 border rounded-full text-white font-bold bg-gradient-to-r from-[#CC1587] via-[#26538C] to-[#00AFF0] hover:bg-gradient-to-r hover:from-[#00AFF0] hover:via-[#26538C] hover:to-[#CC1587] duration-300 ease-in-out
+  @apply px-8 py-3 border rounded-full text-white font-bold bg-gradient-to-r from-[#26538C]  to-[#00AFF0] hover:bg-gradient-to-r hover:from-[#00AFF0] hover:via-[#26538C] hover:to-[#26538C] duration-300 ease-in-out
 }
 .gradient{
-  @apply  bg-gradient-to-tr from-[#CC1587] via-[#26538C] to-[#00AFF0]
+  @apply  bg-gradient-to-tr from-[#26538C]  to-[#00AFF0]
 }
 .animate-button{
   @apply md:w-[140px] w-full bg-black font-bold md:h-[45px] h-[45px] my-3 flex items-center justify-center rounded-full cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-[#CC1587] before:via-[#26538C] before:to-[#00AFF0] before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 text-[#fff]
 }
-
-
 .navbarhover{
   @apply relative  w-fit block after:block after:content-[''] after:absolute after:h-[2px] after:bg-tertiary after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center
 }

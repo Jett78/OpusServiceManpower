@@ -79,7 +79,7 @@ const WhyUs = () => {
     );
   });
   return (
-    <main className=" my-20 overflow-hidden w-full" ref={whycontainerRef}>
+    <main className=" py-20 overflow-hidden w-full bg-black text-white" ref={whycontainerRef}>
       <div className="flex flex-wrap justify-center lg:gap-0  w-11/12 mx-auto ">
         <section className="lg:max-w-[50%]">
           <div className="">
@@ -91,7 +91,7 @@ const WhyUs = () => {
             <h1 className="headanimate lg:text-5xl md:text-3xl text-3xl  font-bold leading-[1.1em]">
               Right Connection and Right Employee
             </h1>
-            <p className="headanimate font-medium text-lighttext my-6 max-w-[30em] md:text-xl text-sm min-w-[20em]">
+            <p className="headanimate font-medium text-lighttext my-6 max-w-[35em] md:text-lg text-sm min-w-[20em]">
               In the pursuit of business success, two critical factors often
               determine the trajectory of an organization: establishing the
               right connections and hiring the right employees. Both elements
@@ -117,16 +117,16 @@ const WhyUs = () => {
                 <div className="h-14 w-14 rounded-full border mb-6 gradient text-white text-2xl flex items-center justify-center relative z-50">
                   <div>{item.img}</div>
                 </div>
-                <h2 className="font-bold text-2xl md:group-hover:text-white text-white md:text-black z-50 relative">
+                <h2 className="font-bold text-2xl md:group-hover:text-white text-white md:text-white z-50 relative">
                   {item.title}
                 </h2>
                 <p className="font-medium md:text-lighttext md:group-hover:text-white  text-white text-sm my-2 z-50 relative">
                   {item.desc}
                 </p>
                 {/* Background gradient for small screens */}
-                <div className="md:hidden z-0 absolute bg-gradient-to-tr from-primary via-secondary to-tertiary w-full h-full right-0 rounded-lg bottom-0" />
+                <div className="md:hidden z-0 absolute bg-gradient-to-tr from-[#26538C]  to-[#00AFF0] w-full h-full right-0 rounded-lg bottom-0" />
                 {/* Background gradient on hover for large screens */}
-                <div className="hidden sm:block z-0 absolute bg-gradient-to-tr from-primary via-secondary to-tertiary w-full right-0 group-hover:h-full rounded-lg bottom-0 duration-500 ease-in-out transform scale-x-0 group-hover:scale-x-100 origin-left" />
+                <div className="hidden sm:block z-0 absolute bg-gradient-to-tr from-[#26538C]  to-[#00AFF0] w-full right-0 group-hover:h-full rounded-lg bottom-0 duration-500 ease-in-out transform scale-x-0 group-hover:scale-x-100 origin-left" />
               </div>
             ))}
           </div>
@@ -140,16 +140,16 @@ const WhyUs = () => {
                 <div className="h-14 w-14 rounded-full border mb-6 gradient text-white text-2xl flex items-center justify-center relative z-50">
                   <div>{item.img}</div>
                 </div>
-                <h2 className="font-bold text-2xl md:group-hover:text-white text-white md:text-black z-50 relative">
+                <h2 className="font-bold text-2xl md:group-hover:text-white text-white md:text-white z-50 relative">
                   {item.title}
                 </h2>
                 <p className="font-medium md:text-lighttext md:group-hover:text-white  text-white text-sm my-2 z-50 relative">
                   {item.desc}
                 </p>
                 {/* Background gradient for small screens */}
-                <div className="md:hidden z-0 absolute bg-gradient-to-tr from-primary via-secondary to-tertiary w-full h-full right-0 rounded-lg bottom-0" />
+                <div className="md:hidden z-0 absolute bg-gradient-to-tr from-[#26538C]  to-[#00AFF0]w-full h-full right-0 rounded-lg bottom-0" />
                 {/* Background gradient on hover for large screens */}
-                <div className="hidden sm:block z-0 absolute bg-gradient-to-tr from-primary via-secondary to-tertiary w-full right-0 group-hover:h-full rounded-lg bottom-0 duration-500 ease-in-out transform scale-x-0 group-hover:scale-x-100 origin-left" />
+                <div className="hidden sm:block z-0 absolute bg-gradient-to-tr from-[#26538C]  to-[#00AFF0] w-full right-0 group-hover:h-full rounded-lg bottom-0 duration-500 ease-in-out transform scale-x-0 group-hover:scale-x-100 origin-left" />
               </div>
             ))}
           </div>

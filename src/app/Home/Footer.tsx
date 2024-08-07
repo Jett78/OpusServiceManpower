@@ -131,7 +131,7 @@ const Footer: React.FC = () => {
               placeholder="Enter your email"
               className="pl-4 p-2 w-40 bg-white outline-none rounded-tl-xl rounded-bl-xl text-black"
             />
-            <button className="bg-gradient-to-r from-[#CC1587] via-[#26538C] to-[#00AFF0] hover:bg-gradient-to-r hover:from-[#00AFF0] hover:via-[#26538C] hover:to-[#CC1587] duration-750 ease-in-out p-2 px-4 font-medium rounded-tr-xl rounded-br-xl">
+            <button className=" bg-gradient-to-r from-[#26538C]  to-[#00AFF0] hover:bg-gradient-to-r hover:from-[#00AFF0] hover:via-[#26538C] hover:to-[#26538C] duration-750 ease-in-out p-2 px-4 font-medium rounded-tr-xl rounded-br-xl">
               Subscribe
             </button>
           </div>
