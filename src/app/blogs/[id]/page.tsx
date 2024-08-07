@@ -30,9 +30,9 @@ export default function Page({ params }: { params: { id: string } }) {
   return (
    <main>
      <div className='lg:w-9/12 w-11/12 mx-auto my-10'>
-      <h1 className='font-bold lg:text-5xl md:text-3xl text-3xl md:text-center'>{blog.title}</h1>
-      <p className='font-medium md:text-lg text-[12px] py-8'>{blog.desc}</p>
-      <Image src={blog.img} alt={blog.title} width={1000} height={1000} className='max-h-[65vh] object-cover mx-auto rounded-2xl my-4' />
+      <h1 className='font-bold lg:text-5xl md:text-3xl text-3xl md:text-left'>{blog.title}</h1>
+      <p className='font-medium md:text-lg text-[12px] pt-8 '>{blog.desc}</p>
+      <Image src={blog.img} alt={blog.title} width={1000} height={1000} className=' max-h-[65vh] w-full object-cover mx-auto rounded-2xl my-6' />
       <p className='font-semibold'>{blog.time}</p>
       <p className='font-medium  md:text-lg text-[12px] py-6'>{blog.desc2}</p>
       <p className='font-medium  md:text-lg text-[12px] py-6'>{blog.desc3}</p>

@@ -108,7 +108,7 @@ const Navbar = () => {
                   <Link
                     href={items.path}
                     className={`font-semibold text-white text-3xl ${
-                      router === items.path ? "text-tertiary font-bold" : "text-white"
+                      router === items.path ? "text-[#00AFF0] font-bold" : "text-white"
                     }`}
                   >
                     {items.title}
