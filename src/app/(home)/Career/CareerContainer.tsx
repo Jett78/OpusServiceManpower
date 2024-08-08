@@ -235,7 +235,7 @@ const CareerContainer = () => {
                 <p className="text-tertiary">
                   <FaHandPointRight />
                 </p>
-                <h2 className="md:text-2xl font-semibold border-l border-b rounded-xl shadow-sm w-full p-2">
+                <h2 className="md:text-2xl  font-semibold border-l border-b rounded-xl shadow-sm w-full p-2">
                   {item.title}
                 </h2>
               </div>

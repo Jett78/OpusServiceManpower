@@ -63,6 +63,10 @@ const config: Config = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      brightness: {
+        25: '.25',
+        175: '1.75',
+      },
       screens: {
         xs: "475px",
         sm: "640px",

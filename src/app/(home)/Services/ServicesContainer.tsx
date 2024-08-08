@@ -2,93 +2,86 @@
 import React, { useState, useRef } from "react";
 import Image from "next/image";
 import Cta from "../Home/Cta";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
 const ServiceContainer: React.FC = () => {
-  const [selectedService, setSelectedService] = useState(servicesdata[0]);
-  const contentRef = useRef<HTMLDivElement>(null);
+  const serviceContainer = useRef<any>(null);
+  const mainContainer = useRef<any>(null);
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: mainContainer.current,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1,
+        // markers: true,
+      },
+    });
 
-  const handleServiceClick = (service: (typeof servicesdata)[0]) => {
-    setSelectedService(service);
-    // Scroll to content
-    if (contentRef.current) {
-      contentRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
+    tl.fromTo(
+      serviceContainer.current?.children,
+      { y: 100, opacity: 0, scale: 0.5 },
+      { y: 0, opacity: 1, stagger: 0.3, scale: 1, ease: "power2.out" }
+    );
+
+    tl.to(serviceContainer.current?.children, { scale: 0.5 });
+  });
 
   return (
-    <div className="w-11/12 mx-auto pt-10">
-      <h2 className="font-extrabold text-3xl uppercase text-gradient w-fit mx-auto">
-        Our Services
-      </h2>
-      <p className="font-medium text-md max-w-[60em] md:mx-auto mx-2 sm:text-l text-sm py-2 text-center">
-        Explore our comprehensive range of services designed to meet your
-        diverse needs, from industrial and IT solutions to transportation and
-        construction services.
-      </p>
+    <main>
+      <div className="w-11/12 mx-auto pt-10" ref={mainContainer}>
+        <h2 className="font-extrabold text-3xl uppercase text-black w-fit mx-auto">
+          Our <span className="text-gradient">Services</span>
+        </h2>
+        <p className="font-medium text-md max-w-[60em] md:mx-auto mx-2 sm:text-l text-sm py-2 text-center">
+          Explore our comprehensive range of services designed to meet your
+          diverse needs, from industrial and IT solutions to transportation and
+          construction services.
+        </p>
 
-      <div className="my-10">
-        <div className="grid gap-20">
-          {/* <ul className="grid gap-2 sticky top-[10em]">
-            {servicesdata.map((item, index) => (
-              <li
-                key={index}
-                className={`cursor-pointer font-bold text-xl whitespace-nowrap border-b border-l  p-2 ${
-                  selectedService.title === item.title
-                    ? " text-tertiary shadow-md"
-                    : "hover:text-tertiary"
-                }`}
-                onClick={() => handleServiceClick(item)}
-              >
-                {item.title}
-              </li>
-            ))}
-          </ul> */}
-          {servicesdata.map((item:any, index) => (
-            <div key={index} className="grid gap-8">
-              <div className="flex flex-wrap md:justify-center items-start xl:gap-20 md:gap-10 gap-6">
-                <div className="flex gap-2 items-center ">
-                  <h2 className="font-extrabold lg:text-9xl md:text-6xl sm:text-4xl text-4xl font-sans text-gradient">
-                    {item.num}
-                  </h2>
-                  <h2 className="font-bold lg:text-5xl md:text-4xl text-2xl max-w-80 ">{item.title}</h2>
-                </div>
+        <div className="my-16">
+          <div className="grid gap-20" ref={serviceContainer}>
+            {servicesdata.map((item: any, index) => (
+              <div key={index} className="grid gap-8">
+                <div
+                  className={` flex flex-wrap lg:justify-center items-start xl:gap-20 md:gap-10 gap-6 ${
+                    index % 2 == 1 ? " flex-row-reverse" : ""
+                  }`}
+                >
+                  <div className={`flex gap-2 items-center `}>
+                    <h2 className="font-extrabold lg:text-9xl md:text-6xl sm:text-4xl text-4xl font-sans text-gradient">
+                      {item.num}
+                    </h2>
+                    <h2 className="font-bold lg:text-5xl md:text-4xl text-2xl max-w-80 ">
+                      {item.title}
+                    </h2>
+                  </div>
 
-                <div className="xl:max-w-[40em]">
-                  <p className="font-medium lg:text-lg text-[14px] text-lighttext">{item.desc}</p>
+                  <div className="xl:max-w-[40em]">
+                    <p className="font-medium lg:text-l text-[14px] text-lighttext">
+                      {item.desc}
+                    </p>
+                  </div>
                 </div>
+                <figure>
+                  <Image
+                    src={item.img}
+                    alt={item.name}
+                    width={700}
+                    height={1000}
+                    className="max-h-[50vh] w-[70em] mx-auto object-cover rounded-lg shadow-md"
+                  />
+                </figure>
               </div>
-              <figure>
-                <Image
-                  src={item.img}
-                  alt={item.name}
-                  width={700}
-                  height={1000}
-                  className="max-h-[50vh] w-[70em] mx-auto object-cover rounded-lg shadow-md"
-                />
-              </figure>
-            </div>
-          ))}
-        </div>
-        {/* <div className="sm:w-[70%] w-full">
-          <div ref={contentRef}>
-            <figure>
-              <Image
-                src={selectedService.img}
-                alt={selectedService.title}
-                width={700}
-                height={1000}
-                className="max-h-[60vh] w-full object-cover rounded-lg shadow-md"
-              />
-            </figure>
-            <h3 className="font-medium py-10 md:text-xl text-sm">
-              {selectedService.desc}
-            </h3>
+            ))}
           </div>
-        </div> */}
+        </div>
       </div>
-
-      <Cta/>
-    </div>
+      <Cta />
+    </main>
   );
 };
 

@@ -1,11 +1,37 @@
+"use client"
 import React from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+
+gsap.registerPlugin(ScrollTrigger);
 
 const HowweWork = () => {
+
+  useGSAP(() => {
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".content",
+        start: "top bottom",
+        end: "50% 50%",
+        scrub: 1,
+        // markers: true,
+      },
+    });
+
+    tl.from(".textsection",{
+      y:60,
+      opacity:0,
+    })
+  })
+
   return (
-    <main className="md:py-20 text-white py-10 bg-black">
-      <div className="lg:w-9/12 w-11/12 mx-auto flex flex-wrap justify-center gap-20">
+    <main className="content md:py-20 text-white py-10 bg-black">
+      <div className="lg:w-10/12 w-11/12 mx-auto flex flex-wrap justify-center gap-20">
        <div className="xl:w-[50%] ">
-       <section className="sticky top-[5em]">
+       <section className="textsection sticky top-[5em]">
           <h2 className="text-gradient uppercase font-bold text-xl  w-fit my-4">How we work</h2>
           <h2  className="lg:text-5xl md:text-3xl text-3xl  font-bold leading-[1.1em]">Learn more about our working process</h2>
           <p  className=" font-medium text-lighttext md:text-md text-[12px] my-6 max-w-[30em] md:text-xl min-w-[20em]">
@@ -17,10 +43,10 @@ const HowweWork = () => {
        </div>
 
 
-        <section className="grid gap-10 xl:grid-cols-1 md:grid-cols-2 ">
+        <section className="imgsection grid gap-10 xl:grid-cols-1 md:grid-cols-2 ">
             {howwork.map((item,index) => (
-                <div key={index} className="flex items-start gap-4">
-                      {/* <div className="gradient h-4 w-4 rounded-full mt-3"></div> */}
+                <div key={index} className="relative flex items-start gap-2">
+                      <div className="gradient min-h-4 min-w-4 rounded-full  relative z-10"></div>
                       <div className=" shadow-md p-3 rounded-lg">
                           <div className="flex gap-2">
                             <h2 className="font-bold text-2xl font-sans text-gradient">{item.num}.</h2>
@@ -28,7 +54,11 @@ const HowweWork = () => {
                           </div>
                           <p className="font-semibold md:text-md text-sm leading-6 max-w-[25em] py-2">{item.desc}</p>
                       </div>
+                      <div className="absolute border-2 h-[9em] border-dashed top-6 left-2">
+                        
+                      </div>
                 </div>
+              
             ))}
         </section>
       </div>

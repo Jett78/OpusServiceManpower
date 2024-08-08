@@ -64,7 +64,7 @@ const Chairmanmssg: React.FC = () => {
     <main className="w-11/12 mx-auto md:my-40 my-10 overflow-hidden" ref={messageConatiner}>
       <div className="mx-auto rounded-lg ">
         <div className="flex flex-wrap flex-row-reverse items-center justify-center gap-10 ">
-          <section className="relative  lg:w-[40%]   h-[35em]  py-10">
+          <section className="relative  lg:max-w-[40%] w-full   h-[35em]  py-10">
             <div className=" pb-10">
               <h2 className="mssganimate text-gradient text-2xl font-bold">
                 Chairmans Message

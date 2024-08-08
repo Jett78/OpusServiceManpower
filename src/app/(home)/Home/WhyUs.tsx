@@ -50,9 +50,8 @@ const WhyUs = () => {
     tl.from(
       ".headanimate",
       {
-        y: 24,
+        x: -200,
         opacity: 0,
-        stagger: 0.2,
         duration: 1,
       },
       "<"
@@ -79,19 +78,19 @@ const WhyUs = () => {
     );
   });
   return (
-    <main className=" my-20 overflow-hidden w-full" ref={whycontainerRef}>
+    <main className=" py-20 overflow-hidden w-full text-black" ref={whycontainerRef}>
       <div className="flex flex-wrap justify-center lg:gap-0  w-11/12 mx-auto ">
-        <section className="lg:max-w-[50%]">
-          <div className="">
+        <section className="md:max-w-[50%] w-full">
+          <div className="headanimate">
             <div className="h-[24px] overflow-hidden mb-6">
-              <h2 className="headanimate text-gradient uppercase font-bold text-xl border-b w-fit ">
+              <h2 className=" text-gradient uppercase font-bold text-xl border-b w-fit ">
                 Why Us
               </h2>
             </div>
-            <h1 className="headanimate lg:text-5xl md:text-3xl text-3xl  font-bold leading-[1.1em]">
+            <h1 className=" lg:text-5xl md:text-3xl text-3xl  font-bold leading-[1.1em]">
               Right Connection and Right Employee
             </h1>
-            <p className="headanimate font-medium text-lighttext my-6 max-w-[30em] md:text-xl text-sm min-w-[20em]">
+            <p className=" font-medium text-lighttext my-6 max-w-[35em] md:text-lg text-sm min-w-[20em]">
               In the pursuit of business success, two critical factors often
               determine the trajectory of an organization: establishing the
               right connections and hiring the right employees. Both elements
@@ -107,7 +106,7 @@ const WhyUs = () => {
           </div>
         </section>
 
-        <section className="sm:max-w-[50%] lg:grid-cols-2  grid-cols-1 grid gap-x-4">
+        <section className="md:max-w-[50%] w-full lg:grid-cols-2  grid-cols-1 grid gap-x-4">
           <div className="space-y-6">
             {whyusdata.slice(0, 2).map((item, index) => (
               <div
@@ -124,9 +123,9 @@ const WhyUs = () => {
                   {item.desc}
                 </p>
                 {/* Background gradient for small screens */}
-                <div className="md:hidden z-0 absolute bg-gradient-to-tr from-primary via-secondary to-tertiary w-full h-full right-0 rounded-lg bottom-0" />
+                <div className="md:hidden z-0 absolute bg-gradient-to-tr from-[#26538C]  to-[#00AFF0] w-full h-full right-0 rounded-lg bottom-0" />
                 {/* Background gradient on hover for large screens */}
-                <div className="hidden sm:block z-0 absolute bg-gradient-to-tr from-primary via-secondary to-tertiary w-full right-0 group-hover:h-full rounded-lg bottom-0 duration-500 ease-in-out transform scale-x-0 group-hover:scale-x-100 origin-left" />
+                <div className="hidden sm:block z-0 absolute bg-gradient-to-tr from-[#26538C]  to-[#00AFF0] w-full right-0 group-hover:h-full rounded-lg bottom-0 duration-500 ease-in-out transform scale-x-0 group-hover:scale-x-100 origin-left" />
               </div>
             ))}
           </div>
@@ -147,9 +146,9 @@ const WhyUs = () => {
                   {item.desc}
                 </p>
                 {/* Background gradient for small screens */}
-                <div className="md:hidden z-0 absolute bg-gradient-to-tr from-primary via-secondary to-tertiary w-full h-full right-0 rounded-lg bottom-0" />
+                <div className="md:hidden z-0 absolute bg-gradient-to-tr from-[#26538C]  to-[#00AFF0] w-full h-full right-0 rounded-lg bottom-0" />
                 {/* Background gradient on hover for large screens */}
-                <div className="hidden sm:block z-0 absolute bg-gradient-to-tr from-primary via-secondary to-tertiary w-full right-0 group-hover:h-full rounded-lg bottom-0 duration-500 ease-in-out transform scale-x-0 group-hover:scale-x-100 origin-left" />
+                <div className="hidden sm:block z-0 absolute bg-gradient-to-tr from-[#26538C]  to-[#00AFF0] w-full right-0 group-hover:h-full rounded-lg bottom-0 duration-500 ease-in-out transform scale-x-0 group-hover:scale-x-100 origin-left" />
               </div>
             ))}
           </div>
