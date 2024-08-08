@@ -2,9 +2,9 @@
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
-import demoImg from "../../../public/Heroimg.png";
-import demoImg2 from "../../../public/heroimg2.jpg";
-import demoImg3 from "../../../public/heroimg3.jpg";
+import demoImg from "../../../../public/Heroimg.png";
+import demoImg2 from "../../../../public/heroimg2.jpg";
+import demoImg3 from "../../../../public/heroimg3.jpg";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -60,7 +60,6 @@ const HeroSection: React.FC = () => {
            py-4 md:max-w-[48em] min-w-[18em] leading-6 mx-auto">
             We provide you with the best human resources to meet your specific
             business needs. Partner with us to effortlessly double your
-            workforce and achieve unprecedented growth and efficiency.
           </p>
           <div className="flex flex-wrap gap-4 justify-left mt-6 group">
             <Link href="/Contact">
