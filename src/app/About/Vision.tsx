@@ -1,18 +1,55 @@
-import React from "react";
+"use client"
+import React, { useRef } from "react";
 import { TbDeviceVisionPro } from "react-icons/tb";
 import { GoGoal } from "react-icons/go";
 import Image from "next/image";
 import CountUp from 'react-countup'
 import { useInView } from 'react-intersection-observer';
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+
+gsap.registerPlugin(ScrollTrigger);
 const Vision = () => {
+  const visions = useRef<any>(null)
+
+  useGSAP(() => {
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: visions.current,
+        start: "top bottom",
+        end: "50% 50%",
+        scrub: 1,
+        // markers: true,
+      },
+    });
+
+    tl.from(visions.current?.children,{
+      stagger:0.5,
+      y:60,
+      opacity:0,
+    })
+
+    gsap.from(".textright",{
+      opacity:0,
+      x:200,
+      duration:1.5,
+    })
+    gsap.from(".imgleft",{
+      opacity:0,
+      x:-200,
+      duration:1.5,
+    })
+  })
   return (
     <main className="">
       <h2 className="text-black uppercase font-extrabold text-3xl w-fit mx-auto md:mb-10 ">
         <span className="text-gradient">About {""}</span> 
       </h2>
       <section className="w-11/12 mx-auto flex flex-wrap flex-row-reverse justify-center gap-8 items-start">
-        <div className="md:w-[50%]">
+        <div className="textright lg:w-[50%] w-full">
           <div className="h-[24px] overflow-hidden mb-2"></div>
           <h1 className="header lg:text-5xl md:text-4xl sm:text-3xl  text-2xl font-bold leading-[1.1em]">
             Outsourcing and outstaffing solutions for sustainable
@@ -45,7 +82,7 @@ const Vision = () => {
           </p>
         </div>
 
-        <div className="about-img-animate sm:w-[45%] md:block hidden">
+        <div className="imgleft about-img-animate sm:w-[45%] lg:block hidden">
           <Image
             src="/chairman.jpg"
             alt="chairman"
@@ -75,7 +112,7 @@ const Vision = () => {
 
 
       <div className=" md:py-40 py-20  bg-gray-50">
-        <div className="w-11/12 mx-auto flex flex-wrap justify-center md:gap-8 gap-12">
+        <div className="w-11/12 mx-auto flex flex-wrap justify-center md:gap-8 gap-12" ref={visions}>
         {aboutdata.map((item, index) => (
           <div key={index} className="relative group">
             <div

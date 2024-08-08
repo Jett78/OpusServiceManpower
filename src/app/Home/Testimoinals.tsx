@@ -1,7 +1,6 @@
-
 "use client";
 import React from "react";
-import Slider,{Settings} from "react-slick";
+import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { RiStarSFill } from "react-icons/ri";
@@ -9,27 +8,43 @@ import { ImQuotesLeft } from "react-icons/im";
 import { ImQuotesRight } from "react-icons/im";
 import Image from "next/image";
 import gsap from "gsap";
-import { ScrollTrigger} from "gsap/ScrollTrigger";
-
-
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Testimoinals:React.FC = () => {
-  const settings:Settings = {
+const Testimoinals: React.FC = () => {
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".testimonialsanimate",
+        start: "top bottom",
+        end: "50% 50%",
+        scrub: 1,
+        // markers: true,
+      },
+    });
+
+    tl.from(".testimonialsanimate", {
+      scale: 0.5,
+      opacity: 0,
+      ease: "power2.out" 
+    });
+  });
+  const settings: Settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-    autoplay:true,
+    autoplay: true,
     autoplaySpeed: 2000,
   };
-  
+
   return (
     <main className=" md:my-20 my-6 ">
-      <div className="rounded-lg sm:py-20 py-4 bg-[url('/globe.jpeg')] bg-center bg-white bg-blend-lighten bg-opacity-50">
+      <div className="testimonialsanimate rounded-lg sm:py-20 py-4 bg-[url('/globe.jpeg')] bg-center bg-white bg-blend-lighten bg-opacity-50">
         <h2 className="text-center font-extrabold sm:text-l text-sm uppercase tracking-wider">
           Testimonials
         </h2>
@@ -46,19 +61,31 @@ const Testimoinals:React.FC = () => {
                     <RiStarSFill key={index} />
                   ))}
                 </div>
-                <h2 className="sm:text-l text-sm font-semibold my-4">{item.desc}</h2>
-                <Image src={item.img} alt={item.name} height={1000} width={1000} className="h-14 w-14  rounded-full mx-auto object-cover object-center"/>
-                <h2 className="sm:text-xl text-md font-bold py-4">{item.name}</h2>
+                <h2 className="sm:text-l text-sm font-semibold my-4">
+                  {item.desc}
+                </h2>
+                <Image
+                  src={item.img}
+                  alt={item.name}
+                  height={1000}
+                  width={1000}
+                  className="h-14 w-14  rounded-full mx-auto object-cover object-center"
+                />
+                <h2 className="sm:text-xl text-md font-bold py-4">
+                  {item.name}
+                </h2>
               </div>
             ))}
           </Slider>
 
-          {/* <div className="absolute sm:text-6xl text-2xl sm:bottom-[3em] bottom-[12em]  opacity-50 text-tertiary">
+        <div className="sm:hidden lg:block block">
+        <div className="absolute sm:text-6xl text-2xl lg:bottom-[3em] md:bottom-[5em] bottom-[12em]  opacity-50 text-tertiary">
             <ImQuotesLeft />
           </div>
           <div className="absolute sm:text-6xl text-2xl sm:bottom-16 bottom-28 right-0 opacity-50 text-tertiary">
             <ImQuotesRight />
-          </div> */}
+          </div>
+        </div>
         </div>
       </div>
     </main>
@@ -67,7 +94,7 @@ const Testimoinals:React.FC = () => {
 
 export default Testimoinals;
 
-const testimonialsdata:Testimonial[] = [
+const testimonialsdata: Testimonial[] = [
   {
     name: "John Doe",
     desc: "Working with [Company Name] has been a game-changer for our recruitment process. Their team is highly professional and understands our specific needs. They consistently provide us with top-notch candidates who fit perfectly with our company culture.",
@@ -90,7 +117,7 @@ const testimonialsdata:Testimonial[] = [
   },
 ];
 type Testimonial = {
-  name:string,
-  desc:string,
-  img:string,
-}
+  name: string;
+  desc: string;
+  img: string;
+};

@@ -1,8 +1,36 @@
+"use client"
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+
+gsap.registerPlugin(ScrollTrigger);
 const Cta = () => {
+  useGSAP(() => {
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger:".ctanimate",
+        start: "top bottom",
+        end: "50% 50%",
+        scrub: 1,
+        // markers: true,
+      },
+    });
+
+    tl.from(".ctaanimateleft",{
+      x:-200,
+      opacity:0,
+    })
+    tl.from(".ctanimateright",{
+      x:200,
+      opacity:0,
+    })
+  
+  })
   return (
     <main className="w-11/12 mx-auto my-20">
       {/* <div className="border bg-[url('/CTA.png')] shadow-md bg-black bg-opacity-50 bg-blend-overlay text-white bg-center rounded-2xl flex flex-col justify-center items-center px-6 w-full h-[30em]">
@@ -38,8 +66,8 @@ const Cta = () => {
 
 
 
-<section className="overflow-hidden bg-gray-50 sm:grid sm:grid-cols-2">
-  <div className="p-8 md:p-12 lg:px-16 lg:py-24">
+<section className="ctanimate overflow-hidden bg-gray-50 sm:grid sm:grid-cols-2">
+  <div className="ctaanimateleft p-8 md:p-12 lg:px-16 lg:py-24">
     <div className="mx-auto max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
       <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">
        Boost Your Productivity With Our Manpower Solutions
@@ -66,10 +94,12 @@ const Cta = () => {
     </div>
   </div>
 
-  <img
-    alt=""
-    src="https://images.unsplash.com/photo-1464582883107-8adf2dca8a9f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-    className="h-56 w-full object-cover sm:h-full"
+  <Image
+    alt="tech-image"
+    src="/servicesimg/technology.png"
+    width={1000}
+    height={1000}
+    className="ctanimateright h-56 w-full object-cover sm:h-full"
   />
 </section>
     </main>

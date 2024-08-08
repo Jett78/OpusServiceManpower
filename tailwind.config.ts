@@ -17,6 +17,10 @@ const config: Config = {
         tertiary:"#00AFF0",
         lighttext: "#7E7E7E",
       },
+      brightness: {
+        25: '.25',
+        175: '1.75',
+      },
       screens: {
         xs: "475px",
         sm: "640px",

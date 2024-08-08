@@ -22,7 +22,7 @@ const navdata = [
   },
   {
     title: "Blog",
-    path: "/blog",
+    path: "/blogs",
   },
   {
     title: "Contact us",
@@ -33,31 +33,31 @@ const navdata = [
 const anotherlink = [
   {
     title: "Oil & Gases",
-    path: "/",
+    path: "/Services",
   },
   {
     title: "Industrial Services",
-    path: "/",
+    path: "/Services",
   },
   {
     title: "Health Services",
-    path: "/",
+    path: "/Services",
   },
   {
     title: "Construction Services",
-    path: "/",
+    path: "/Services",
   },
   {
     title: "Information technology",
-    path: "/",
+    path: "/Services",
   },
   {
     title: "Accomodation & Transportation",
-    path: "/",
+    path: "/Services",
   },
   {
     title: "Blue Collar & White Collar",
-    path: "/",
+    path: "/Services",
   },
 ];
 
