@@ -3,7 +3,7 @@ import Image from "next/image";
 import Cta from "../../Home/Cta";
 import { supabase } from "@/lib/supabase";
 import parse from 'html-react-parser'
-export async function fetchData(id: any) {
+async function fetchData(id: any) {
   try {
     const { data, error, status } = await supabase
       .from("Blogs")
@@ -58,7 +58,7 @@ export async function generateMetadata(
   };
 }
 
-export default async function Page({ params }: { params: { id: string } }) {
+export default async function Page({ params }: any) {
   const blog:any =await fetchData(params.id);
 
   if (!blog) {

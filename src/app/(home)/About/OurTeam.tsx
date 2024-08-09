@@ -83,7 +83,7 @@ const OurTeam = () => {
         validate our skills and expertise across various countries
       </p>
 
-      <div className="grid lg:grid-cols-2 grid-cols-1 place-items-center md:w-7/12 w-11/12 mx-auto justify-center gap-10 my-20 group cursor-pointer">
+      <div className="highteam grid lg:grid-cols-2 grid-cols-1 place-items-center md:w-7/12 w-11/12 mx-auto justify-center gap-10 my-20 group cursor-pointer">
         {testimonial?.slice(0,2).map((item:any, index:number) => (
           <div
             key={index}
@@ -118,7 +118,7 @@ const OurTeam = () => {
         ))}
       </div>
 
-      <div className="md:grid hidden lg:grid-cols-4 grid-cols-2 place-items-center w-10/12 mx-auto justify-center gap-10 my-20 group cursor-pointer">
+      <div className="lowteam md:grid hidden lg:grid-cols-4 grid-cols-2 place-items-center w-10/12 mx-auto justify-center gap-10 my-20 group cursor-pointer">
         {testimonial?.slice(2).map((item:any, index:number) => (
           <div
             key={index}
