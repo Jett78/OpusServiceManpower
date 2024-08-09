@@ -1,9 +1,15 @@
+"use client"
 import React from "react";
 import { IoLocation } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
 import { IoCall } from "react-icons/io5";
 import { Form } from "../components/Form";
 import Image from "next/image";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 const locationinfo = [
   {
     img: <IoLocation />,
@@ -28,10 +34,41 @@ const locationinfo = [
 ];
 
 const Contactus = () => {
+
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger:".contactcontainer",
+        start: "top bottom",
+        end: "50% 50%",
+        scrub: 1,
+        // markers: true,
+      },
+    });
+
+    tl.from(
+      ".contactleft",
+      {
+        x: -100,
+        opacity: 0,
+        duration: 1,
+      },
+      "<"
+    );
+    tl.from(
+      ".contactright",
+      {
+        x: 100,
+        opacity: 0,
+        duration: 1,
+      },
+      "<"
+    );
+  })
   return (
-    <main className=" bg-gray-50 md:py-20 py-6">
+    <main className="contactcontainer bg-gray-50 md:py-20 py-6 overflow-hidden">
       <div className="w-11/12 mx-auto flex flex-wrap gap-8 justify-center  rounded-2xl">
-        <section className="md:w-[35%]">
+        <section className="md:w-[35%] contactleft">
           <div className="sticky top-[6rem] left-0">
             <h1 className="header lg:text-5xl md:text-3xl text-2xl font-bold leading-[1.1em] whitespace-nowrap">
               Get in
@@ -65,7 +102,7 @@ const Contactus = () => {
             </div>
           </div>
         </section>
-        <section className="md:w-[55%]">
+        <section className="md:w-[55%] contactright">
           <div className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1  grid-cols-2 gap-y-2 gap-x-2">
             {locationinfo.map((item, index) => (
               <div

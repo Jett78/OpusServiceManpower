@@ -1,10 +1,35 @@
+"use client"
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+
+gsap.registerPlugin(ScrollTrigger);
 const Vocational = () => {
+
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".vocationalanimate",
+        start: "top bottom",
+        end: "50% 50%",
+        scrub: 1,
+        // markers: true,
+      },
+    });
+
+    tl.from(".vocationalanimate", {
+      scale: 0.5,
+      opacity: 0,
+      ease: "power2.out" 
+    });
+  });
   return (
    <main className='my-6'>
-          <div className="border bg-[url('/CTA.png')] shadow-md bg-black bg-opacity-80 bg-blend-overlay text-white bg-center flex flex-col justify-center items-center px-6 w-full h-[30em]">
+          <div className="vocationalanimate border bg-[url('/CTA.png')] shadow-md bg-black bg-opacity-80 bg-blend-overlay text-white bg-center flex flex-col justify-center items-center px-6 w-full h-[30em]">
          <div className="grid md:gap-6">
          <h2 className="lg:text-[46px] md:text-[40px] sm:text-[30px] text-2xl font-bold text-center">
           We Provide Vocational Training Services

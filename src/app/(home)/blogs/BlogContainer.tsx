@@ -1,15 +1,30 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FaChevronLeft } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { FaArrowRight } from "react-icons/fa6";
+
 
 
 const BlogContainer: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [itemsPerPage, setItemsPerPage] = useState<number>(6); // Default items per page
 
+  const blogref = useRef<any>(null)
+
+  useGSAP(() => {
+    gsap.from(blogref.current?.children,{
+      opacity:0,
+      y:60,
+      duration:0.5,
+      stagger:0.2,
+    })
+  })
   useEffect(() => {
     // Update itemsPerPage based on screen size
     const updateItemsPerPage = () => {
@@ -55,7 +70,7 @@ const BlogContainer: React.FC = () => {
         stay ahead in your field.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-11/12 mx-auto my-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-11/12 mx-auto my-16" ref={blogref}>
         {currentItems.map((item, index) => (
           <Link key={index} href={`/blogs/${index}`}>
             <div>
@@ -81,7 +96,10 @@ const BlogContainer: React.FC = () => {
                   <p className="text-[14px] py-2 font-medium text-lighttext">
                     {item.desc}
                   </p>
-                  <p className="text-tertiary font-medium text-[12px]">Find Out More</p>
+                  <p className="text-tertiary font-medium text-[12px] flex  gap-2 items-center">Read More
+                  <FaArrowRight />
+
+                  </p>
                 </div>
               </article>
             </div>
