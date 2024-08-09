@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -10,10 +10,23 @@ import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { supabase } from "@/lib/supabase";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Testimoinals: React.FC = () => {
+  const [testimonial, setTestimonial] = useState<any>([]);
+  React.useEffect(() => {
+    const fetch = async () => {
+      let { data, error } = await supabase.from("Testimonial").select("*");
+      if (error) {
+        throw new Error("Failed to fetch blogs");
+      } else {
+        setTestimonial(data || []);
+      }
+    };
+    fetch();
+  }, []);
   useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -28,7 +41,7 @@ const Testimoinals: React.FC = () => {
     tl.from(".testimonialsanimate", {
       scale: 0.5,
       opacity: 0,
-      ease: "power2.out" 
+      ease: "power2.out",
     });
   });
   const settings: Settings = {
@@ -51,10 +64,9 @@ const Testimoinals: React.FC = () => {
         <h2 className="font-bold md:text-3xl text-2xl text-center text-gradient w-fit mx-auto mt-2">
           What Our Clients Are Saying
         </h2>
-
         <div className=" sm:mx-40 mx-6 text-center mt-10 relative">
           <Slider {...settings}>
-            {testimonialsdata.map((item, index) => (
+            {testimonial?.map((item:any, index:number) => (
               <div key={index}>
                 <div className="flex text-2xl text-orange-400 justify-center">
                   {[...Array(5)].map((_, index) => (
@@ -62,30 +74,30 @@ const Testimoinals: React.FC = () => {
                   ))}
                 </div>
                 <h2 className="sm:text-l text-sm font-semibold my-4">
-                  {item.desc}
+                  {item.Message}
                 </h2>
                 <Image
-                  src={item.img}
-                  alt={item.name}
+                  src={item.Image}
+                  alt={item.Name}
                   height={1000}
                   width={1000}
                   className="h-14 w-14  rounded-full mx-auto object-cover object-center"
                 />
                 <h2 className="sm:text-xl text-md font-bold py-4">
-                  {item.name}
+                  {item.Name}
                 </h2>
               </div>
             ))}
           </Slider>
 
-        <div className="sm:hidden lg:block block">
-        <div className="absolute sm:text-6xl text-2xl lg:bottom-[3em] md:bottom-[5em] bottom-[12em]  opacity-50 text-tertiary">
-            <ImQuotesLeft />
+          <div className="sm:hidden lg:block block">
+            <div className="absolute sm:text-6xl text-2xl lg:bottom-[3em] md:bottom-[5em] bottom-[12em]  opacity-50 text-tertiary">
+              <ImQuotesLeft />
+            </div>
+            <div className="absolute sm:text-6xl text-2xl sm:bottom-16 bottom-28 right-0 opacity-50 text-tertiary">
+              <ImQuotesRight />
+            </div>
           </div>
-          <div className="absolute sm:text-6xl text-2xl sm:bottom-16 bottom-28 right-0 opacity-50 text-tertiary">
-            <ImQuotesRight />
-          </div>
-        </div>
         </div>
       </div>
     </main>
@@ -93,31 +105,3 @@ const Testimoinals: React.FC = () => {
 };
 
 export default Testimoinals;
-
-const testimonialsdata: Testimonial[] = [
-  {
-    name: "John Doe",
-    desc: "Working with [Company Name] has been a game-changer for our recruitment process. Their team is highly professional and understands our specific needs. They consistently provide us with top-notch candidates who fit perfectly with our company culture.",
-    img: "/avatar.jpg",
-  },
-  {
-    name: "Jane Doe",
-    desc: "The level of service and support we receive from [Company Name] is exceptional. They are always responsive and go above and beyond to ensure our staffing requirements are met. Their expertise in the industry is evident, and they have become a trusted partner in our growth",
-    img: "/avatar.jpg",
-  },
-  {
-    name: "Alexander Muffins",
-    desc: "We have been collaborating with [Company Name] for several years now, and they have been instrumental in helping us find the right talent for our organization. Their commitment to quality and their deep understanding of our industry needs have made a significant impact on our operations.",
-    img: "/avatar.jpg",
-  },
-  {
-    name: "Kiran Nepali",
-    desc: "The team at [Company Name] has been a pleasure to work with. Their recruitment process is efficient, and they always deliver candidates who are well-suited for the roles. Their dedication to customer satisfaction is truly commendable",
-    img: "/avatar.jpg",
-  },
-];
-type Testimonial = {
-  name: string;
-  desc: string;
-  img: string;
-};

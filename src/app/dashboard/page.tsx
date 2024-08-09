@@ -1,7 +1,8 @@
 "use client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { supabase } from "@/lib/supabase";
 // import { supabase } from "@/utils/something/supabase/supabaseClient";
-import { Shirt } from "lucide-react";
+import { Group, Inbox, Newspaper, Shirt, Users } from "lucide-react";
 import React, { useState } from "react";
 
 export default function Page() {
@@ -11,58 +12,50 @@ export default function Page() {
   const [lenseCount, setLenseCount] = useState<number | null>(0);
   const [productCount, setProductCount] = useState<number | null>(0);
 
-  // React.useEffect(() => {
-  //   const fetch = async () => {
-  //     let { count: category_count } = await supabase.from("Category").select("*", { count: "exact", head: true });
-  //     let { count: brand_count } = await supabase.from("Brand").select("*", { count: "exact", head: true });
-  //     let { count: frame_count } = await supabase.from("Frame").select("*", { count: "exact", head: true });
-  //     let { count: lense_count } = await supabase.from("Lense").select("*", { count: "exact", head: true });
-  //     let { count: product_count } = await supabase.from("Product").select("*", { count: "exact", head: true });
+  React.useEffect(() => {
+    const fetch = async () => {
+      let { count: category_count } = await supabase.from("Contact").select("*", { count: "exact", head: true });
+      let { count: brand_count } = await supabase.from("Blogs").select("*", { count: "exact", head: true });
+      let { count: frame_count } = await supabase.from("Team").select("*", { count: "exact", head: true });
+      let { count: lense_count } = await supabase.from("Testimonial").select("*", { count: "exact", head: true });
+      // let { count: product_count } = await supabase.from("Product").select("*", { count: "exact", head: true });
 
-  //     setcategoryCount(category_count);
-  //     setBrandCount(brand_count);
-  //     setFrameCount(frame_count);
-  //     setLenseCount(lense_count);
-  //     setProductCount(product_count);
-  //   };
-  //   fetch();
-  // }, []);
+      setcategoryCount(category_count);
+      setBrandCount(brand_count);
+      setFrameCount(frame_count);
+      setLenseCount(lense_count);
+      // setProductCount(product_count);
+    };
+    fetch();
+  }, []);
 
   return (
     <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
       <StatCard
-        title=" Total Home"
-        description="Total number of availabe categories."
-        value={categoryCount}
-        icon={<Shirt />}
-      />
-
-      <StatCard
-        title=" Total Products"
-        description="Total number of products."
-        value={productCount}
-        icon={<Shirt />}
-      />
-
-      <StatCard
-        title="Total Brands"
-        description="Total number of brands."
+        title="Total Blogs"
+        description="Total number of blogs."
         value={brandCount}
-        icon={<Shirt />}
+        icon={<Newspaper />}
       />
 
       <StatCard
-        title=" Total Frames"
-        description="Total number of frames."
+        title=" Total Team"
+        description="Total number of team."
         value={frameCount}
-        icon={<Shirt />}
+        icon={<Group />}
       />
 
       <StatCard
-        title=" Total Lenses"
-        description="Total number of lemses."
+        title=" Total Testimonial"
+        description="Total number of testimonial."
         value={lenseCount}
-        icon={<Shirt />}
+        icon={<Users />}
+      />
+      <StatCard
+        title=" Total Contact"
+        description="Total number of contact."
+        value={categoryCount}
+        icon={<Inbox />}
       />
     </div>
   );

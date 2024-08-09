@@ -1,4 +1,5 @@
 "use client";
+import { supabase } from "@/lib/supabase";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
@@ -10,11 +11,22 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaArrowRight } from "react-icons/fa6";
 
 
-
 const BlogContainer: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [itemsPerPage, setItemsPerPage] = useState<number>(6); // Default items per page
+  const [products, setProducts] = React.useState<any[]>([]);
 
+  React.useEffect(() => {
+    const fetch = async () => {
+      let { data, error } = await supabase.from("Blogs").select("*");
+      if (error) {
+        throw new Error("Failed to fetch blogs");
+      }
+
+      setProducts(data || []);
+    };
+    fetch();
+  }, []);
   const blogref = useRef<any>(null)
 
   useGSAP(() => {
@@ -49,7 +61,6 @@ const BlogContainer: React.FC = () => {
     if (newPage > 0 && newPage <= totalPages) {
       setCurrentPage(newPage);
       window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to the top of the page
-
     }
   };
   useEffect(() => {
@@ -70,15 +81,15 @@ const BlogContainer: React.FC = () => {
         stay ahead in your field.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-11/12 mx-auto my-16" ref={blogref}>
-        {currentItems.map((item, index) => (
-          <Link key={index} href={`/blogs/${index}`}>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-11/12 mx-auto my-16">
+        {products?.map((item, index) => (
+          <Link key={index} href={`/blogs/${item?.slug}`}>
             <div>
               <article className="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
                 <figure className="relative overflow-hidden rounded-lg h-80 hover:scale-90 ease-in-out duration-300">
                   <Image
-                    src={item.img}
-                    alt="team"
+                    src={item?.Image}
+                    alt={item?.Title.slice(0, 10)}
                     width={700}
                     height={1000}
                     className="h-80 w-full object-cover rounded-lg overflow-hidden hover:brightness-50"
@@ -89,12 +100,11 @@ const BlogContainer: React.FC = () => {
                 </figure>
 
                 <div className="bg-white p-4 sm:p-6">
-              
-
-                  <h3 className="font-bold text-xl">{item.title}</h3>
+                  <h3 className="font-bold text-xl">{item?.Title}</h3>
 
                   <p className="text-[14px] py-2 font-medium text-lighttext">
-                    {item.desc}
+                    {item?.Intro.slice(0, 50)}
+                    {item?.Intro.length > 50 && "..."}
                   </p>
                   <p className="text-tertiary font-medium text-[12px] flex  gap-2 items-center">Read More
                   <FaArrowRight />
@@ -106,9 +116,6 @@ const BlogContainer: React.FC = () => {
           </Link>
         ))}
       </div>
-
-     
-
 
       {/* Pagination Controls */}
       <div className="flex justify-center gap-4 my-4">
@@ -137,7 +144,6 @@ const BlogContainer: React.FC = () => {
 };
 
 export default BlogContainer;
-
 
 const blogdata = [
   {

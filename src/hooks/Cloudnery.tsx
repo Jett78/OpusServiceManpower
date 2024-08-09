@@ -10,8 +10,8 @@ export default function useCloudinaryFileUpload() {
       setUploading(true);
       const formData = new FormData();
       formData.append("file", file);
-      formData.append("upload_preset", "dczgansz");
-      fetch("https://api.cloudinary.com/v1_1/dpb8r7bqq/image/upload", {
+      formData.append("upload_preset", "opusManpower2");
+      fetch("https://api.cloudinary.com/v1_1//dgjuuo5dsimage/upload", {
         method: "POST",
         body: formData,
       })

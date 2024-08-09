@@ -90,7 +90,7 @@ export default function BrandCreateDialog({ setRefreshNow }: Props) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button>Create brand</Button>
+        <Button className="bg-secondary hover:bg-secondary hover:bg-opacity-80 text-white">Create brand</Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[725px]">
         <DialogHeader>

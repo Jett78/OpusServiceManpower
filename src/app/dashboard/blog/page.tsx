@@ -175,7 +175,7 @@ export default function Page() {
     {
       accessorKey: "Date",
       header: "Date",
-      cell: ({ row }) => <div>{row.getValue("created_at")}</div>,
+      cell: ({ row }) => <div>{row.original.created_at.slice(0,10)}</div>,
     },
 
     {
@@ -266,7 +266,7 @@ export default function Page() {
         />
         <div className=" space-x-4">
           <Link href="/dashboard/blog/create">
-            <Button>Create Blog</Button>
+            <Button className="bg-secondary hover:bg-secondary hover:bg-opacity-80 text-white">Create Blog</Button>
           </Link>
 
           <DropdownMenu>
