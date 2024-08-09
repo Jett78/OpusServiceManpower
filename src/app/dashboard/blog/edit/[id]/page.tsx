@@ -22,6 +22,7 @@ import { supabase } from "@/lib/supabase";
 import "react-quill/dist/quill.snow.css";
 import { Textarea } from "@/components/ui/textarea";
 import ReactQuill from "react-quill";
+import useCloudinaryFileUpload from "@/hooks/Cloudnery";
 
 const formSchema = z.object({
   Title: z
@@ -131,7 +132,7 @@ export default function Page() {
   useEffect(() => {
     form.setValue("Image", imageUrl1);
   }, [form, imageUrl1]);
-  // const { uploading, handleFileUpload } = useCloudinaryFileUpload();
+  const { uploading, handleFileUpload } = useCloudinaryFileUpload();
 
   return (
     <div className=" p-8 shadow-sm">
@@ -147,11 +148,11 @@ export default function Page() {
                   <div className=" flex items-center  gap-2">
                     <Input
                       type="file"
-                      // onChange={(event) => handleFileUpload(event.target.files?.[0], setImageUrl1)}
+                      onChange={(event) => handleFileUpload(event.target.files?.[0], setImageUrl1)}
                     />
 
                     <>
-                      {false ? (
+                      {uploading ? (
                         <div className=" flex flex-col gap-2 rounded-md items-center justify-center h-9 w-9 border">
                           <ButtonActionLoader />
                         </div>

@@ -4,11 +4,23 @@ import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { supabase } from "@/lib/supabase";
 
 const OurTeam = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [hoveredIndex2, setHoveredIndex2] = useState<number | null>(null);
-
+  const [testimonial, setTestimonial] = useState<any>([]);
+  React.useEffect(() => {
+    const fetch = async () => {
+      let { data, error } = await supabase.from("Team").select("*");
+      if (error) {
+        throw new Error("Failed to fetch blogs");
+      } else {
+        setTestimonial(data || []);
+      }
+    };
+    fetch();
+  }, []);
   const settings = {
     dots: true,
     infinite: true,
@@ -31,7 +43,7 @@ const OurTeam = () => {
       </p>
 
       <div className="grid lg:grid-cols-2 grid-cols-1 place-items-center md:w-7/12 w-11/12 mx-auto justify-center gap-10 my-20 group cursor-pointer">
-        {teamdata.map((item, index) => (
+        {testimonial?.slice(0,2).map((item:any, index:number) => (
           <div
             key={index}
             className="relative group"
@@ -40,7 +52,7 @@ const OurTeam = () => {
           >
             <div className="overflow-hidden rounded-lg">
               <Image
-                src={item.img}
+                src={item.Image ||'/default.webp'}
                 alt="team"
                 width={700}
                 height={1000}
@@ -55,9 +67,9 @@ const OurTeam = () => {
               }`}
             >
               <div className="grid place-items-center whitespace-nowrap py-2 ">
-                <h2 className="font-bold text-xl">{item.name}</h2>
+                <h2 className="font-bold text-xl">{item.Name}</h2>
                 <h3 className="font-semibold  text-sm italic tracking-wide">
-                  {item.role}
+                  {item.Position}
                 </h3>
               </div>
             </div>
@@ -66,7 +78,7 @@ const OurTeam = () => {
       </div>
 
       <div className="md:grid hidden lg:grid-cols-4 grid-cols-2 place-items-center w-10/12 mx-auto justify-center gap-10 my-20 group cursor-pointer">
-        {teamdata2.map((item, index) => (
+        {testimonial?.slice(2).map((item:any, index:number) => (
           <div
             key={index}
             className="relative group"
@@ -75,7 +87,7 @@ const OurTeam = () => {
           >
             <div className="overflow-hidden rounded-lg">
               <Image
-                src={item.img}
+                src={item.Image}
                 alt="team"
                 width={1000}
                 height={1000}
@@ -90,9 +102,9 @@ const OurTeam = () => {
               }`}
             >
               <div className="grid place-items-center whitespace-nowrap py-2 ">
-                <h2 className="font-bold text-xl">{item.name}</h2>
+                <h2 className="font-bold text-xl">{item.Name}</h2>
                 <h3 className="font-semibold  text-sm italic tracking-wide">
-                  {item.role}
+                  {item.Position}
                 </h3>
               </div>
             </div>
@@ -103,7 +115,7 @@ const OurTeam = () => {
       {/* slider for smaller screens */}
       <div className="cursor-pointer md:hidden block mx-6">
         <Slider {...settings}>
-          {teamdata2.map((item, index) => (
+          {testimonial.map((item:any, index:number) => (
             <div
               key={index}
               className="relative group "
@@ -112,7 +124,7 @@ const OurTeam = () => {
             >
               <div className="overflow-hidden rounded-lg">
                 <Image
-                  src={item.img}
+                  src={item.Image}
                   alt="team"
                   width={700}
                   height={1000}
@@ -127,9 +139,9 @@ const OurTeam = () => {
                 }`}
               >
                 <div className="grid place-items-center whitespace-nowrap py-2 ">
-                  <h2 className="font-bold text-xl">{item.name}</h2>
+                  <h2 className="font-bold text-xl">{item.Name}</h2>
                   <h3 className="font-semibold  text-sm italic tracking-wide">
-                    {item.role}
+                    {item.Position}
                   </h3>
                 </div>
               </div>
@@ -142,65 +154,3 @@ const OurTeam = () => {
 };
 
 export default OurTeam;
-
-const teamdata = [
-  {
-    name: "Jane Donald",
-    img: "/team/team1.jpg",
-    role: "Chief Executive Officer",
-  },
-  {
-    name: "Alander Doe",
-    img: "/team/team2.jpg",
-    role: "Chief Marketting Officer",
-  },
-];
-const teamdata2 = [
-  {
-    name: "Jane Doe",
-    img: "/team/team3.jpg",
-    role: "Counsellor",
-  },
-  {
-    name: "Alander Donald",
-    img: "/team/team4.jpg",
-    role: "Receptionist",
-  },
-  {
-    name: "Rajesh Hamal",
-    img: "/team/team1.jpg",
-    role: "Counsellor",
-  },
-  {
-    name: "Jane Doe",
-    img: "/team/team2.jpg",
-    role: "SEO SPecialist",
-  },
-];
-const teamdata3 = [
-  {
-    name: "Jane Doe",
-    img: "/team/team1.jpg",
-    role: "Chief Executive Officer",
-  },
-  {
-    name: "Alander Doe",
-    img: "/team/team1.jpg",
-    role: "Chief Marketting Officer",
-  },
-  {
-    name: "Rajesh Hamal",
-    img: "/team/team1.jpg",
-    role: "Chief Technical Officer",
-  },
-  {
-    name: "Jane Doe",
-    img: "/team/team1.jpg",
-    role: "Chief Executive Officer",
-  },
-  {
-    name: "Jane Doe",
-    img: "/team/team1.jpg",
-    role: "Chief Executive Officer",
-  },
-];

@@ -129,7 +129,17 @@ export default function Page() {
       header: ({ column }) => {
         return <>Image</>;
       },
-      cell: ({ row }) => <div><Image src={row.getValue("Image")||""} width={1000} height={1000} className="w-full h-10" alt={row.original.Name}/></div>,
+      cell: ({ row }) => (
+        <div>
+          <Image
+            src={row.getValue("Image") || ""}
+            width={1000}
+            height={1000}
+            className="w-auto object-cover h-10"
+            alt={row.original.Name}
+          />
+        </div>
+      ),
     },
     {
       accessorKey: "Name",

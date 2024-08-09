@@ -95,7 +95,7 @@ export default function CategoryCreateDialog({ setRefreshNow }: Props) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button>Create Team</Button>
+        <Button className="bg-secondary hover:bg-secondary hover:bg-opacity-80 text-white">Create Team</Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[725px]">
         <DialogHeader>
@@ -162,11 +162,11 @@ export default function CategoryCreateDialog({ setRefreshNow }: Props) {
                     <div className=" flex items-center  gap-2">
                       <Input
                         type="file"
-                        // onChange={(event) => handleFileUpload(event.target.files?.[0], setImageUrl)}
+                        onChange={(event) => handleFileUpload(event.target.files?.[0], setImageUrl)}
                       />
 
                       <>
-                        {false ? (
+                        {uploading ? (
                           <div className=" flex flex-col gap-2 rounded-md items-center justify-center h-9 w-9 border">
                             <ButtonActionLoader />
                           </div>
