@@ -28,8 +28,11 @@ import {
 } from "@/components/ui/select";
 // import { supabase } from "@/utils/something/supabase/supabaseClient";
 import ButtonActionLoader from "@/components/dashboard/ButtonActionLoader";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
+import dynamic from 'next/dynamic';
+import 'react-quill/dist/quill.snow.css'; // Import Quill styles
+
+const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
+
 import { supabase } from "@/lib/supabase";
 import { Textarea } from "@/components/ui/textarea";
 import useCloudinaryFileUpload from "@/hooks/Cloudnery";

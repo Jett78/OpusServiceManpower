@@ -19,9 +19,12 @@ import Image from "next/image";
 import ButtonActionLoader from "@/components/dashboard/ButtonActionLoader";
 import { useParams } from "next/navigation";
 import { supabase } from "@/lib/supabase";
-import "react-quill/dist/quill.snow.css";
 import { Textarea } from "@/components/ui/textarea";
-import ReactQuill from "react-quill";
+import dynamic from 'next/dynamic';
+import 'react-quill/dist/quill.snow.css'; // Import Quill styles
+
+const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
+
 import useCloudinaryFileUpload from "@/hooks/Cloudnery";
 
 const formSchema = z.object({
