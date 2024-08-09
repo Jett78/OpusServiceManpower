@@ -34,17 +34,17 @@ const Vision = () => {
 
     gsap.from(".textright",{
       opacity:0,
-      x:200,
+      x:60,
       duration:1.5,
     })
     gsap.from(".imgleft",{
       opacity:0,
-      x:-200,
+      x:-60,
       duration:1.5,
     })
   })
   return (
-    <main className="">
+    <main className="overflow-hidden">
       <h2 className="text-black uppercase font-extrabold text-3xl w-fit mx-auto md:mb-10 ">
         <span className="text-gradient">About {""}</span> 
       </h2>

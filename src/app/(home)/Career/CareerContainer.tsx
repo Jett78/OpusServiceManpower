@@ -196,15 +196,31 @@
 // };
 
 // export default page;
-
+"use client";
 import React from "react";
 import Image from "next/image";
 import { FaHandPointRight } from "react-icons/fa";
 import Cta from "../Home/Cta";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
 const CareerContainer = () => {
+  useGSAP(() => {
+    gsap.from(".textright", {
+      opacity: 0,
+      x: -200,
+      duration: 1.5,
+    });
+    gsap.from(".imgleft", {
+      opacity: 0,
+      x: 100,
+      duration: 1,
+    });
+  });
   return (
-    <main className="pt-10 w-11/12 mx-auto">
+    <main className="pt-10 w-11/12 mx-auto overflow-hidden">
       <h2 className="font-extrabold text-3xl uppercase text-gradient w-fit mx-auto">
         Career
       </h2>
@@ -215,7 +231,7 @@ const CareerContainer = () => {
         workforce to achieve your business goals efficiently.{" "}
       </p>
 
-      <div className="flex flex-wrap flex-row-reverse items-center justify-center gap-20 lg:my-20 md:my-10 my-6">
+      <div className="imgleft flex flex-wrap flex-row-reverse items-center justify-center gap-20 lg:my-20 md:my-10 my-6">
         <section>
           <figure>
             <Image
@@ -228,7 +244,7 @@ const CareerContainer = () => {
           </figure>
         </section>
 
-        <section className="grid gap-6 2xl:max-w-[30%] w-full">
+        <section className="grid gap-6 2xl:max-w-[30%] w-full textright">
           {careerdetails.map((item, index) => (
             <div key={index} className="">
               <div className="flex items-center gap-4">

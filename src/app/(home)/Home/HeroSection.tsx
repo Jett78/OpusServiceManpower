@@ -37,7 +37,7 @@ const HeroSection: React.FC = () => {
         <Slider {...settings}>
           {images.map((item, index) => (
             <div key={index}>
-              <div className="relative h-screen w-full brightness-25">
+              <div className="relative sm:h-screen h-[92vh] w-full brightness-25">
                 <Image
                   src={item.img}
                   alt={`Slide ${index + 1}`}
@@ -51,13 +51,13 @@ const HeroSection: React.FC = () => {
         </Slider>
       </div>
 
-      <div className="absolute lg:left-[2em] sm:top-1/2 sm:-translate-y-1/2 top-16  xl:w-7/12  z-50">
+      <div className="absolute lg:left-[2em] top-1/2 -translate-y-1/2   xl:w-7/12  z-50">
         <div className="text-white md:mt-14 mt-6 px-6">
-          <h2 className="font-bold lg:text-[78px] whitespace-nowrap md:text-[48px]  sm:text-4xl text-4xl sm:leading-[68px]">
+          <h2 className="font-bold lg:text-[78px] 2xl:text-[5vw] 2xl:leading-[0.9em] md:text-[48px]  sm:text-4xl text-4xl sm:leading-[68px]">
             Elevate Your Workforce With Us
           </h2>
           <p className="font-medium text-[18px] text-gray-300 lg:py-8 md:py-6
-           py-4 md:max-w-[48em] min-w-[18em] leading-6 mx-auto">
+           py-4 md:max-w-[48em] min-w-[18em] leading-6">
             We provide you with the best human resources to meet your specific
             business needs. Partner with us to effortlessly double your
           </p>

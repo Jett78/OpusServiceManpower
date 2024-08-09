@@ -1,14 +1,23 @@
 "use client"
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+
 import { supabase } from "@/lib/supabase";
 
+gsap.registerPlugin(ScrollTrigger);
 const OurTeam = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [hoveredIndex2, setHoveredIndex2] = useState<number | null>(null);
+  const highteam = useRef<any>(null)
+  const lowteam = useRef<any>(null)
+
   const [testimonial, setTestimonial] = useState<any>([]);
   React.useEffect(() => {
     const fetch = async () => {
@@ -32,8 +41,40 @@ const OurTeam = () => {
     arrows: false,
   };
 
+  useGSAP(() => {
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger:".teamcontainer",
+        start: "top bottom",
+        end: "bottom 50%",
+        scrub: 1,
+        // markers: true,
+      },
+    });
+
+    tl.fromTo(
+      highteam.current?.children,
+      {
+        clipPath: "inset( 0 0 100% 0)",
+      },
+      {
+        clipPath: "inset(0 0 0% 0)",
+        duration: 2,
+        ease: "power3.out",
+      }
+    );
+
+    tl.from(lowteam.current?.children,{
+      stagger:0.5,
+      y:60,
+      opacity:0,
+    })
+
+  })
+
   return (
-    <main className="md:my-28 my-10 w-11/12 mx-auto">
+    <main className="teamcontainer md:my-28 my-10 w-11/12 mx-auto">
       <h2 className="font-extrabold text-2xl uppercase w-fit mx-auto">
         Meet Our <span className="text-gradient">Team</span>
       </h2>
@@ -50,7 +91,7 @@ const OurTeam = () => {
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
-            <div className="overflow-hidden rounded-lg">
+            <div className="overflow-hidden rounded-xl">
               <Image
                 src={item.Image ||'/default.webp'}
                 alt="team"
@@ -85,7 +126,7 @@ const OurTeam = () => {
             onMouseEnter={() => setHoveredIndex2(index)}
             onMouseLeave={() => setHoveredIndex2(null)}
           >
-            <div className="overflow-hidden rounded-lg">
+            <div className="overflow-hidden rounded-xl">
               <Image
                 src={item.Image}
                 alt="team"

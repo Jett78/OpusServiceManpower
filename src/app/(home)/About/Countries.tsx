@@ -4,8 +4,32 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+
+
+gsap.registerPlugin(ScrollTrigger);
 const Countries = () => {
+  useGSAP(() => {
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger:".countriescontainer",
+        start: "top bottom",
+        end: "50% 50%",
+        scrub: 1,
+        // markers: true,
+      },
+    });
+
+    tl.from(".coutriescontainer",{
+      opacity:0,
+      duration:1,
+    })
+  })
+
   const settings = {
     dots: false,
     arrows: false,
@@ -48,9 +72,11 @@ const Countries = () => {
         },
       },
     ],
+
+    
   };
   return (
-    <main className="md:my-28 my-10 bg-gray-50 py-16">
+    <main className="countriescontainer md:my-28 my-10 bg-gray-50 py-16">
       <h2 className="font-bold sm:text-2xl text-xl w-fit mx-auto uppercase text-center">
         Our Operating <span className="text-gradient font-extrabold ">Countries</span>
       </h2>

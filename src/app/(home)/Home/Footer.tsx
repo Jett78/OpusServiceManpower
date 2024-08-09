@@ -138,7 +138,7 @@ const Footer: React.FC = () => {
         </section>
       </footer>
 
-      <div className="flex flex-wrap whitespace-nowrap md:justify-between md:gap-20 justify-center md:px-20 py-4 px-4 sm:pb-4 pb-20">
+      <div className="flex flex-wrap whitespace-nowrap md:justify-between md:gap-20 sm:gap-6 justify-center md:px-20 py-4 px-4 sm:pb-4 pb-20">
       <div className=" flex items-center gap-1 justify-center">
           <FaCopyright />
           <h2 className="text-white tracking-wider text-sm">

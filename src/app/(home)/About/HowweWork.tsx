@@ -1,5 +1,5 @@
 "use client"
-import React from "react";
+import React,{useRef} from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -8,7 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const HowweWork = () => {
-
+const steps = useRef<any>(null)
   useGSAP(() => {
 
     const tl = gsap.timeline({
@@ -22,13 +22,21 @@ const HowweWork = () => {
     });
 
     tl.from(".textsection",{
-      y:60,
+      x:60,
+      duration:1,
+      opacity:0,
+    })
+
+    tl.from(steps.current?.children,{
+      stagger:0.5,
+      x:60,
+      duration:1,
       opacity:0,
     })
   })
 
   return (
-    <main className="content md:py-20 text-white py-10 bg-black">
+    <main className="content md:py-20 text-white py-10 bg-black overflow-hidden">
       <div className="lg:w-10/12 w-11/12 mx-auto flex flex-wrap justify-center gap-20">
        <div className="xl:w-[50%] ">
        <section className="textsection sticky top-[5em]">
@@ -43,7 +51,7 @@ const HowweWork = () => {
        </div>
 
 
-        <section className="imgsection grid gap-10 xl:grid-cols-1 md:grid-cols-2 ">
+        <section className="imgsection grid gap-10 xl:grid-cols-1 md:grid-cols-2 " ref={steps}>
             {howwork.map((item,index) => (
                 <div key={index} className="relative flex items-start gap-2">
                       <div className="gradient min-h-4 min-w-4 rounded-full  relative z-10"></div>
@@ -54,7 +62,7 @@ const HowweWork = () => {
                           </div>
                           <p className="font-semibold md:text-md text-sm leading-6 max-w-[25em] py-2">{item.desc}</p>
                       </div>
-                      <div className="absolute border-2 h-[9em] border-dashed top-6 left-2">
+                      <div className="absolute border  h-[8em] border-dashed top-4 left-1.5">
                         
                       </div>
                 </div>

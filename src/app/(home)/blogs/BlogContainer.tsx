@@ -2,9 +2,14 @@
 import { supabase } from "@/lib/supabase";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FaChevronLeft } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { FaArrowRight } from "react-icons/fa6";
+
 
 const BlogContainer: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -22,6 +27,16 @@ const BlogContainer: React.FC = () => {
     };
     fetch();
   }, []);
+  const blogref = useRef<any>(null)
+
+  useGSAP(() => {
+    gsap.from(blogref.current?.children,{
+      opacity:0,
+      y:60,
+      duration:0.5,
+      stagger:0.2,
+    })
+  })
   useEffect(() => {
     // Update itemsPerPage based on screen size
     const updateItemsPerPage = () => {
@@ -91,8 +106,9 @@ const BlogContainer: React.FC = () => {
                     {item?.Intro.slice(0, 50)}
                     {item?.Intro.length > 50 && "..."}
                   </p>
-                  <p className="text-tertiary font-medium text-[12px]">
-                    Find Out More
+                  <p className="text-tertiary font-medium text-[12px] flex  gap-2 items-center">Read More
+                  <FaArrowRight />
+
                   </p>
                 </div>
               </article>
