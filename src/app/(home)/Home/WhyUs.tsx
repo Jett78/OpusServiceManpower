@@ -50,9 +50,10 @@ const WhyUs = () => {
     tl.from(
       ".headanimate",
       {
-        x: -200,
+        x: -100,
         opacity: 0,
         duration: 1,
+        stagger:0.5,
       },
       "<"
     );
@@ -83,14 +84,14 @@ const WhyUs = () => {
         <section className="md:max-w-[50%] w-full">
           <div className="headanimate">
             <div className="h-[24px] overflow-hidden mb-6">
-              <h2 className=" text-gradient uppercase font-bold text-xl border-b w-fit ">
+              <h2 className="headanimate text-gradient uppercase font-bold text-xl border-b w-fit ">
                 Why Us
               </h2>
             </div>
-            <h1 className=" lg:text-5xl md:text-3xl text-3xl  font-bold leading-[1.1em]">
+            <h1 className="headanimate lg:text-5xl md:text-3xl text-3xl  font-bold leading-[1.1em]">
               Right Connection and Right Employee
             </h1>
-            <p className=" font-medium text-lighttext my-6 max-w-[35em] md:text-lg text-sm min-w-[20em]">
+            <p className="headanimate font-medium text-lighttext my-6 max-w-[35em] md:text-lg text-sm min-w-[20em]">
               In the pursuit of business success, two critical factors often
               determine the trajectory of an organization: establishing the
               right connections and hiring the right employees. Both elements
@@ -98,7 +99,7 @@ const WhyUs = () => {
               achieving long-term success. Here’s how focusing on these aspects
               can significantly impact your business:
             </p>
-            <Link href="/Services" className="md:block hidden">
+            <Link href="/Services" className="headanimate md:block hidden">
               <button className=" animate-button">
                 Know More
               </button>

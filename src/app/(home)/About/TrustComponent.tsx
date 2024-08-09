@@ -4,8 +4,32 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+
+
+gsap.registerPlugin(ScrollTrigger);
 const TrustComponent = () => {
+
+  useGSAP(() => {
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".trustcomponent",
+        start: "top bottom",
+        end: "50% 50%",
+        scrub: 1,
+        // markers: true,
+      },
+    });
+tl.from(".trustcomponent",{
+  // opacity:0,
+  scale:0.5,
+  duration:1,
+})
+  })
   const settings = {
     dots: false,
     arrows:false,
@@ -97,7 +121,7 @@ const TrustComponent = () => {
 
   };
   return (
-    <main className="md:my-28 my-10 bg-gray-50 py-16">
+    <main className="trustcomponent md:my-28 my-10 bg-gray-50 py-16">
       <h2 className="font-bold sm:text-2xl text-xl w-fit mx-auto uppercase text-center">
         <span className="text-gradient font-extrabold ">Trusted </span>by 1000+
         Companies
