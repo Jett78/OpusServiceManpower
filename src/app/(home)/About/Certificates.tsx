@@ -1,14 +1,27 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { AiOutlineDownload } from "react-icons/ai";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import { supabase } from "@/lib/supabase";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Certificates = () => {
+  const [testimonial, setTestimonial] = useState<any>([]);
+  React.useEffect(() => {
+    const fetch = async () => {
+      let { data, error } = await supabase.from("Certificate").select("*");
+      if (error) {
+        throw new Error("Failed to fetch blogs");
+      } else {
+        setTestimonial(data || []);
+      }
+    };
+    fetch();
+  }, []);
   const certificateref = useRef<any>(null);
 
   useGSAP(() => {
@@ -44,29 +57,18 @@ const Certificates = () => {
         className="flex flex-wrap justify-center gap-8 my-20 "
         ref={certificateref}
       >
-        <Image
-          src="/certificate.jpg"
-          height={1000}
-          width={1000}
-          alt="certificate"
-          className="h-[25em] w-80 drop-shadow-lg"
-        />
-        <Image
-          src="/certificate.jpg"
-          height={1000}
-          width={1000}
-          alt="certificate"
-          className="h-[25em] w-80 drop-shadow-lg"
-        />
-        <Image
-          src="/certificate.jpg"
-          height={1000}
-          width={1000}
-          alt="certificate"
-          className="h-[25em] w-80 drop-shadow-lg"
-        />
+        {testimonial?.map((item: any, index: number) => (
+          <Image
+            key={index}
+            src={item?.url}
+            height={1000}
+            width={1000}
+            alt="certificate"
+            className="h-[25em] w-80 drop-shadow-lg"
+          />
+        ))}
       </div>
-      <button className="flex gap-2 w-[250px] mx-auto bg-black font-bold h-[60px] my-16 flex items-center justify-center rounded-full cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-[#CC1587] before:via-[#26538C] before:to-[#00AFF0] before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 text-[#fff]">
+      <button className=" gap-2 w-[250px] mx-auto bg-black font-bold h-[60px] my-16 flex items-center justify-center rounded-full cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-[#CC1587] before:via-[#26538C] before:to-[#00AFF0] before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 text-[#fff]">
         <AiOutlineDownload size={32} />
         Company Profile
       </button>
