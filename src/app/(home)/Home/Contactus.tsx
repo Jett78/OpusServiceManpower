@@ -46,27 +46,27 @@ const Contactus = () => {
       },
     });
 
-    tl.from(
-      ".contactleft",
-      {
-        x: -100,
-        opacity: 0,
-        duration: 1,
-      },
-      "<"
-    );
-    tl.from(
-      ".contactright",
-      {
-        x: 100,
-        opacity: 0,
-        duration: 1,
-      },
-      "<"
-    );
+    // tl.from(
+    //   ".contactleft",
+    //   {
+    //     x: -40,
+    //     opacity: 0,
+    //     duration: 1,
+    //   },
+    //   "<"
+    // );
+    // tl.from(
+    //   ".contactright",
+    //   {
+    //     x: 40,
+    //     opacity: 0,
+    //     duration: 1,
+    //   },
+    //   "<"
+    // );
   })
   return (
-    <main className="contactcontainer bg-gray-50 md:py-20 py-6 overflow-hidden">
+    <main className="contactcontainer bg-gray-50 md:py-20 py-6">
       <div className="w-11/12 mx-auto flex flex-wrap gap-8 justify-center  rounded-2xl">
         <section className="md:w-[35%] contactleft">
           <div className="sticky top-[6rem] left-0">

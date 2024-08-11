@@ -9,22 +9,20 @@ import Contactus from "./Contactus";
 import Slider from "./Slides";
 import Cta from "./Cta";
 import Vocational from "./Vocational";
+import Preloader from "../components/Preloader";
 const Page = () => {
   return (
     <div>
       <HeroSection />
       <AboutUs />
       <WhyUs />
-      <Slider/>
-
+      <Slider />
       <Chairmanmssg />
       <OurServices />
-
       <Testimoinals />
       {/* <Cta/> */}
-      <Vocational/>
-
-      <Contactus />
+      {/* <Vocational />
+      <Contactus /> */}
     </div>
   );
 };

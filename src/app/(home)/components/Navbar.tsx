@@ -1,12 +1,14 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Headroom from "react-headroom";
 import { GiCrossedBones } from "react-icons/gi";
-
+import gsap from "gsap";
 import Image from "next/image";
+import { useGSAP } from "@gsap/react";
+import { OpacityIcon } from "@radix-ui/react-icons";
 
 const navdata = [
   {
@@ -36,6 +38,28 @@ const navdata = [
 ];
 
 const Navbar = () => {
+  const navitems = useRef<any>();
+
+  useGSAP(() => {
+    const tl = gsap.timeline();
+
+    gsap.from(".navcontainer", {
+      opacity: 0,
+      delay: 0.5,
+      duration: 1,
+    });
+    tl.from(".logoanimate", {
+      opacity: 0,
+      delay: 0.5,
+    });
+    tl.from(navitems.current?.children, {
+      stagger: 0.2,
+      y: -20,
+      delay: 0.5,
+      opacity: 0,
+    });
+  });
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = usePathname();
 
@@ -58,14 +82,13 @@ const Navbar = () => {
     };
   }, [isMenuOpen]);
 
-
   return (
     <Headroom>
-      <div className="overflow-hidden w-full z-[200]">
+      <div className="navcontainer overflow-hidden w-full z-[200]">
         <main
           className={`relative overflow-hidden bg-black bg-opacity-90 bg-blend-overlay bg-clip-padding backdrop-filter backdrop-blur-xl  text-white flex justify-end  top-0 left-0 w-full items-center py-6 lg:px-20 md:px-10 px-6 z-50`}
         >
-          <figure className="absolute sm:left-10 left-2">
+          <figure className="logoanimate absolute sm:left-10 left-2">
             <Image
               src="/opusLogo.png"
               alt="logo"
@@ -75,7 +98,7 @@ const Navbar = () => {
             />{" "}
           </figure>
 
-          <nav className="gap-10 md:flex hidden">
+          <nav className="gap-10 md:flex hidden" ref={navitems}>
             {navdata.map((items, index) => (
               <div key={index} className="list-none">
                 <Link
@@ -91,7 +114,7 @@ const Navbar = () => {
           </nav>
 
           <div className="md:hidden block" onClick={toggleMenu}>
-            {isMenuOpen ? <GiCrossedBones />: <GiHamburgerMenu />  }
+            {isMenuOpen ? <GiCrossedBones /> : <GiHamburgerMenu />}
           </div>
         </main>
 
@@ -108,7 +131,9 @@ const Navbar = () => {
                   <Link
                     href={items.path}
                     className={`font-semibold text-white text-3xl ${
-                      router === items.path ? "text-[#00AFF0] font-bold" : "text-white"
+                      router === items.path
+                        ? "text-[#00AFF0] font-bold"
+                        : "text-white"
                     }`}
                   >
                     {items.title}

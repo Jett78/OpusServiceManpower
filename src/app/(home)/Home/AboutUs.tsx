@@ -97,7 +97,7 @@ const AboutUs: React.FC = () => {
 
   return (
     <main>
-      <div className=" w-11/12 mx-auto md:my-20 my-8 overflow-hidden" ref={aboutContainer}>
+      <div className=" w-11/12 mx-auto md:my-20 my-8" ref={aboutContainer}>
         <section className="flex flex-wrap justify-center items-start ">
           <div className="sm:max-w-[50%] md:sticky top-[5em]">
             <div className="h-[24px] overflow-hidden mb-2">
