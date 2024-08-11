@@ -11,7 +11,7 @@ export default function Page() {
   })
   return (
 
-    <div>
+    <div className='pt-20'>
       <DynamicBlog/>
     </div>
   )

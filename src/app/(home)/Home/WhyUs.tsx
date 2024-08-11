@@ -79,10 +79,10 @@ const WhyUs = () => {
     );
   });
   return (
-    <main className=" py-20 overflow-hidden w-full text-black" ref={whycontainerRef}>
+    <main className=" py-20  w-full text-black" ref={whycontainerRef}>
       <div className="flex flex-wrap justify-center lg:gap-0  w-11/12 mx-auto ">
-        <section className="md:max-w-[50%] w-full">
-          <div className="headanimate">
+        <section className="md:max-w-[50%] w-full ">
+          <div className="headanimate sticky">
             <div className="h-[24px] overflow-hidden mb-6">
               <h2 className="headanimate text-gradient uppercase font-bold text-xl border-b w-fit ">
                 Why Us
