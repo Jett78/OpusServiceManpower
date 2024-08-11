@@ -54,7 +54,7 @@ useGSAP(() => {
       opacity: 1,
       duration: 2,
       ease:"power2.inOut"
-    }
+    },"<"
   );
 
   tl.from(headertext.chars,{
@@ -74,7 +74,7 @@ useGSAP(() => {
 
 })
   return (
-    <main className="relative w-full h-screen z-0 overflow-hidden" ref={herocontent}>
+    <main className="relative w-full h-screen z-0 overflow-hidden " ref={herocontent}>
       <div className="slider-container overflow-hidden">
         <Slider {...settings}>
           {images.map((item, index) => (

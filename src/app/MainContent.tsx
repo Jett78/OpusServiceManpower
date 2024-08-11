@@ -13,7 +13,7 @@ export default function MainContent({ children }: { children: React.ReactNode })
 
   useEffect(() => {
     // Simulate loading time or any initialization
-    const timer = setTimeout(() => setLoading(false), 2500);
+    const timer = setTimeout(() => setLoading(false), 2200);
     return () => clearTimeout(timer);
   }, []);
 
