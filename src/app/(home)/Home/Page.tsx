@@ -20,9 +20,9 @@ const Page = () => {
       <Chairmanmssg />
       <OurServices />
       <Testimoinals />
-      {/* <Cta/> */}
-      {/* <Vocational />
-      <Contactus /> */}
+      <Cta/>
+      <Vocational />
+      <Contactus />
     </div>
   );
 };
