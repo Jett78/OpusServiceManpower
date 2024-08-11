@@ -20,7 +20,7 @@ const Page = () => {
       <Chairmanmssg />
       <OurServices />
       <Testimoinals />
-      <Cta/>
+      {/* <Cta/> */}
       <Vocational />
       <Contactus />
     </div>
