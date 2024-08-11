@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -7,11 +7,24 @@ import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { supabase } from "@/lib/supabase";
 
 
 
 gsap.registerPlugin(ScrollTrigger);
 const Countries = () => {
+  const [testimonial, setTestimonial] = useState<any>([]);
+  React.useEffect(() => {
+    const fetch = async () => {
+      let { data, error } = await supabase.from("Testimonial").select("*");
+      if (error) {
+        throw new Error("Failed to fetch blogs");
+      } else {
+        setTestimonial(data || []);
+      }
+    };
+    fetch();
+  }, []);
   useGSAP(() => {
 
     const tl = gsap.timeline({
@@ -83,10 +96,10 @@ const Countries = () => {
 
       <div className="bg-gray-50 mt-10">
         <Slider {...settings}>
-          {countryflags.map((item, index) => (
+          {testimonial?.map((item:any, index:number) => (
             <div key={index}>
               <Image
-                src={item.img}
+                src={item?.url}
                 alt="icons-company"
                 width={100}
                 height={100}
