@@ -136,7 +136,7 @@ const Navbar = () => {
               isMenuOpen ? "translate-y-0" : "-translate-y-full"
             } ease-in-out duration-300 absolute bg-black w-full h-screen top-0 pt-10 inset-0 overflow-x-hidden`}
           >
-            <div className="grid place-items-center justify-center gap-8 pt-28">
+            <div className="grid place-items-center justify-center gap-8 py-28">
               {navdata.map((items, index) => (
                 <div key={index} className="list-none ">
                   <Link
