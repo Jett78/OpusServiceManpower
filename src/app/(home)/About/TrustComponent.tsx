@@ -1,20 +1,29 @@
-"use client"
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-
+import { supabase } from "@/lib/supabase";
 
 gsap.registerPlugin(ScrollTrigger);
 const TrustComponent = () => {
-
+  const [testimonial, setTestimonial] = useState<any>([]);
+  React.useEffect(() => {
+    const fetch = async () => {
+      let { data, error } = await supabase.from("CompanyImg").select("*");
+      if (error) {
+        throw new Error("Failed to fetch blogs");
+      } else {
+        setTestimonial(data || []);
+      }
+    };
+    fetch();
+  }, []);
   useGSAP(() => {
-
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".trustcomponent",
@@ -24,15 +33,15 @@ const TrustComponent = () => {
         // markers: true,
       },
     });
-tl.from(".trustcomponent",{
-  // opacity:0,
-  scale:0.5,
-  duration:1,
-})
-  })
+    tl.from(".trustcomponent", {
+      // opacity:0,
+      scale: 0.5,
+      duration: 1,
+    });
+  });
   const settings = {
     dots: false,
-    arrows:false,
+    arrows: false,
     infinite: true,
     slidesToShow: 5,
     slidesToScroll: 1,
@@ -41,7 +50,7 @@ tl.from(".trustcomponent",{
     autoplaySpeed: 2000,
     cssEase: "linear",
     pauseOnHover: false, // Continue sliding when hovered
-     
+
     responsive: [
       {
         breakpoint: 1024,
@@ -50,8 +59,7 @@ tl.from(".trustcomponent",{
           slidesToScroll: 3,
           infinite: true,
           pauseOnHover: false, // Continue sliding when hovered
-
-        }
+        },
       },
       {
         breakpoint: 600,
@@ -61,7 +69,7 @@ tl.from(".trustcomponent",{
           initialSlide: 2,
           infinite: true,
           pauseOnHover: false,
-        }
+        },
       },
       {
         breakpoint: 480,
@@ -70,13 +78,13 @@ tl.from(".trustcomponent",{
           slidesToScroll: 1,
           infinite: true,
           pauseOnHover: false,
-        }
-      }
-    ]
+        },
+      },
+    ],
   };
   const settings2 = {
     dots: false,
-    arrows:false,
+    arrows: false,
     infinite: true,
     slidesToShow: 5,
     slidesToScroll: 1,
@@ -84,7 +92,7 @@ tl.from(".trustcomponent",{
     speed: 2000,
     autoplaySpeed: 2000,
     cssEase: "linear",
-    rtl: true,// Add this line to change the slide direction
+    rtl: true, // Add this line to change the slide direction
     pauseOnHover: false, // Continue sliding when hovered
     responsive: [
       {
@@ -94,8 +102,7 @@ tl.from(".trustcomponent",{
           slidesToScroll: 3,
           infinite: true,
           pauseOnHover: false, // Continue sliding when hovered
-
-        }
+        },
       },
       {
         breakpoint: 600,
@@ -105,7 +112,7 @@ tl.from(".trustcomponent",{
           initialSlide: 2,
           infinite: true,
           pauseOnHover: false,
-        }
+        },
       },
       {
         breakpoint: 480,
@@ -114,11 +121,9 @@ tl.from(".trustcomponent",{
           slidesToScroll: 1,
           infinite: true,
           pauseOnHover: false,
-        }
-      }
-    ]
-
-
+        },
+      },
+    ],
   };
   return (
     <main className="trustcomponent md:my-28 my-10 bg-gray-50 py-16">
@@ -128,22 +133,34 @@ tl.from(".trustcomponent",{
       </h2>
 
       <div className="bg-gray-50 mt-10">
-      <Slider {...settings}>
-        {companies.map((item,index) => (
+        <Slider {...settings}>
+          {testimonial.map((item: any, index: number) => (
             <div key={index}>
-                <Image src={item.img} alt="icons-company" width={100} height={100} className=' object-cover rounded-lg' />
+              <Image
+                src={item?.url}
+                alt="icons-company"
+                width={100}
+                height={100}
+                className=" object-cover rounded-lg"
+              />
             </div>
-        ))}
+          ))}
         </Slider>
       </div>
 
       <div className="bg-gray-50 pt-6">
-      <Slider {...settings2}>
-        {companies.map((item,index) => (
+        <Slider {...settings2}>
+          {testimonial.map((item: any, index: number) => (
             <div key={index}>
-                <Image src={item.img} alt="icons-company" width={100} height={100} className=' object-cover rounded-lg' />
+              <Image
+                src={item?.url}
+                alt="icons-company"
+                width={100}
+                height={100}
+                className=" object-cover rounded-lg"
+              />
             </div>
-        ))}
+          ))}
         </Slider>
       </div>
     </main>
@@ -183,5 +200,4 @@ const companies = [
   {
     img: "/companies/client_10.png",
   },
-
 ];

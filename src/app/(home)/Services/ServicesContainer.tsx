@@ -137,3 +137,4 @@ const servicesdata = [
     desc: "Our blue-collar staffing  skilled labor for positions such as manufacturing, construction, maintenance, and logistics. Understanding the critical role that a reliable and proficient workforce plays in operational efficiency and productivity, we offer comprehensive services that include recruitment, training, and on-site support. Our goal is to help businesses build a robust and capable team that can handle the complexities of blue-collar work with expertise and dedication. By ensuring that you have access to the right talent for your specific needs, we aim to enhance your operational effectiveness and contribute to your long-term success..",
   },
 ];
+
