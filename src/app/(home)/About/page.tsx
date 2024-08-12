@@ -9,7 +9,7 @@ const DynamicAbout = dynamic(() => import ('./ABoutContainer'),{
 })
 const page = () => {
   return (
-    <div className='pt-20'>
+    <div className=''>
       <DynamicAbout/>
     </div>
   )

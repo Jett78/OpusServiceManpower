@@ -9,7 +9,7 @@ const DynamicCareer = dynamic(() => import ('./CareerContainer'),{
 })
 const page = () => {
   return (
-    <div className='pt-20'>
+    <div className=''>
       <DynamicCareer/>
     </div>
   )

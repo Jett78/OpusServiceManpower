@@ -66,7 +66,7 @@ export default async function Page({ params }: any) {
   }
 
   return (
-    <main className="pt-20">
+    <main className="">
       <div className="lg:w-9/12 w-11/12 mx-auto md:my-16 my-8">
         <h1 className="font-extrabold lg:text-4xl md:text-3xl uppercase text-2xl md:text-left tracking-wide">
           {blog.Title}

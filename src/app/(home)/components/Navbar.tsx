@@ -66,11 +66,11 @@ const Navbar = () => {
     };
   }, [isMenuOpen]);
 
-  // Set navbar background based on the current page and scroll position
+  // Set navbar background based on the current page
   useEffect(() => {
     if (router === "/") {
       const handleScroll = () => {
-        if (window.scrollY > window.innerHeight) {
+        if (window.scrollY > 50) {
           setBgBlack(true);
         } else {
           setBgBlack(false);
@@ -89,14 +89,14 @@ const Navbar = () => {
   return (
     <Headroom>
       <div
-        className={`navcontainer fixed top-0 left-0 w-full z-[200] ${
+        className={`navcontainer overflow-hidden w-full z-[200] ${
           bgBlack
-            ? "bg-black bg-opacity-95 bg-blend-overlay backdrop-filter backdrop-blur-xl"
+            ? "bg-black bg-opacity-90 bg-blend-overlay backdrop-filter backdrop-blur-xl"
             : "bg-transparent"
         }`}
       >
         <main
-          className={`relative overflow-hidden text-white flex justify-end items-center py-6 lg:px-20 md:px-10 px-6 z-50`}
+          className={`relative overflow-hidden text-white flex justify-end top-0 left-0 w-full items-center py-6 lg:px-20 md:px-10 px-6 z-50`}
         >
           <figure className="logoanimate absolute sm:left-10 left-2">
             <Image
@@ -114,12 +114,11 @@ const Navbar = () => {
                 <Link
                   href={items.path}
                   className={`font-semibold navbarhover ${
-                    router === items.path ? "text-tertiary font-bold active" : ""
+                    router === items.path ? "text-tertiary active font-bold" : ""
                   }`}
                 >
                   {items.title}
                 </Link>
-
               </div>
             ))}
           </nav>
@@ -136,7 +135,7 @@ const Navbar = () => {
               isMenuOpen ? "translate-y-0" : "-translate-y-full"
             } ease-in-out duration-300 absolute bg-black w-full h-screen top-0 pt-10 inset-0 overflow-x-hidden`}
           >
-            <div className="grid place-items-center justify-center gap-8 py-28">
+            <div className="grid place-items-center justify-center gap-8 pt-28">
               {navdata.map((items, index) => (
                 <div key={index} className="list-none ">
                   <Link

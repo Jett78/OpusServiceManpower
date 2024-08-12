@@ -8,7 +8,7 @@ const DynamicContact = dynamic(() => import ('./ContactContainer'),{
 })
 const page = () => {
   return (
-    <div className='pt-20'>
+    <div className=''>
       <DynamicContact/>
     </div>
   )
