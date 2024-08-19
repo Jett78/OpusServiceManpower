@@ -6,12 +6,18 @@ import React, { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
-import { Form, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import {
+  Form,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { z } from "zod";
-// import { supabase } from "@/utils/something/supabase/supabaseClient";
 import LoaderIcon from "./LoaderIcon";
-import logo from "../../public/logo1.png";
+import logo from "../../../public/logo.jpg";
 import Image from "next/image";
+import { supabase } from "@/lib/supabase";
 
 const formSchema = z.object({
   email: z.string().min(10, {
@@ -35,54 +41,30 @@ export default function LoginSection() {
 
   // Define a submit handler
   const [isLoging, setIsLoging] = useState<boolean>(false);
-  const handleFileUpload = async (file: any) => {
-    if (file) {
-      const formData = new FormData();
-      formData.append("file", file);
-      formData.append("upload_preset", "gsakcrgh");
-      try {
-        const response = await fetch(
-          "https://api.cloudinary.com/v1_1/dxeipcp9u/image/upload",
-          {
-            method: "POST",
-            body: formData,
-          }
-        );
-        const data = await response.json();
-        return data.url;
-      } catch (error) {
-        console.error("Error uploading image:", error);
-        toast.error("Error uploading image");
-        return null;
-      }
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    setIsLoging(true);
+    const { data, error } = await supabase.auth.signInWithPassword(values);
+
+    if (error) {
+      console.error("Login failed:", error.message);
+      toast.error(error.message || "Something went wrong. Please try again.");
+      setIsLoging(false);
+      return;
+    }
+
+    if (data) {
+      form.reset();
+      setIsLoging(false);
+      toast.success("Login successful.");
+      return;
     }
   };
-// const onSubmit = async (values: z.infer<typeof formSchema>) => {
-//     setIsLoging(true);
-//     const { data, error } = await supabase.auth.signInWithPassword(values);
-
-//     if (error) {
-//       console.error("Login failed:", error.message);
-//       toast.error(error.message || "Something went wrong. Please try again.");
-//       setIsLoging(false);
-//       return;
-//     }
-
-//     if (data) {
-//       form.reset();
-//       setIsLoging(false);
-//       toast.success("Login successful.");
-//       return;
-//     }
-//   };
 
   return (
     <section className=" h-screen flex items-center justify-center">
       <Card className=" p-8  ">
         <Form {...form}>
-          <form
-            // onSubmit={form.handleSubmit(onSubmit)}
-            className="w-[350px]">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="w-[350px]">
             <div className=" space-y-4 ">
               <div className="grid gap-2 text-center ">
                 <Image
@@ -90,7 +72,9 @@ export default function LoginSection() {
                   alt="logo"
                   className=" h-20 w-20 object-scale-down mx-auto"
                 />
-                <p className="text-balance text-muted-foreground">Login as Admin</p>
+                <p className="text-balance text-muted-foreground">
+                  Login as Admin
+                </p>
               </div>
 
               <FormField
@@ -100,6 +84,7 @@ export default function LoginSection() {
                   <FormItem>
                     <FormLabel>Email </FormLabel>
                     <Input
+                      className="text-black  bg-white"
                       {...field}
                       placeholder="johndoe@gmail.com"
                     />
@@ -122,6 +107,7 @@ export default function LoginSection() {
                       </Link> */}
                     </div>
                     <Input
+                      className="text-black  bg-white"
                       {...field}
                       placeholder="*******"
                     />
@@ -130,9 +116,7 @@ export default function LoginSection() {
                 )}
               />
 
-              <Button
-                type="submit"
-                className="w-full">
+              <Button type="submit" className="w-full text-white">
                 {isLoging && <LoaderIcon />}
                 Login
               </Button>
