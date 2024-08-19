@@ -24,47 +24,59 @@ import { Separator } from "@/components/ui/separator";
 // import AdminCircleUser from "@/components/dashboard/AdminCircleUser";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
+import { SessionContext } from "./context/SessionContext";
+import { supabase } from "@/lib/supabase";
+import Image from "next/image";
+import logo from "../../../public/logo.jpg";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  // const { session } = useContext(SessionContext);
+  const { session } = useContext(SessionContext);
 
-  // const handleLogout = async () => {
-  //   const { error } = await supabase.auth.signOut();
+  const handleLogout = async () => {
+    const { error } = await supabase.auth.signOut();
 
-  //   if (error) {
-  //     console.error("Login failed:", error.message);
-  //     toast.error(error.message || "Something went wrong. Please logout again.");
-  //     return;
-  //   }
+    if (error) {
+      console.error("Login failed:", error.message);
+      toast.error(
+        error.message || "Something went wrong. Please logout again."
+      );
+      return;
+    }
 
-  //   if (!error) {
-  //     toast.success("Logout successful.");
-  //     return;
-  //   }
-  // };
+    if (!error) {
+      toast.success("Logout successful.");
+      return;
+    }
+  };
 
-  // if (!session) {
-  //   return <LoginSection />;
-  // }
-
-  if (true) {
+  if (!session || session == null) {
+    return (
+      <html>
+        <body>
+          <LoginSection />
+        </body>
+      </html>
+    );
+  }
+  console.log(session);
+  if (session) {
     return (
       <html>
         <body>
           <div className=" flex ">
-          <Toaster/>
-            <div className=" flex flex-col justify-between h-screen w-2/12 bg-primary-foreground  bg-primary-500 ">
+            <Toaster />
+            <div className=" border-r flex flex-col justify-between h-screen w-2/12 bg-primary-foreground  bg-primary-500 ">
               <div>
-                {/* <Image
-              src={logo}
-              alt="logo"
-              className=" h-20 w-20 object-scale-down mx-auto"
-            /> */}
-                <h1 className=" text-2xl px-6 font-semibold tracking-wider py-2 ">
+                <Image
+                  src={logo}
+                  alt="logo"
+                  className=" h-20 w-40 object-cover mx-auto"
+                />
+                {/* <h1 className=" text-2xl px-6 font-semibold tracking-wider py-2 ">
                   Opus
                 </h1>
-                <Separator />
+                <Separator /> */}
 
                 <div className=" space-y-2 pt-4">
                   {navItems.map((item: any, index: number) => (
@@ -75,7 +87,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                       <Link
                         href={item.href}
                         className={`link ${
-                          pathname === item.href ? "bg-secondary text-white" : ""
+                          pathname === item.href
+                            ? "bg-secondary text-white"
+                            : ""
                         }  py-1.5 px-6 hover:text-secondary-950 duration-100   opacity-95 flex items-center gap-1  `}
                       >
                         {item.icon} {item.name}
@@ -86,7 +100,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </div>
 
               <div
-                // onClick={handleLogout}
+                onClick={handleLogout}
                 className="cursor-pointer  absolute bottom-0 mb-4  tracking-wider  flex gap-2 items-center   py-3 px-3  "
               >
                 <LogOut size={18} />
@@ -97,8 +111,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div className="h-screen overflow-y-scroll w-full">
               <div className="  flex items-center justify-between  h-12 px-4 shadow-md z-50">
                 <Button className=" opacity-0" variant="outline"></Button>
-                <div className=" flex items-center gap-4 ">
-                </div>
+                <div className=" flex items-center gap-4 "></div>
               </div>
               <div className=" px-4 mt-8 ">{children}</div>
             </div>
