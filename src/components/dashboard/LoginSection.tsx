@@ -116,7 +116,7 @@ export default function LoginSection() {
                 )}
               />
 
-              <Button type="submit" className="w-full text-white">
+              <Button type="submit" className="w-full text-white bg-slate-950">
                 {isLoging && <LoaderIcon />}
                 Login
               </Button>
