@@ -57,20 +57,31 @@ const Certificates = () => {
         className="flex flex-wrap justify-center gap-8 my-20 "
         ref={certificateref}
       >
-        {testimonial?.map((item: any, index: number) => (
+        <div className="relative">
+        <Image
+          
+            src="/frame.jpg"
+            height={1000}
+            width={1000}
+            alt="certificate"
+            className="h-[35em] max-w-[30em]"
+          />
+           {testimonial?.map((item: any, index: number) => (
           <Image
             key={index}
             src={item?.url}
             height={1000}
             width={1000}
             alt="certificate"
-            className="h-[25em] w-80 drop-shadow-lg"
+            className="h-[22em] max-w-[17em] drop-shadow-lg absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
           />
         ))}
+        </div>
+       
       </div>
-      <button className=" gap-2 w-[250px] mx-auto bg-black font-bold h-[60px] my-16 flex items-center justify-center rounded-full cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-[#CC1587] before:via-[#26538C] before:to-[#00AFF0] before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 text-[#fff]">
+      <button className=" gap-2 w-[260px] mx-auto bg-black text-sm font-semibold h-[60px] my-16 flex items-center justify-center rounded-full cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-[#CC1587] before:via-[#26538C] before:to-[#00AFF0] before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 text-[#fff]">
         <AiOutlineDownload size={32} />
-        Company Profile
+       Download Company Profile
       </button>
     </main>
   );
