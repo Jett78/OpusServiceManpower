@@ -9,7 +9,7 @@ const DynamicService = dynamic(() => import ('./ServicesContainer'),{
 })
 const page = () => {
   return (
-    <div className='pt-20'>
+    <div className='pt-12'>
       <DynamicService/>
     </div>
   )

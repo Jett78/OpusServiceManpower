@@ -38,11 +38,11 @@ const Testimoinals: React.FC = () => {
       },
     });
 
-    tl.from(".testimonialsanimate", {
-      scale: 0.5,
-      opacity: 0,
-      ease: "power2.out",
-    });
+    // tl.from(".testimonialsanimate", {
+    //   scale: 0.5,
+    //   opacity: 0,
+    //   ease: "power2.out",
+    // });
   });
   const settings: Settings = {
     dots: true,

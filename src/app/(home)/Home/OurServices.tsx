@@ -54,9 +54,9 @@ const OurServices: React.FC = () => {
       },
     });
 
-    tl.from(containerRef.current,{
-       scale:0.8,
-    })
+    // tl.from(containerRef.current,{
+    //    scale:0.8,
+    // })
     if (mainRef.current && containerRef.current) {
       const totalScrollWidth = mainRef.current.scrollWidth;
       const visibleWidth = containerRef.current.offsetWidth;
