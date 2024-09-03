@@ -48,7 +48,7 @@ const Vision = () => {
       <h2 className="text-black uppercase font-extrabold text-3xl w-fit mx-auto md:mb-10 ">
         <span className="text-gradient">About {""}</span> 
       </h2>
-      <section className="w-11/12 mx-auto flex flex-wrap flex-row-reverse justify-center gap-8 items-start">
+      <section className="w-11/12 3xl:w-9/12 mx-auto flex flex-wrap flex-row-reverse justify-center gap-8 items-start">
         <div className="textright lg:w-[50%] w-full">
           <div className="h-[24px] overflow-hidden mb-2"></div>
           <h1 className="header lg:text-5xl md:text-4xl sm:text-3xl  text-2xl font-bold leading-[1.1em]">
@@ -88,7 +88,7 @@ const Vision = () => {
             alt="chairman"
             height={1000}
             width={1000}
-            className="rounded-lg sm:w-[60em] sm:h-[35em] object-cover brightness-75"
+            className="rounded-lg sm:w-[60em] sm:h-[35em] object-center brightness-75"
           />
         </div>
       </section>
@@ -116,7 +116,7 @@ const Vision = () => {
         {aboutdata.map((item, index) => (
           <div key={index} className="relative group">
             <div
-              className="rounded-2xl max-w-[22em] h-[20em] p-4 relative "
+              className="rounded-2xl group-hover:border-transparent max-w-[22em] h-[20em] p-4 relative "
               style={{ border: `2px solid ${item.border}` }}
             >
               <div className="h-20 w-20 flex items-center justify-center rounded-full gradient mb-6 absolute -top-10 left-1/2 -translate-x-1/2 z-10">
@@ -128,7 +128,7 @@ const Vision = () => {
               <p className="font-semibold text-black italic text-sm my-4 leading-6 group-hover:text-white relative z-50">
                 {item.desc}
               </p>
-              <div className="z-0 absolute bg-gradient-to-r from-[#26538C]  to-[#00AFF0]  w-full right-0 group-hover:h-full rounded-lg bottom-0 duration-500 ease-in-out transform scale-x-0  group-hover:scale-x-100 origin-bottom" />
+              <div className="z-0 absolute bg-gradient-to-r from-[#26538C]  to-[#00AFF0]  w-full right-0 group-hover:h-full rounded-xl bottom-0 duration-500 ease-in-out transform scale-x-0  group-hover:scale-x-100 origin-bottom" />
             </div>
           </div>
         ))}
