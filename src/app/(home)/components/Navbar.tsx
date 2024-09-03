@@ -67,36 +67,36 @@ const Navbar = () => {
   }, [isMenuOpen]);
 
   // Set navbar background based on the current page
-  useEffect(() => {
-    if (router === "/") {
-      const handleScroll = () => {
-        if (window.scrollY > 50) {
-          setBgBlack(true);
-        } else {
-          setBgBlack(false);
-        }
-      };
+  // useEffect(() => {
+  //   if (router === "/") {
+  //     const handleScroll = () => {
+  //       if (window.scrollY > 50) {
+  //         setBgBlack(true);
+  //       } else {
+  //         setBgBlack(false);
+  //       }
+  //     };
 
-      window.addEventListener("scroll", handleScroll);
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-      };
-    } else {
-      setBgBlack(true); // Set bg black on all other pages
-    }
-  }, [router]);
+  //     window.addEventListener("scroll", handleScroll);
+  //     return () => {
+  //       window.removeEventListener("scroll", handleScroll);
+  //     };
+  //   } else {
+  //     setBgBlack(true); // Set bg black on all other pages
+  //   }
+  // }, [router]);
 
   return (
     <Headroom>
       <div
-        className={`navcontainer overflow-hidden w-full z-[200] ${
+        className={`navcontainer bg-black overflow-hidden w-full z-[200] ${
           bgBlack
             ? "bg-black bg-opacity-90 bg-blend-overlay backdrop-filter backdrop-blur-xl"
             : "bg-transparent"
         }`}
       >
         <main
-          className={`relative overflow-hidden text-white flex justify-end top-0 left-0 w-full items-center py-6 lg:px-20 md:px-10 px-6 z-50`}
+          className={`relative overflow-hidden bg-zinc-900 text-white flex justify-end top-0 left-0 w-full items-center py-5 lg:px-20 md:px-10 px-6 z-50`}
         >
           <figure className="logoanimate absolute sm:left-10 left-2">
             <Image
@@ -113,7 +113,7 @@ const Navbar = () => {
               <div key={index} className="list-none">
                 <Link
                   href={items.path}
-                  className={`font-semibold navbarhover ${
+                  className={`font-semibold text-sm navbarhover ${
                     router === items.path ? "text-tertiary active font-bold" : ""
                   }`}
                 >
