@@ -36,10 +36,10 @@ const steps = useRef<any>(null)
   })
 
   return (
-    <main className="content md:py-20 text-white py-10 bg-black overflow-hidden">
+    <main className="content md:py-20 text-white py-10 bg-black ">
       <div className="lg:w-10/12 w-11/12 mx-auto flex flex-wrap justify-center gap-20">
-       <div className="xl:w-[50%] ">
-       <section className="textsection sticky top-[5em]">
+       <div className="xl:w-[50%]">
+       <section className="textsection sticky ">
           <h2 className="text-gradient uppercase font-bold text-xl  w-fit my-4">How we work</h2>
           <h2  className="lg:text-5xl md:text-3xl text-3xl  font-bold leading-[1.1em]">Learn more about our working process</h2>
           <p  className=" font-medium text-lighttext md:text-md text-[12px] my-6 max-w-[30em] md:text-xl min-w-[20em]">

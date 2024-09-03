@@ -2,7 +2,7 @@ import { Metadata, ResolvingMetadata } from "next";
 import Image from "next/image";
 import Cta from "../../Home/Cta";
 import { supabase } from "@/lib/supabase";
-import parse from 'html-react-parser'
+import parse from "html-react-parser";
 async function fetchData(id: any) {
   try {
     const { data, error, status } = await supabase
@@ -59,7 +59,7 @@ export async function generateMetadata(
 }
 
 export default async function Page({ params }: any) {
-  const blog:any =await fetchData(params.id);
+  const blog: any = await fetchData(params.id);
 
   if (!blog) {
     return <div>Blog not found</div>;
@@ -79,9 +79,26 @@ export default async function Page({ params }: any) {
           height={1000}
           className=" max-h-[65vh] w-full object-cover mx-auto rounded-2xl my-6"
         />
-        <p className="font-semibold">{blog?.created_at?.slice(0,10)}</p>
+       <div className="flex justify-between items-center">
+        <div className="flex items-cente gap-2">
+          <Image
+            src="/avatar.jpg"
+            alt="avatar"
+            width={1000}
+            height={1000}
+            className=" h-12 w-12 rounded-full"
+          />
+          <div>
+            <p className="font-semibold">John Doe</p>
+            <p className="font-semibold">Marketting Officer</p>
+          </div>
+        </div>
+
+        <p className="font-semibold">{blog?.created_at?.slice(0, 10)}</p>
+
+       </div>
         <div className="font-medium  md:text-lg text-[12px] md:py-6 py-2">
-          {blog.Description&&parse(blog.Description)}
+          {blog.Description && parse(blog.Description)}
         </div>
       </div>
       <Cta />

@@ -61,7 +61,7 @@ const Chairmanmssg: React.FC = () => {
   });
 
   return (
-    <main className="w-11/12  mx-auto md:my-40 my-10 overflow-hidden" ref={messageConatiner}>
+    <main className="w-11/12 3xl:w-9/12  mx-auto md:my-40 my-10 overflow-hidden" ref={messageConatiner}>
       <div className="mx-auto rounded-lg ">
         <div className="flex flex-wrap flex-row-reverse items-center justify-center gap-10 ">
           <section className="relative  lg:max-w-[40%] w-full   h-[35em]  py-10">
@@ -126,7 +126,7 @@ const Chairmanmssg: React.FC = () => {
               height={1000}
               width={1000}
               alt="chairman"
-              className="rounded-lg sm:w-[59em] sm:max-h-[34em] max-h-[25em] object-cover brightness-75"
+              className=" sm:w-[59em] sm:max-h-[34em] max-h-[25em] object-cover  rounded-xl brightness-75"
             />
             <svg
               className="whitebox h-[42em]"

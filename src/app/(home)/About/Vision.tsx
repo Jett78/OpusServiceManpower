@@ -88,7 +88,7 @@ const Vision = () => {
             alt="chairman"
             height={1000}
             width={1000}
-            className="rounded-lg sm:w-[60em] sm:h-[35em] object-center brightness-75"
+            className="rounded-xl sm:w-[60em] sm:h-[35em] object-cover brightness-75"
           />
         </div>
       </section>

@@ -81,7 +81,7 @@ const BlogContainer: React.FC = () => {
         stay ahead in your field.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-11/12 mx-auto my-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-11/12 3xl:w-9/12 mx-auto my-16">
         {products?.map((item, index) => (
           <Link key={index} href={`/blogs/${item?.slug}`}>
             <div>
@@ -103,7 +103,7 @@ const BlogContainer: React.FC = () => {
                   <h3 className="font-bold text-xl">{item?.Title}</h3>
 
                   <p className="text-[14px] py-2 font-medium text-lighttext">
-                    {item?.Intro.slice(0, 50)}
+                    {item?.Intro.slice(0, 90)}
                     {item?.Intro.length > 50 && "..."}
                   </p>
                   <p className="text-tertiary font-medium text-[12px] flex  gap-2 items-center">Read More
