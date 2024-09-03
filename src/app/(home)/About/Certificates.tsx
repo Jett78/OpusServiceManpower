@@ -64,7 +64,7 @@ const Certificates = () => {
             height={1000}
             width={1000}
             alt="certificate"
-            className="h-[35em] max-w-[30em]"
+            className="h-[35em] sm:max-w-[30em] w-[21em]"
           />
            {testimonial?.map((item: any, index: number) => (
           <Image
@@ -73,7 +73,7 @@ const Certificates = () => {
             height={1000}
             width={1000}
             alt="certificate"
-            className="h-[22em] max-w-[17em] drop-shadow-lg absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
+            className="h-[22em] sm:max-w-[17em] w-[12em] drop-shadow-lg absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
           />
         ))}
         </div>
