@@ -28,7 +28,7 @@ export default function Page({ params }: { params: { id: string } }) {
   return (
     <main className="mt-10">
       {/* <h2 className="font-bold text-center text-2xl">Job Details</h2> */}
-      <div className="h-screen w-8/12 mx-auto border-2 rounded-2xl p-10 mt-2">
+      <div className="my-20 w-7/12 mx-auto border-2 rounded-2xl p-10 mt-2">
         <h2 className="text-xl font-bold">{jobs.title}</h2>
         <div className="grid grid-cols-2 gap-2 w-[30em] my-8">
           <div className="flex gap-2 items-center w-fit">
