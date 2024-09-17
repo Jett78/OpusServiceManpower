@@ -1,6 +1,7 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
+import Image from "next/image"
 
 const JobsContainer = () => {
   return (
@@ -14,14 +15,19 @@ const JobsContainer = () => {
         perfect role waiting for you. Start your journey today!
       </p>
 
-      <div className="grid md:grid-cols-2 gap-10 my-20">
+      <div className="grid md:grid-cols-2 gap-10 md:my-20 my-10">
         {jobsdata.map((item, index) => (
           <div
             key={index}
             className="p-4 border-2 border-zinc-400 bg-gray-100  rounded-2xl"
           >
-            <h2 className="text-xl font-bold">{item.title}</h2>
-            <p className="font-semibold text-lighttext py-4">{item.desc}</p>
+            <div>
+                 <div className="flex justify-between items-center">
+                 <h2 className="md:text-xl font-bold">{item.title}</h2>
+                 <Image src="/companylogo.jpg" alt="companylogo" width={1000} height={1000} className="max-h-10 max-w-10 rounded-full"/>
+                 </div>
+            </div>
+            <p className="font-semibold text-lighttext py-4 md:text-base text-sm">{item.desc}</p>
 
             <div className="flex flex-wrap justify-between gap-2 items-center">
               <div className="flex items-center gap-8">
