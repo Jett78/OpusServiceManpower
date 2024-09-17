@@ -31,15 +31,15 @@ const Navbar = () => {
 
     gsap.from(".navcontainer", {
       opacity: 0,
-      delay: 0.5,
+      delay: 0.3,
       duration: 1,
     });
     tl.from(".logoanimate", {
       opacity: 0,
-      delay: 0.5,
+      delay: 0.3,
     });
     tl.from(navitems.current?.children, {
-      stagger: 0.2,
+      stagger: 0.1,
       y: -20,
       delay: 0.5,
       opacity: 0,
