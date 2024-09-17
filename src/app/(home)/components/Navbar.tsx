@@ -14,6 +14,8 @@ const navdata = [
   { title: "About", path: "/About" },
   { title: "Services", path: "/Services" },
   { title: "Career", path: "/Career" },
+    { title: "Jobs", path: "/jobs" },
+
   { title: "Blog", path: "/blogs" },
   { title: "Contact us", path: "/Contact" },
 ];
