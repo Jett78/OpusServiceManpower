@@ -31,7 +31,7 @@ input::placeholder {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-[#26538C]  to-[#00AFF0];
 }
 .button-gradient{
-  @apply px-8 py-3 border rounded-full text-white font-bold bg-gradient-to-r from-[#26538C]  to-[#00AFF0] hover:bg-gradient-to-r hover:from-[#00AFF0] hover:via-[#26538C] hover:to-[#26538C] duration-300 ease-in-out
+  @apply px-8 py-3 border rounded-full text-white font-bold bg-[#00AFF0]  hover:bg-blue-500  duration-300 ease-in-out
 }
 .gradient{
   @apply  bg-gradient-to-tr from-[#26538C]  to-[#00AFF0]
@@ -138,4 +138,28 @@ input::placeholder {
 .preloader.fade-out {
   opacity: 0;
   visibility: hidden;
+}
+/* Default placeholder style */
+textarea::placeholder {
+  color: #a0a0a0; /* or whatever color you prefer */
+  font-size: 12px;
+}
+
+/* Hide placeholder on screens smaller than 640px (tailored for mobile) */
+@media (max-width: 640px) {
+  textarea::placeholder {
+    color: transparent; /* Hides the placeholder */
+  }
+}
+/* Default placeholder style */
+input::placeholder {
+  color: #a0a0a0; /* or whatever color you prefer */
+  font-size: 12px;
+}
+
+/* Hide placeholder on screens smaller than 640px (tailored for mobile) */
+@media (max-width: 640px) {
+  input::placeholder {
+    color: transparent; /* Hides the placeholder */
+  }
 }
