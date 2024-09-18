@@ -17,7 +17,6 @@ const navdata = [
     { title: "Jobs", path: "/jobs" },
 
   { title: "Blog", path: "/blogs" },
-  { title: "Contact us", path: "/Contact" },
 ];
 
 const Navbar = () => {
@@ -110,7 +109,7 @@ const Navbar = () => {
             />
           </figure>
 
-          <nav className="gap-10 md:flex hidden" ref={navitems}>
+          <nav className="gap-14 md:flex items-center hidden" ref={navitems}>
             {navdata.map((items, index) => (
               <div key={index} className="list-none">
                 <Link
@@ -123,6 +122,7 @@ const Navbar = () => {
                 </Link>
               </div>
             ))}
+            <Link href="/Contact" className="font-semibold text-sm  bg-tertiary rounded-full px-4 py-2">Contact</Link>
           </nav>
 
           <div className="md:hidden block" onClick={toggleMenu}>
