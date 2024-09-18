@@ -17,6 +17,7 @@
 // }
 
 import { Icon } from "@iconify/react";
+import Image from "next/image";
 
 export default function Page({ params }: { params: { id: string } }) {
   const jobs = jobsdata[parseInt(params.id, 10)];
@@ -28,41 +29,49 @@ export default function Page({ params }: { params: { id: string } }) {
   return (
     <main className="mt-10">
       {/* <h2 className="font-bold text-center text-2xl">Job Details</h2> */}
-      <div className="my-20 w-7/12 mx-auto border-2 rounded-2xl p-10 mt-2">
-        <h2 className="text-xl font-bold">{jobs.title}</h2>
+      <div className="my-20 lg:w-7/12 w-11/12 mx-auto border-2 rounded-2xl lg:p-10 p-4 mt-2">
+      <h2 className="md:text-xl text-md font-bold">{jobs.title}</h2>
+       <section className="flex flex-wrap justify-between">
+      
         <div className="grid grid-cols-2 gap-2 w-[30em] my-8">
           <div className="flex gap-2 items-center w-fit">
             <Icon icon="mdi:location" style={{ color: "#01adee" }} />
-            <h3 className="font-semibold md:text-base text-sm">
+            <h3 className="font-semibold md:text-base text-xs">
               Emirates Gas Pvt Ltd
             </h3>
           </div>
           <div className="flex gap-2 items-center w-fit">
             <Icon icon="mdi:location" style={{ color: "#01adee" }}/>
-            <h3 className="font-semibold md:text-base text-sm">Dubai</h3>
+            <h3 className="font-semibold md:text-base text-xs">Dubai</h3>
           </div>
           <div className="flex gap-2 items-center w-fit">
             <Icon icon="uiw:date"  style={{ color: "#01adee" }} />{" "}
-            <h3 className="font-semibold md:text-base text-sm">
+            <h3 className="font-semibold md:text-base text-xs">
               August 10 2024
             </h3>
           </div>
           <div className="flex gap-2 items-center w-fit">
             <Icon icon="mingcute:time-fill" style={{ color: "#01adee" }} />
-            <h3 className="font-semibold md:text-base text-sm">Full Time</h3>
+            <h3 className="font-semibold md:text-base text-xs">Full Time</h3>
           </div>
           <div className="flex gap-2 items-center w-fit">
             <Icon icon="mage:dollar-fill"  style={{ color: "#01adee" }} />{" "}
-            <h3 className="font-semibold md:text-base text-sm">100 AED</h3>
+            <h3 className="font-semibold md:text-base text-xs">100 AED</h3>
           </div>
           <div className="flex gap-2 items-center w-fit">
             <Icon icon="ion:home"  style={{ color: "#01adee" }} />
-            <h3 className="font-semibold md:text-base text-sm">
+            <h3 className="font-semibold md:text-base text-xs">
               Foods & Accomodation
             </h3>
           </div>
         </div>
-        <section className="space-y-8">
+
+        <figure>
+          <Image src="/vacancy.png" alt="vacanacy" width={1000} height={1000} className="w-48 h-52"/>
+        </figure>
+       </section>
+
+        <section className="space-y-8 mt-4">
           <div>
             <h2 className="font-bold">About Company</h2>
             <p className="text-sm font-semibold mt-3">
