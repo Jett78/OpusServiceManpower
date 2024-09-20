@@ -64,11 +64,14 @@ const Slides = () => {
   };
 
   return (
-    <main className="md:my-28 my-6 max-w-screen bg-gray-50 py-12">
-      <div className=" mt-10 relative">
+    <main className="md:my-28 my-6 max-w-screen bg-gray-50 py-14">
+      <div className=" relative">
         {/* <div className="absolute left-0 top-0 w-[15rem] z-30 bg-gradient-to-r from-white via-white  to-transparent h-full"></div> */}
         {/* <div className="absolute right-0 top-0 w-[15rem] z-30 bg-gradient-to-l from-white via-white  to-transparent h-full"></div> */}
-
+        <h2 className="font-bold sm:text-2xl text-xl w-fit mx-auto uppercase text-center pb-10">
+        <span className="text-gradient font-extrabold ">Trusted </span>by 1000+
+        Companies
+      </h2>
         <Slider {...settings}>
           {testimonial?.map((item: any, index: number) => (
             <div key={index} className="">

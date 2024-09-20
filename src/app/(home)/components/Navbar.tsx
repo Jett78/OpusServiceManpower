@@ -93,7 +93,7 @@ const Navbar = () => {
         className={`navcontainer shadow-md fixed bg-black overflow-hidden w-full z-[200] ease-in-out duration-500 ${isScrolled?"bg-black text-white":"bg-white"}`}
       >
         <main
-          className={` overflow-hidden flex justify-between w-full items-center py-2 lg:px-20 md:px-10 px-6 z-50`}
+          className={` overflow-hidden flex justify-between w-full items-center md:py-2 lg:px-20 md:px-10 px-6 z-50`}
         >
           <figure className="logoanimate sm:left-10 left-2">
             <Image

@@ -3,6 +3,7 @@ import "./globals.css";
 import { Metadata } from "next";
 import LenisInitializer from "./components/LenseInit";
 import MainContent from "../MainContent";
+import Staticad from "./components/Staticad";
 export const metadata: Metadata = {
   title: "Opus Manpower Service - Premier Recruitment & Staffing Solutions",
   openGraph: {
@@ -26,6 +27,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <LenisInitializer />
+        <Staticad/>
         <MainContent>{children}</MainContent>
       </body>
     </html>

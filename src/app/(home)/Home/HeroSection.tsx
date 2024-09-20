@@ -57,17 +57,17 @@ const HeroSection: React.FC = () => {
     );
 
     tl.from(headertext.chars, {
-      stagger: 0.05,
+      stagger: 0.03,
       duration: 0.02,
       y: 20,
       opacity: 0,
     });
     tl.from(".desctext", {
-      duration: 0.5,
+      duration: 0.3,
       opacity: 0,
     });
     tl.from(".animatebutton", {
-      duration: 1,
+      duration: 0.3,
       opacity: 0,
     });
   });

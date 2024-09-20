@@ -220,4 +220,9 @@ const services = [
     desc: "Our blue-collar staffing  skilled labor for positions such as manufacturing, construction, maintenance, and logistics. Understanding the critical role that a reliable and proficient workforce plays in operational efficiency and productivity, we offer comprehensive services that include recruitment, training, and on-site support.",
     img: "/servicesimg/services3.jpg",
   },
+  {
+    title: "Pro Support",
+    desc: "Our blue-collar staffing  skilled labor for positions such as manufacturing, construction, maintenance, and logistics. Understanding the critical role that a reliable and proficient workforce plays in operational efficiency and productivity, we offer comprehensive services that include recruitment, training, and on-site support.",
+    img: "/servicesimg/technology.png",
+  },
 ];
