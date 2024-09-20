@@ -87,7 +87,7 @@ const OurServices: React.FC = () => {
                   <FaArrowRightLong />
                 </p>
               </div>
-              <p className="text-left sm:text-xl text-lighttext text-sm font-medium max-w-[20em] mt-4">
+              <p className="text-left  text-lighttext md:text-base text-sm font-medium max-w-[20em] mt-4">
                 Explore our comprehensive range of services designed to meet
                 your diverse needs, from industrial and IT solutions to
                 transportation and construction services.
@@ -114,11 +114,11 @@ const OurServices: React.FC = () => {
                   />
 
                   <div className="w-full h-full absolute inset-0 text-white rounded-3xl  bg-gradient-to-b from-transparent via-transparent bg-black bg-blend-overlay bg-opacity-30 to-black">
-                    <div className="absolute bottom-12 translate-y-64 group-hover:translate-y-0 ease-in-out duration-700  left-8">
+                    <div className="absolute bottom-12  ease-in-out duration-700  left-8">
                       <h2 className="font-bold sm:text-2xl text-xl">
                         {item.title}
                       </h2>
-                      <p className="py-10 pr-8">{item.desc}</p>
+                      {/* <p className="py-10 pr-8">{item.desc}</p> */}
                     </div>
                   </div>
                 </Link>
@@ -139,7 +139,7 @@ const OurServices: React.FC = () => {
               <FaArrowRightLong />
             </p>
           </div>
-          <p className="text-left sm:text-xl text-lighttext text-sm font-medium max-w-[20em] mt-4">
+          <p className="text-left sm:text-md text-lighttext text-sm font-medium max-w-[20em] mt-4">
             Explore our comprehensive range of services designed to meet your
             diverse needs, from industrial and IT solutions to transportation
             and construction services.
@@ -167,7 +167,7 @@ const OurServices: React.FC = () => {
 
               <div className="w-full h-full absolute inset-0 text-white rounded-3xl  bg-gradient-to-b from-transparent via-transparent to-black">
                 <div className="absolute bottom-12 left-2">
-                  <h2 className="font-bold sm:text-2xl text-lg">
+                  <h2 className="font-semibold sm:text-xl text-lg">
                     {item.title}
                   </h2>
                 </div>

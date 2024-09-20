@@ -80,18 +80,18 @@ const WhyUs = () => {
   });
   return (
     <main className=" py-20  w-full text-black" ref={whycontainerRef}>
-      <div className="flex flex-wrap justify-center lg:gap-0  w-11/12 3xl:w-9/12 mx-auto ">
-        <section className="md:max-w-[50%] w-full ">
+      <div className="grid md:grid-cols-2 gap-4  w-11/12 3xl:w-9/12 mx-auto ">
+        <section className="w-full ">
           <div className="headanimate sticky">
             <div className="h-[24px] overflow-hidden mb-6">
               <h2 className="headanimate text-gradient uppercase font-bold text-xl border-b w-fit ">
                 Why Us
               </h2>
             </div>
-            <h1 className="headanimate lg:text-5xl md:text-3xl text-3xl  font-bold leading-[1.1em]">
+            <h1 className="headanimate lg:text-4xl md:text-3xl text-3xl  font-bold leading-[1.1em]">
               Right Connection and Right Employee
             </h1>
-            <p className="headanimate font-medium text-lighttext my-6 max-w-[35em] md:text-lg text-sm min-w-[20em]">
+            <p className="headanimate font-medium text-lighttext my-6  md:text-md text-sm ">
               In the pursuit of business success, two critical factors often
               determine the trajectory of an organization: establishing the
               right connections and hiring the right employees. Both elements
@@ -107,7 +107,7 @@ const WhyUs = () => {
           </div>
         </section>
 
-        <section className="md:max-w-[50%] w-full lg:grid-cols-2  grid-cols-1 grid gap-x-4">
+        <section className=" w-full lg:grid-cols-2  grid-cols-1 grid gap-x-4">
           <div className="space-y-6">
             {whyusdata.slice(0, 2).map((item, index) => (
               <div

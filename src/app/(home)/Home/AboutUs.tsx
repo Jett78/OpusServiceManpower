@@ -97,20 +97,20 @@ const AboutUs: React.FC = () => {
 
   return (
     <main>
-      <div className=" w-11/12 3xl:w-10/12 mx-auto md:my-20 my-8" ref={aboutContainer}>
-        <section className="flex flex-wrap justify-center items-start ">
-          <div className="sm:max-w-[50%] md:sticky top-[5em]">
+      <div className=" w-11/12 3xl:w-9/12 mx-auto md:my-20 my-8" ref={aboutContainer}>
+        <section className="grid md:grid-cols-2 gap-4 justify-center items-start ">
+          <div className=" md:sticky top-[5em]">
             <div className="h-[24px] overflow-hidden mb-2">
             </div>
-            <h1 className="header lg:text-5xl md:text-3xl text-3xl font-bold leading-[1.1em]">
+            <h1 className="header lg:text-4xl md:text-3xl text-3xl font-bold leading-[1.1em]">
               Outsourcing and outstaffing solutions for sustainable
               <span className="text-gradient"> Business Growth.</span>
             </h1>
           </div>
 
-          <div className="about-img-animate sm:max-w-[50%]">
+          <div className="about-img-animate ">
 
-            <p className="about-desc font-medium md:text-lg text-sm text-lighttext my-6">
+            <p className="about-desc w-full font-medium md:text-md text-sm text-lighttext my-6">
               In todays rapidly evolving business landscape, companies are
               increasingly turning to outsourcing and outstaffing as strategic
               solutions to drive growth, optimize operations, and maintain a
@@ -118,6 +118,7 @@ const AboutUs: React.FC = () => {
               can contribute to sustainable business growth, yet they cater to
               different needs and objectives.
             </p>
+            
             <button className="md:mt-4 font-semibold flex items-center animate-bounce">
               <Link href="/About">
                 <p className="text-gradient ">Read More</p>

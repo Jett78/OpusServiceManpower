@@ -21,11 +21,11 @@ const Vocational = () => {
       },
     });
 
-    tl.from(".vocationalanimate", {
-      scale: 0.5,
-      opacity: 0,
-      ease: "power2.out" 
-    });
+    // tl.from(".vocationalanimate", {
+    //   scale: 0.5,
+    //   opacity: 0,
+    //   ease: "power2.out" 
+    // });
   });
   return (
    <main className='my-6'>

@@ -33,11 +33,11 @@ const TrustComponent = () => {
         // markers: true,
       },
     });
-    tl.from(".trustcomponent", {
-      // opacity:0,
-      scale: 0.5,
-      duration: 1,
-    });
+    // tl.from(".trustcomponent", {
+    //   // opacity:0,
+    //   scale: 0.5,
+    //   duration: 1,
+    // });
   });
   const settings = {
     dots: false,

@@ -32,7 +32,7 @@ const ServiceContainer: React.FC = () => {
 
   return (
     <main>
-      <div className="w-11/12  mx-auto pt-10" ref={mainContainer}>
+      <div className="w-11/12  mx-auto" ref={mainContainer}>
         <h2 className="font-extrabold text-3xl uppercase text-black w-fit mx-auto">
           Our <span className="text-gradient">Services</span>
         </h2>
@@ -61,7 +61,7 @@ const ServiceContainer: React.FC = () => {
                   </div>
 
                   <div className="xl:max-w-[40em]">
-                    <p className="font-medium lg:text-[18px] text-[14px] text-lighttext">
+                    <p className="font-medium lg:text-[16px] text-[14px] text-lighttext">
                       {item.desc}
                     </p>
                   </div>

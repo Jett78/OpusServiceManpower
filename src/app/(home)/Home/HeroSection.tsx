@@ -89,11 +89,11 @@ const HeroSection: React.FC = () => {
 
       <div className="absolute lg:left-[4em] top-1/2 -translate-y-1/2   xl:w-7/12  z-50">
         <div className="text-black md:mt-14 mt-6 px-6">
-          <h2 className="animateheader font-bold lg:text-[78px] 2xl:text-[5vw] 2xl:leading-[0.9em] md:text-[48px]  sm:text-4xl text-4xl sm:leading-[68px]">
+          <h2 className="font-clash animateheader font-semibold text-zinc-800 tracking-wider lg:text-[78px] 2xl:text-[5vw] 2xl:leading-[0.9em] md:text-[48px]  sm:text-4xl text-4xl sm:leading-[68px]">
             Looking for a Job?
           </h2>
           <p
-            className="desctext font-medium font-sans text-[18px] text-gray-800 lg:py-8 md:py-6
+            className="desctext font-medium  text-[16px] text-gray-800 lg:py-8 md:py-6
            py-4 md:max-w-[42em] min-w-[18em] leading-6"
           >
             We have exciting career opportunities waiting for you across the

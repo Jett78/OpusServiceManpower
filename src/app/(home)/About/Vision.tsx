@@ -35,12 +35,12 @@ const Vision = () => {
     gsap.from(".textright",{
       opacity:0,
       x:60,
-      duration:1.5,
+      duration:0.5,
     })
     gsap.from(".imgleft",{
       opacity:0,
       x:-60,
-      duration:1.5,
+      duration:0.5,
     })
   })
   return (
@@ -51,7 +51,7 @@ const Vision = () => {
       <section className="w-11/12 3xl:w-9/12 mx-auto flex flex-wrap flex-row-reverse justify-center gap-8 items-start">
         <div className="textright lg:w-[50%] w-full">
           <div className="h-[24px] overflow-hidden mb-2"></div>
-          <h1 className="header lg:text-5xl md:text-4xl sm:text-3xl  text-2xl font-bold leading-[1.1em]">
+          <h1 className="header lg:text-4xl md:text-4xl sm:text-3xl  text-2xl font-bold leading-[1.1em]">
             Outsourcing and outstaffing solutions for sustainable
             <span className="text-gradient"> Business Growth.</span>
           </h1>

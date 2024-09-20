@@ -3,14 +3,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@font-face {
+  font-family: 'clash';
+  src: url('/fonts/ClashDisplay-Bold.otf') format('openType'),
+       url('/fonts/ClashDisplay-SemiBold.otf') format('openType');
+  font-weight: 400;
+  font-style: normal;
+}
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 body{
-  font-family: "Raleway", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   overflow-x: hidden;

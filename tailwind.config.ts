@@ -74,7 +74,7 @@ const config: Config = {
         lg: "1024px",
         xl: "1280px",
         "2xl": "1400px",
-        "3xl": "1600px",
+        "3xl": "2200px",
         "4xl": "1700px",
         "5xl": "1800px",
         "6xl": "1920px",
@@ -83,6 +83,9 @@ const config: Config = {
       },
       boxShadow: {
         input: `0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08)`,
+      },
+      fontFamily: {
+        clash: ['clash'],
       },
       backgroundImage: {
         'chairman':'url("/chairman.jpg")',
