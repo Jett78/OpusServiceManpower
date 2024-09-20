@@ -38,7 +38,7 @@ useEffect(() => {
             className="absolute -top-10 -right-20 outline-none m-2 text-3xl"
             onClick={handleCloseAd}
           >
-          <Icon icon="material-symbols:cancel"  style={{color: "black"}} />
+          <Icon icon="material-symbols:cancel"  style={{color: "#ffffff"}} />
           </button>
           <Image
             src="/ads.jpg"
