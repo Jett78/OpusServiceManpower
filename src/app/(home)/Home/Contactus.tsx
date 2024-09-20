@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import { IoLocation } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
@@ -8,6 +8,7 @@ import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 gsap.registerPlugin(ScrollTrigger);
 const locationinfo = [
@@ -34,11 +35,10 @@ const locationinfo = [
 ];
 
 const Contactus = () => {
-
   useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger:".contactcontainer",
+        trigger: ".contactcontainer",
         start: "top bottom",
         end: "50% 50%",
         scrub: 1,
@@ -64,7 +64,7 @@ const Contactus = () => {
     //   },
     //   "<"
     // );
-  })
+  });
   return (
     <main className="contactcontainer bg-gray-50 md:py-20 py-6">
       <div className="w-11/12 mx-auto flex flex-wrap gap-8 justify-center  rounded-2xl">
@@ -99,6 +99,12 @@ const Contactus = () => {
                 height={30}
                 alt="icon"
               />
+              <div className="bg-white shadow-md w-8 flex justify-center items-center rounded-full">
+                <Icon icon="logos:tiktok-icon" />
+              </div>
+              <div className="bg-[#0a66c2] w-8 flex justify-center items-center rounded-full">
+                <Icon icon="skill-icons:linkedin" />
+              </div>
             </div>
           </div>
         </section>

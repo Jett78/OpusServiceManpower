@@ -5,7 +5,7 @@ import Image from "next/image"
 
 const JobsContainer = () => {
   return (
-    <main className="pt-28 w-11/12 mx-auto overflow-hidden">
+    <main className="pt-28 w-10/12 mx-auto overflow-hidden">
       <h2 className="font-extrabold text-3xl uppercase text-gradient w-fit mx-auto">
         Jobs Opening
       </h2>
@@ -15,22 +15,23 @@ const JobsContainer = () => {
         perfect role waiting for you. Start your journey today!
       </p>
 
-      <div className="grid md:grid-cols-2 gap-10 md:my-20 my-10">
+      <div className="grid md:grid-cols-3 gap-10 md:my-20 my-10">
         {jobsdata.map((item, index) => (
           <div
             key={index}
-            className="p-4 border-2 border-zinc-400 bg-gray-100  rounded-2xl"
+            className="p-4 border-2 border-zinc-400 bg-gray-100/50  rounded-2xl"
           >
             <div>
-                 <div className="flex justify-between items-center">
-                 <h2 className="md:text-xl font-bold">{item.title}</h2>
+                 <div className="flex flex-col justify-between gap-2">
                  <Image src="/companylogo.jpg" alt="companylogo" width={1000} height={1000} className="max-h-10 max-w-10 rounded-full"/>
+
+                 <h2 className="md:text-lg font-semibold h-10">{item.title}</h2>
                  </div>
             </div>
-            <p className="font-semibold text-lighttext py-4 md:text-base text-sm">{item.desc}</p>
+            <p className="font-regular  md:text-base text-sm py-6">{item.desc}</p>
 
-            <div className="flex flex-wrap justify-between gap-2 items-center">
-              <div className="flex items-center gap-8">
+            <div className="flex flex-col flex-wrap justify-between gap-2">
+              <div className="flex flex-wrap items-center sm:gap-8 gap-2">
                 <div className="flex gap-2 items-center border-tertiary border-2 rounded-full px-4 py-2 w-fit">
                   <Icon icon="mdi:location" style={{ color: "black" }} />
                   <h3 className="font-semibold md:text-base text-sm">{item.location}</h3>
@@ -42,7 +43,7 @@ const JobsContainer = () => {
               </div>
               <Link href={`/jobs/${index}`}>
               <div className="flex items-center gap-2 cursor-pointer">
-                <h2 className="font-semibold text-tertiary">Apply Now</h2>
+                <h2 className="font-semibold md:text-base text-sm text-tertiary">Apply Now</h2>
                 <Icon icon="mingcute:arrow-right-line"  style={{color: "black"}} />
               </div></Link>
             </div>

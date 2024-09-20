@@ -63,7 +63,7 @@ const anotherlink = [
 
 const Footer: React.FC = () => {
   return (
-    <main className="bg-black text-white">
+    <main className="bg-zinc-900 text-white">
       <footer className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 md:gap-20  gap-10 py-14 lg:px-28 md:px-14 px-4 border-b border-gray-100">
         <section className="md:space-y-0 space-y-4 grid place-items-center relative">
           <figure className="absolute lg:-top-10 md:-top-10 sm:-top-24 -top-20 -left-6">
@@ -131,7 +131,7 @@ const Footer: React.FC = () => {
               placeholder="Enter your email"
               className="pl-4 p-2 w-40 bg-white outline-none rounded-tl-xl rounded-bl-xl text-black"
             />
-            <button className=" bg-gradient-to-r from-[#26538C]  to-[#00AFF0] hover:bg-gradient-to-r hover:from-[#00AFF0] hover:via-[#26538C] hover:to-[#26538C] duration-750 ease-in-out p-2 px-4 font-medium rounded-tr-xl rounded-br-xl">
+            <button className="bg-[#00AFF0]  hover:bg-blue-500  duration-300 ease-in-out  p-2 px-4 font-medium rounded-tr-xl rounded-br-xl">
               Subscribe
             </button>
           </div>

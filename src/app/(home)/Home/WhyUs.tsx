@@ -91,7 +91,7 @@ const WhyUs = () => {
             <h1 className="headanimate lg:text-4xl md:text-3xl text-3xl  font-bold leading-[1.1em]">
               Right Connection and Right Employee
             </h1>
-            <p className="headanimate font-medium text-lighttext my-6  md:text-md text-sm ">
+            <p className="headanimate font-medium text-lighttext my-6  md:text-lg text-sm ">
               In the pursuit of business success, two critical factors often
               determine the trajectory of an organization: establishing the
               right connections and hiring the right employees. Both elements

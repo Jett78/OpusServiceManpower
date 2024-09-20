@@ -93,7 +93,7 @@ const OurServices: React.FC = () => {
                 transportation and construction services.
               </p>
             </div>
-            <button className="md:w-[140px] w-[130px] sm:flex md:mx-0 mx-auto bg-black font-bold h-[45px] my-3 hidden items-center justify-center rounded-full cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-[#CC1587] before:via-[#26538C] before:to-[#00AFF0] before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 text-[#fff]">
+            <button className="animate-button">
               View More
             </button>
           </section>
@@ -145,7 +145,7 @@ const OurServices: React.FC = () => {
             and construction services.
           </p>
         </div>
-        <button className="md:w-[140px] w-[130px] md:flex md:mx-0 mx-auto bg-black font-bold h-[45px] my-3 hidden items-center justify-center rounded-full cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-[#26538C]  before:to-[#00AFF0] before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 text-[#fff]">
+        <button className="animate-button">
           View More
         </button>
       </section>

@@ -87,7 +87,7 @@ export default function Page({ params }: { params: { id: string } }) {
         <section className="space-y-8 mt-4">
           <div>
             <h2 className="font-bold">About Company</h2>
-            <p className="text-sm font-semibold mt-3">
+            <p className="text-md font-medium p mt-3">
               We are a leading construction firm based in Dubai, UAE,
               specializing in large-scale infrastructure projects. With a
               commitment to quality and innovation, we pride ourselves on
@@ -101,7 +101,7 @@ export default function Page({ params }: { params: { id: string } }) {
           </div>
           <div>
             <h2 className="font-bold">Job Details & Responsibilities</h2>
-            <p className="text-sm font-semibold mt-3">
+            <p className="text-md font-medium  mt-3">
               We are a leading construction firm based in Dubai, UAE,
               specializing in large-scale infrastructure projects. With a
               commitment to quality and innovation, we pride ourselves on
@@ -115,7 +115,7 @@ export default function Page({ params }: { params: { id: string } }) {
           </div>
           <div>
             <h2 className="font-bold">Skills & Responsibilities</h2>
-            <p className="text-sm font-semibold mt-3">
+            <p className="text-md font-medium mt-3">
               As a Construction Laborer, you will be responsible for supporting
               various construction projects by performing manual tasks such as
               digging, lifting, and transporting materials. Duties include

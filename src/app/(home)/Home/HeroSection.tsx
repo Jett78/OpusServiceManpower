@@ -4,7 +4,7 @@ import React, { useRef } from "react";
 import Link from "next/link";
 import demoImg from "../../../../public/Heroimg.png";
 import demoImg2 from "../../../../public/heroo.png";
-import demoImg3 from "../../../../public/heroo.png";
+import demoImg3 from "../../../../public/hero2.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -77,7 +77,7 @@ const HeroSection: React.FC = () => {
     "
       ref={herocontent}
     >
-      <div className="relative sm:h-screen h-[92vh] w-full ">
+      <div className="relative sm:h-screen h-screen w-full ">
         <Image
           src={demoImg3}
           alt="hero-img"
@@ -87,14 +87,14 @@ const HeroSection: React.FC = () => {
         />
       </div>
 
-      <div className="absolute lg:left-[4em] top-1/2 -translate-y-1/2   xl:w-7/12  z-50">
+      <div className="absolute lg:left-[3.5em] top-1/2 -translate-y-1/2   xl:w-7/12  z-50">
         <div className="text-black md:mt-14 mt-6 px-6">
-          <h2 className="font-clash animateheader font-semibold text-zinc-800 tracking-wider lg:text-[78px] 2xl:text-[5vw] 2xl:leading-[0.9em] md:text-[48px]  sm:text-4xl text-4xl sm:leading-[68px]">
+          <h2 className="font-clash animateheader font-semibold text-zinc-800 tracking-wider lg:text-[74px] 2xl:text-[4.8vw] 2xl:leading-[0.9em] md:text-[48px]  sm:text-4xl text-4xl sm:leading-[68px]">
             Looking for a Job?
           </h2>
           <p
-            className="desctext font-medium  text-[16px] text-gray-800 lg:py-8 md:py-6
-           py-4 md:max-w-[42em] min-w-[18em] leading-6"
+            className="desctext font-medium  md:text-[18px] text-gray-800 lg:py-8 md:py-6
+           py-4 md:max-w-[35em] min-w-[14em] leading-6"
           >
             We have exciting career opportunities waiting for you across the
             Middle East. Whether you're looking to advance your career, explore

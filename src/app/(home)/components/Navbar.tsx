@@ -90,7 +90,7 @@ const Navbar = () => {
   return (
     <main>
       <div
-        className={`navcontainer shadow-md fixed bg-black overflow-hidden w-full z-[200] ease-in-out duration-500 ${isScrolled?"bg-black text-white":"bg-white"}`}
+        className={`navcontainer shadow-md fixed bg-black overflow-hidden w-full z-[200] ease-in-out duration-500 ${isScrolled?"bg-zinc-800 text-white":"bg-white"}`}
       >
         <main
           className={` overflow-hidden flex justify-between w-full items-center md:py-2 lg:px-20 md:px-10 px-6 z-50`}
@@ -101,7 +101,7 @@ const Navbar = () => {
               alt="logo"
               height={1000}
               width={1000}
-              className="w-28 h-14"
+              className="w-24 h-10"
             />
           </figure>
 
@@ -120,7 +120,7 @@ const Navbar = () => {
             ))}
           </nav>
 
-          <Link href="/Contact" className={` text-white md:block hidden font-semibold text-sm  bg-tertiary rounded-full px-4 py-2`}>Contact</Link>
+          <Link href="/Contact" className={` text-white md:block hidden font-semibold text-sm  bg-[#00AFF0]  hover:bg-blue-500  duration-300 ease-in-out rounded-full px-4 py-2`}>Contact</Link>
 
 
           <div className="md:hidden block" onClick={toggleMenu}>
