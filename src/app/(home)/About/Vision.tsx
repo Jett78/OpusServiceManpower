@@ -44,18 +44,18 @@ const Vision = () => {
     })
   })
   return (
-    <main className="overflow-hidden">
-      <h2 className="text-black uppercase font-extrabold text-3xl w-fit mx-auto md:mb-10 ">
+    <main className="overflow-hidden mt-8">
+      {/* <h2 className="text-black uppercase font-extrabold text-3xl w-fit mx-auto md:mb-10 ">
         <span className="text-gradient">About {""}</span> 
-      </h2>
+      </h2> */}
       <section className="w-11/12 3xl:w-9/12 mx-auto flex flex-wrap flex-row-reverse justify-center gap-8 items-start">
         <div className="textright lg:w-[50%] w-full">
-          <div className="h-[24px] overflow-hidden mb-2"></div>
+          <h2 className="font uppercase font-semibold mb-4 text-gradient w-fit text-xl">Know more about us</h2>
           <h1 className="header lg:text-4xl md:text-4xl sm:text-3xl  text-2xl font-bold leading-[1.1em]">
             Outsourcing and outstaffing solutions for sustainable
             <span className="text-gradient"> Business Growth.</span>
           </h1>
-          <p className="about-desc font-medium xl:text-l md:text-l text-sm text-lighttext my-6">
+          <p className="about-desc font-medium xl:text-[16px] leading-8 md:text-l text-sm text-lighttext my-6">
             In today’s rapidly evolving business landscape, companies are
             increasingly turning to outsourcing and outstaffing as strategic
             solutions to drive growth, optimize operations, and maintain a
@@ -71,20 +71,13 @@ const Vision = () => {
             outsourcing non-core activities, companies can streamline
             operations, enhance efficiency, and allocate resources more
             effectively to strategic initiatives.
-            allowing companies to leverage specialized expertise, reduce costs,
-            and focus on core competencies. This model is particularly
-            beneficial for functions such as IT support, customer service, and
-            accounting, where external providers can offer high-quality services
-            at a lower cost compared to maintaining an in-house team. By
-            outsourcing non-core activities, companies can streamline
-            operations, enhance efficiency, and allocate resources more
-            effectively to strategic initiatives.
+            
           </p>
         </div>
 
         <div className="imgleft about-img-animate sm:w-[45%] lg:block hidden">
           <Image
-            src="/chairman.jpg"
+            src="/building.jpg"
             alt="chairman"
             height={1000}
             width={1000}

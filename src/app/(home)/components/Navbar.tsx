@@ -97,7 +97,7 @@ const Navbar = () => {
         }`}
       >
         <main
-          className={`relative overflow-hidden bg-zinc-900 text-white flex justify-end top-0 left-0 w-full items-center py-5 lg:px-20 md:px-10 px-6 z-50`}
+          className={`relative overflow-hidden bg-zinc-800 text-white flex justify-end top-0 left-0 w-full items-center py-4 lg:px-20 md:px-10 px-6 z-50`}
         >
           <figure className="logoanimate absolute sm:left-10 left-2">
             <Image
