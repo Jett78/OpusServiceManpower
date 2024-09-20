@@ -44,7 +44,7 @@ const Vision = () => {
     })
   })
   return (
-    <main className="overflow-hidden mt-8">
+    <main className="overflow-hidden mt-24">
       {/* <h2 className="text-black uppercase font-extrabold text-3xl w-fit mx-auto md:mb-10 ">
         <span className="text-gradient">About {""}</span> 
       </h2> */}
@@ -52,7 +52,7 @@ const Vision = () => {
         <div className="textright lg:w-[50%] w-full">
           <h2 className="font uppercase font-semibold mb-4 text-gradient w-fit text-xl">Know more about us</h2>
           <h1 className="header lg:text-4xl md:text-4xl sm:text-3xl  text-2xl font-bold leading-[1.1em]">
-            Outsourcing and outstaffing solutions for sustainable
+            Recruiting & Outsourcing solutions for sustainable
             <span className="text-gradient"> Business Growth.</span>
           </h1>
           <p className="about-desc font-medium xl:text-[16px] leading-8 md:text-l text-sm text-lighttext my-6">

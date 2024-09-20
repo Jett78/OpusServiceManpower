@@ -220,7 +220,7 @@ const CareerContainer = () => {
     });
   });
   return (
-    <main className="pt-10 w-11/12 mx-auto overflow-hidden">
+    <main className="pt-28 w-11/12 mx-auto overflow-hidden">
       <h2 className="font-extrabold text-3xl uppercase text-gradient w-fit mx-auto">
         Career
       </h2>

@@ -32,7 +32,7 @@ const Vocational = () => {
           <div className="vocationalanimate border bg-[url('/CTA.png')] shadow-md bg-black bg-opacity-80 bg-blend-overlay text-white bg-center flex flex-col justify-center items-center px-6 w-full h-[30em]">
          <div className="grid md:gap-6">
          <h2 className="lg:text-[46px] md:text-[40px] sm:text-[30px] text-2xl font-bold text-center">
-          We Provide Vocational Training Services
+          We Provide Recruiting Services
         </h2>
         <h2 className="lg:text-[46px] md:text-[40px] sm:text-[30px] text-2xl font-bold text-center">
         with Our Manpower Solutions        </h2>

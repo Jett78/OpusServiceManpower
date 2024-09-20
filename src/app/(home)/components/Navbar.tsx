@@ -20,6 +20,25 @@ const navdata = [
 ];
 
 const Navbar = () => {
+ const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const navitems = useRef<any>();
   const [bgBlack, setBgBlack] = useState(false);
   const router = usePathname();
@@ -28,21 +47,21 @@ const Navbar = () => {
   useGSAP(() => {
     const tl = gsap.timeline();
 
-    gsap.from(".navcontainer", {
-      opacity: 0,
-      delay: 0.3,
-      duration: 1,
-    });
-    tl.from(".logoanimate", {
-      opacity: 0,
-      delay: 0.3,
-    });
-    tl.from(navitems.current?.children, {
-      stagger: 0.1,
-      y: -20,
-      delay: 0.5,
-      opacity: 0,
-    });
+    // gsap.from(".navcontainer", {
+    //   opacity: 0,
+    //   delay: 0.3,
+    //   duration: 1,
+    // });
+    // tl.from(".logoanimate", {
+    //   opacity: 0,
+    //   delay: 0.3,
+    // });
+    // tl.from(navitems.current?.children, {
+    //   stagger: 0.1,
+    //   y: -20,
+    //   delay: 0.5,
+    //   opacity: 0,
+    // });
   });
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -67,45 +86,22 @@ const Navbar = () => {
     };
   }, [isMenuOpen]);
 
-  // Set navbar background based on the current page
-  // useEffect(() => {
-  //   if (router === "/") {
-  //     const handleScroll = () => {
-  //       if (window.scrollY > 50) {
-  //         setBgBlack(true);
-  //       } else {
-  //         setBgBlack(false);
-  //       }
-  //     };
-
-  //     window.addEventListener("scroll", handleScroll);
-  //     return () => {
-  //       window.removeEventListener("scroll", handleScroll);
-  //     };
-  //   } else {
-  //     setBgBlack(true); // Set bg black on all other pages
-  //   }
-  // }, [router]);
 
   return (
-    <Headroom>
+    <main>
       <div
-        className={`navcontainer bg-black overflow-hidden w-full z-[200] ${
-          bgBlack
-            ? "bg-black bg-opacity-90 bg-blend-overlay backdrop-filter backdrop-blur-xl"
-            : "bg-transparent"
-        }`}
+        className={`navcontainer shadow-md fixed bg-black overflow-hidden w-full z-[200] ease-in-out duration-500 ${isScrolled?"bg-black text-white":"bg-white"}`}
       >
         <main
-          className={`relative overflow-hidden bg-zinc-800 text-white flex justify-end top-0 left-0 w-full items-center py-4 lg:px-20 md:px-10 px-6 z-50`}
+          className={` overflow-hidden flex justify-between w-full items-center py-2 lg:px-20 md:px-10 px-6 z-50`}
         >
-          <figure className="logoanimate absolute sm:left-10 left-2">
+          <figure className="logoanimate sm:left-10 left-2">
             <Image
-              src="/opusLogo.png"
+              src="/opusLogomain.png"
               alt="logo"
               height={1000}
               width={1000}
-              className="w-36 h-36"
+              className="w-28 h-14"
             />
           </figure>
 
@@ -122,8 +118,10 @@ const Navbar = () => {
                 </Link>
               </div>
             ))}
-            <Link href="/Contact" className="font-semibold text-sm  bg-tertiary rounded-full px-4 py-2">Contact</Link>
           </nav>
+
+          <Link href="/Contact" className={` text-white md:block hidden font-semibold text-sm  bg-tertiary rounded-full px-4 py-2`}>Contact</Link>
+
 
           <div className="md:hidden block" onClick={toggleMenu}>
             {isMenuOpen ? <GiCrossedBones /> : <GiHamburgerMenu />}
@@ -158,7 +156,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </Headroom>
+    </main>
   );
 };
 

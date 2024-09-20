@@ -35,7 +35,7 @@ export default function Page({ params }: { params: { id: string } }) {
   }
 
   return (
-    <main className="mt-10">
+    <main className="pt-28">
       {/* <h2 className="font-bold text-center text-2xl">Job Details</h2> */}
       <div className="my-20 lg:w-7/12 w-11/12 mx-auto border-2 rounded-2xl lg:p-10 p-4 mt-2">
         <h2 className="md:text-xl text-md font-bold">{jobs.title}</h2>

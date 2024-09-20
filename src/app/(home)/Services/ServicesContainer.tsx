@@ -32,7 +32,7 @@ const ServiceContainer: React.FC = () => {
 
   return (
     <main>
-      <div className="w-11/12  mx-auto" ref={mainContainer}>
+      <div className="w-11/12 mt-20  mx-auto" ref={mainContainer}>
         <h2 className="font-extrabold text-3xl uppercase text-black w-fit mx-auto">
           Our <span className="text-gradient">Services</span>
         </h2>

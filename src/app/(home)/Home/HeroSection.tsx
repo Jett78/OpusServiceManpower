@@ -73,7 +73,7 @@ const HeroSection: React.FC = () => {
   });
   return (
     <main
-      className="relative w-full h-screen z-0 overflow-hidden -mt-10
+      className="relative w-full h-screen z-0 overflow-hidden
     "
       ref={herocontent}
     >
