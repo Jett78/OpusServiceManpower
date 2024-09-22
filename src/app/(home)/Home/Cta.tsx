@@ -66,7 +66,7 @@ const Cta = () => {
 
 
 
-<section className="ctanimate overflow-hidden bg-gray-50 md:grid md:grid-cols-2">
+<section className="ctanimate overflow-hidden bg-gray-50 md:grid md:grid-cols-2 place-items-center">
   <div className="ctaanimateleft p-8 md:p-12 lg:px-16 lg:py-24">
     <div className="mx-auto max-w-xl md:text-left text-center">
       <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">
@@ -74,8 +74,8 @@ const Cta = () => {
       </h2>
 
       <p className="hidden text-gray-500 md:mt-4 sm:block">
-      Enhance your efficiency with our tailored manpower services. From temporary to long-term staffing, we’ve got the talent you need. Contact us today! enim et fermentum, augue. Aliquet amet volutpat
-        quisque ut interdum tincidunt duis.
+      Enhance your efficiency with our Opus manpower services. From temporary to long-term staffing, we’ve got the talent you need. Contact us today!
+       
       </p>
 
        <div className="flex flex-wrap items-center justify-center md:justify-start sm:gap-6 mt-4">
@@ -96,7 +96,7 @@ const Cta = () => {
 
   <Image
     alt="tech-image"
-    src="/servicesimg/technology.png"
+    src="/cta.webp"
     width={1000}
     height={1000}
     className="ctanimateright md:block hidden h-56 w-full object-cover sm:h-full"
