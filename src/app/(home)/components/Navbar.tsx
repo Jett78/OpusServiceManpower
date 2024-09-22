@@ -14,13 +14,13 @@ const navdata = [
   { title: "About", path: "/About" },
   { title: "Services", path: "/Services" },
   { title: "Career", path: "/Career" },
-    { title: "Jobs", path: "/jobs" },
+  { title: "Jobs", path: "/jobs" },
 
   { title: "Blog", path: "/blogs" },
 ];
 
 const Navbar = () => {
- const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -86,14 +86,15 @@ const Navbar = () => {
     };
   }, [isMenuOpen]);
 
-
   return (
     <main>
       <div
-        className={`navcontainer shadow-md fixed bg-black overflow-hidden w-full z-[100] ease-in-out duration-500 ${isScrolled?"bg-zinc-800 text-white":"bg-white"}`}
+        className={`navcontainer shadow-md fixed bg-black overflow-hidden w-full z-[100] ease-in-out duration-500 ${
+          isScrolled ? "bg-zinc-800 text-white" : "bg-white"
+        }`}
       >
         <main
-          className={` overflow-hidden flex justify-between w-full items-center md:py-2 lg:px-20 md:px-10 px-6 z-50`}
+          className={` overflow-hidden flex justify-between w-full items-center md:py-2 py-2 lg:px-20 md:px-10 px-6 z-50`}
         >
           <figure className="logoanimate sm:left-10 left-2">
             <Image
@@ -105,13 +106,18 @@ const Navbar = () => {
             />
           </figure>
 
-          <nav className="lg:gap-14 gap-8 md:flex items-center hidden" ref={navitems}>
+          <nav
+            className="lg:gap-14 gap-8 md:flex items-center hidden"
+            ref={navitems}
+          >
             {navdata.map((items, index) => (
               <div key={index} className="list-none">
                 <Link
                   href={items.path}
                   className={`font-semibold text-sm navbarhover ${
-                    router === items.path ? "text-tertiary active font-bold" : ""
+                    router === items.path
+                      ? "text-tertiary active font-bold"
+                      : ""
                   }`}
                 >
                   {items.title}
@@ -120,8 +126,12 @@ const Navbar = () => {
             ))}
           </nav>
 
-          <Link href="/Contact" className={` text-white md:block hidden font-semibold text-sm  bg-[#00AFF0]  hover:bg-blue-500  duration-300 ease-in-out rounded-full px-4 py-2`}>Contact</Link>
-
+          <Link
+            href="/Contact"
+            className={` text-white md:block hidden font-semibold text-sm  bg-[#00AFF0]  hover:bg-blue-500  duration-300 ease-in-out rounded-full px-4 py-2`}
+          >
+            Contact
+          </Link>
 
           <div className="md:hidden block" onClick={toggleMenu}>
             {isMenuOpen ? <GiCrossedBones /> : <GiHamburgerMenu />}
@@ -129,11 +139,11 @@ const Navbar = () => {
         </main>
 
         {/* Mobile menu */}
-        <div className="overflow-x-hidden md:hidden block z-[999]">
+        <div className="overflow-x-hidden md:hidden block">
           <div
             className={`${
               isMenuOpen ? "translate-y-0" : "-translate-y-full"
-            } ease-in-out duration-300 absolute bg-black w-full h-screen top-0 pt-10 inset-0 overflow-x-hidden`}
+            } ease-in-out duration-300 fixed bg-black w-full h-screen top-0 pt-10 inset-0 overflow-x-hidden`}
           >
             <div className="grid place-items-center justify-center gap-8 pt-28">
               {navdata.map((items, index) => (
@@ -150,8 +160,15 @@ const Navbar = () => {
                   </Link>
                 </div>
               ))}
-                          <Link href="/Contact" className="font-semibold text-white text-2xl bg-tertiary rounded-full px-4 py-2">Contact</Link>
-
+              <Link
+                href="/Contact"
+                className="font-semibold text-white text-2xl bg-tertiary rounded-full px-4 py-2"
+              >
+                Contact
+              </Link>
+            </div>
+            <div className="absolute top-10 right-10 z-[200]" onClick={()=> setIsMenuOpen(false)}>
+            <GiCrossedBones />
             </div>
           </div>
         </div>
