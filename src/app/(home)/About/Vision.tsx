@@ -55,7 +55,7 @@ const Vision = () => {
             Recruiting & Outsourcing solutions for sustainable
             <span className="text-gradient"> Business Growth.</span>
           </h1>
-          <p className="about-desc font-medium xl:text-[16px] leading-8 md:text-l text-sm text-lighttext my-6">
+          <p className="about-desc font-medium xl:text-[16px] md:leading-8 leading-6 md:text-l text-sm text-lighttext my-6">
             In today’s rapidly evolving business landscape, companies are
             increasingly turning to outsourcing and outstaffing as strategic
             solutions to drive growth, optimize operations, and maintain a
