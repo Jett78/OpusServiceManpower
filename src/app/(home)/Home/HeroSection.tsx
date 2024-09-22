@@ -77,7 +77,7 @@ const HeroSection: React.FC = () => {
     "
       ref={herocontent}
     >
-      <div className="relative sm:h-screen h-screen w-full ">
+      <div className="relative md:block hidden sm:h-screen h-screen w-full ">
         <Image
           src={demoImg3}
           alt="hero-img"
@@ -90,7 +90,10 @@ const HeroSection: React.FC = () => {
       <div className="absolute lg:left-[3.5em] top-1/2 -translate-y-1/2   xl:w-7/12  z-50">
         <div className="text-black md:mt-14 mt-6 px-6">
           <h2 className="font-clash animateheader font-semibold text-zinc-800 tracking-wider lg:text-[74px] 2xl:text-[4.8vw] 2xl:leading-[0.9em] md:text-[48px]  sm:text-4xl text-4xl sm:leading-[68px]">
-            Looking for a Job?
+            Looking for a
+          </h2>
+          <h2 className="font-clash animateheader font-semibold text-zinc-800 tracking-wider lg:text-[74px] 2xl:text-[4.8vw] 2xl:leading-[0.9em] md:text-[48px]  sm:text-4xl text-4xl sm:leading-[68px]">
+          Job?
           </h2>
           <p
             className="desctext font-medium  md:text-[18px] text-gray-800 lg:py-8 md:py-6

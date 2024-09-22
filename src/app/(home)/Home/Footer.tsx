@@ -1,3 +1,4 @@
+import { Icon } from "@iconify/react/dist/iconify.js";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -65,39 +66,24 @@ const Footer: React.FC = () => {
   return (
     <main className="bg-zinc-900 text-white">
       <footer className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 md:gap-20  gap-10 py-14 lg:px-28 md:px-14 px-4 border-b border-gray-100">
-        <section className="md:space-y-0 space-y-4 grid place-items-center relative">
-          <figure className="absolute lg:-top-10 md:-top-10 sm:-top-24 -top-20 -left-6">
+        <section className="">
+          <figure className="">
             <Image
-              src="/opusLogo.png"
+              src="/opusLogomain.png"
               alt="logo"
               height={1000}
               width={1000}
-              className="w-36 h-36"
+              className="w-20 h-10"
             />{" "}
           </figure>
-          <p className="text-sm font-medium text-gray-300">
+          <p className="text-sm font-medium mt-4 text-gray-300">
             At OPus, we specialize in providing comprehensive manpower solutions
             tailored to meet the unique needs of our clients across diverse
             industries
           </p>
-          {/* <div className="flex gap-4">
-          <Image
-            src="/icons/facebookicon.png"
-            width={30}
-            height={30}
-            alt="icon"
-          />
-          <Image src="/icons/instaicon.png" width={30} height={30} alt="icon" />
-          <Image
-            src="/icons/whatsappicon.png"
-            width={30}
-            height={30}
-            alt="icon"
-          />
-        </div> */}
         </section>
 
-        <section className="grid sm:items-center xl:place-items-center md:place-items-end place-items-start ">
+        <section className="grid lg:ml-16 xl:place-items-start md:place-items-end">
           <h2 className="font-semibold text-lg">Quick Links</h2>
           <ul className="space-y-2 mt-4 text-gray-300 text-sm  font-medium">
             {navdata.map((item, index) => (
@@ -108,7 +94,7 @@ const Footer: React.FC = () => {
           </ul>
         </section>
 
-        <section className="grid sm:items-center xl:place-items-center md:place-items-start place-items-start ">
+        <section className="grid  ">
           <h2 className="font-semibold text-lg">Our Services</h2>
           <ul className="space-y-2 mt-4 text-gray-300 text-sm  font-medium">
             {anotherlink.map((item, index) => (
@@ -119,13 +105,14 @@ const Footer: React.FC = () => {
           </ul>
         </section>
 
-        <section className="md:space-y-8 space-y-4 flex flex-col md:items-end ">
-          <h2 className="font-semibold text-lg ">Get Latest Updates</h2>
-          <p className="md:text-end font-medium text-sm text-gray-300">
-            Subscribe to our newsletter and follow us on social media to receive
-            timely information.
+        <section className=" flex flex-col  xl:place-items-start md:place-items-end">
+          <h2 className="font-semibold text-lg ">Get in Touch</h2>
+          <p className=" font-medium text-sm xl:text-start md:text-end text-gray-300 mt-4">
+            Whether you are looking for more information about our services,
+            need support, or want to explore partnership opportunities, our team
+            is ready to help.
           </p>
-          <div className="flex">
+          {/* <div className="flex">
             <input
               type="text"
               placeholder="Enter your email"
@@ -134,12 +121,48 @@ const Footer: React.FC = () => {
             <button className="bg-[#00AFF0]  hover:bg-blue-500  duration-300 ease-in-out  p-2 px-4 font-medium rounded-tr-xl rounded-br-xl">
               Subscribe
             </button>
+          </div> */}
+          <div className="flex gap-4 mt-4">
+            <Link href="/">
+              <Image
+                src="/icons/facebookicon.png"
+                width={30}
+                height={30}
+                alt="icon"
+              />
+            </Link>
+            <Link href="/">
+              <Image
+                src="/icons/instaicon.png"
+                width={30}
+                height={30}
+                alt="icon"
+              />
+            </Link>
+            <Link href="/">
+              <Image
+                src="/icons/whatsappicon.png"
+                width={30}
+                height={30}
+                alt="icon"
+              />
+            </Link>
+            <div className="bg-white shadow-md w-8 flex justify-center items-center rounded-full">
+              <Link href="/">
+                <Icon icon="logos:tiktok-icon" />
+              </Link>
+            </div>
+            <div className="bg-[#0a66c2] w-8 flex justify-center items-center rounded-full">
+              <Link href="/">
+                <Icon icon="skill-icons:linkedin" />
+              </Link>
+            </div>
           </div>
         </section>
       </footer>
 
       <div className="flex flex-wrap whitespace-nowrap md:justify-between md:gap-20 sm:gap-6 justify-center md:px-20 py-4 px-4 sm:pb-4 pb-20">
-      <div className=" flex items-center gap-1 justify-center">
+        <div className=" flex items-center gap-1 justify-center">
           <FaCopyright />
           <h2 className="text-white tracking-wider text-sm">
             2024 <span>|| All Rights Reserved</span>
@@ -149,7 +172,15 @@ const Footer: React.FC = () => {
         <div className=" flex items-center gap-1 justify-center">
           {/* <FaCopyright /> */}
           <h2 className="text-white tracking-wider text-sm">
-            Designed and Developed by <span className=" font-bold">WebX</span>
+            Designed and Developed by{" "}
+            <Link
+              href="https://webxnep.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className=" font-bold"
+            >
+              WebX
+            </Link>
           </h2>
         </div>
       </div>

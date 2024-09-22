@@ -90,7 +90,7 @@ const Navbar = () => {
   return (
     <main>
       <div
-        className={`navcontainer shadow-md fixed bg-black overflow-hidden w-full z-[200] ease-in-out duration-500 ${isScrolled?"bg-zinc-800 text-white":"bg-white"}`}
+        className={`navcontainer shadow-md fixed bg-black overflow-hidden w-full z-[100] ease-in-out duration-500 ${isScrolled?"bg-zinc-800 text-white":"bg-white"}`}
       >
         <main
           className={` overflow-hidden flex justify-between w-full items-center md:py-2 lg:px-20 md:px-10 px-6 z-50`}
@@ -129,7 +129,7 @@ const Navbar = () => {
         </main>
 
         {/* Mobile menu */}
-        <div className="overflow-x-hidden md:hidden block">
+        <div className="overflow-x-hidden md:hidden block z-[999]">
           <div
             className={`${
               isMenuOpen ? "translate-y-0" : "-translate-y-full"

@@ -30,7 +30,7 @@ export function Form() {
 
   return (
     <div className=" mx-auto  md:rounded-2xl  my-8 ">
-      <h2 className=" font-bold lg:text-5xl md:text-4xl text-3xl text-black   ">
+      <h2 className=" font-semibold lg:text-4xl md:text-3xl text-2xl text-black   ">
         Reach out to us
       </h2>
       <p className=" font-semibold text-sm py-4 max-w-[30em] text-black">
