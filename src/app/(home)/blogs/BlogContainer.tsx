@@ -86,13 +86,13 @@ const BlogContainer: React.FC = () => {
           <Link key={index} href={`/blogs/${item?.slug}`}>
             <div>
               <article className="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
-                <figure className="relative overflow-hidden rounded-lg h-80 hover:scale-90 ease-in-out duration-300">
+                <figure className="relative overflow-hidden rounded-lg h-80 ">
                   <Image
                     src={item?.Image}
                     alt={item?.Title.slice(0, 10)}
                     width={700}
                     height={1000}
-                    className="h-80 w-full object-cover rounded-lg overflow-hidden hover:brightness-50"
+                    className="h-80 w-full object-cover rounded-lg  hover:scale-110 hover:brightness-50  ease-in-out duration-500"
                   />
                   <p className="hidden  group-hover:block absolute text-white top-1/2 -translate-x-1/2 left-1/2 -translate-y-1/2">
                     Read More
