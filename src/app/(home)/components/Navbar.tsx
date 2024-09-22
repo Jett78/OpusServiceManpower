@@ -97,17 +97,28 @@ const Navbar = () => {
           className={` overflow-hidden flex justify-between w-full items-center md:py-2 py-2 lg:px-20 md:px-10 px-6 z-50`}
         >
           <figure className="logoanimate sm:left-10 left-2">
-            <Image
-              src="/opusLogomain.png"
+            {isScrolled ? (
+              <Image
+                src="/Logo-white.png"
+
+                alt="logo"
+                height={1000}
+                width={1000}
+                className="w-24 h-10 object-contain"
+              />
+            ) : (
+              <Image
+              src="/blacklogo.png"
               alt="logo"
-              height={1000}
-              width={1000}
-              className="w-24 h-10"
-            />
+                height={1000}
+                width={1000}
+                className="w-24 h-10 object-contain"
+              />
+            )}
           </figure>
 
           <nav
-            className="lg:gap-14 gap-8 md:flex items-center hidden"
+            className="lg:gap-8 gap-4 md:flex items-center hidden"
             ref={navitems}
           >
             {navdata.map((items, index) => (
@@ -167,8 +178,11 @@ const Navbar = () => {
                 Contact
               </Link>
             </div>
-            <div className="absolute top-10 right-10 z-[200]" onClick={()=> setIsMenuOpen(false)}>
-            <GiCrossedBones />
+            <div
+              className="absolute top-10 right-10 z-[200]"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <GiCrossedBones />
             </div>
           </div>
         </div>

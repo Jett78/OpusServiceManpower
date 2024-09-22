@@ -73,7 +73,7 @@ const Footer: React.FC = () => {
               alt="logo"
               height={1000}
               width={1000}
-              className="w-20 h-10"
+              className="w-28 object-contain h-10"
             />{" "}
           </figure>
           <p className="text-sm font-medium mt-4 text-gray-300">

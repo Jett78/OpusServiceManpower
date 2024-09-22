@@ -23,9 +23,9 @@ const JobsContainer = () => {
           >
             <div>
                  <div className="flex flex-col justify-between gap-2">
-                 <Image src="/companylogo.jpg" alt="companylogo" width={1000} height={1000} className="max-h-10 max-w-10 rounded-full"/>
+                 <Image src="/opuslogoonly.png" alt="companylogo" width={1000} height={1000} className="max-h-14 max-w-14 rounded-full object-contain"/>
 
-                 <h2 className="md:text-lg font-semibold h-10">{item.title}</h2>
+                 <h2 className="md:text-2xl font-semibold text-primary h-10">{item.title}</h2>
                  </div>
             </div>
             <p className="font-regular  md:text-base text-sm py-8">{item.desc}</p>
