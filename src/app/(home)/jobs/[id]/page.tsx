@@ -1,20 +1,3 @@
-// export async function generateStaticParams() {
-//   return matcheddata.map((_, index) => ({
-//     id: index.toString(),
-//   }));
-// }
-
-// export async function generateMetadata({ params }: { params: { id: string } }) {
-//   const dealdata = matcheddata[parseInt(params.id, 10)];
-//   if (!dealdata) {
-//     return {
-//       title: "Blog not found",
-//     };
-//   }
-//   return {
-//     title: dealdata.title,
-//   };
-// }
 "use client";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
@@ -24,6 +7,18 @@ import Link from "next/link";
 
 export default function Page({ params }: { params: { id: string } }) {
   const [active, Setactive] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  // Handle image click
+  const handleImageClick = (img: string) => {
+    setSelectedImage(img); // Set the clicked image
+  };
+
+  // Close modal
+  const closeModal = () => {
+    setSelectedImage(null); // Deselect image
+  };
+
   // Overlay click handler
   const closeDropdown = () => {
     Setactive(false);
@@ -40,12 +35,18 @@ export default function Page({ params }: { params: { id: string } }) {
       {/* <h2 className="font-bold text-center text-2xl">Job Details</h2> */}
 
       <div className=" lg:w-7/12 w-11/12 mx-auto mb-4 ">
-       <Link href="/jobs">
-       
-       <div className="flex items-center gap-2 cursor-pointer grou[">
-          <Icon icon="iconamoon:arrow-left-2-bold" style={{ color:"black" }} />
-          <p className="font-semibold text-lighttext group-hover:text-black ease-in-out duration-300"> Back</p>
-        </div></Link>
+        <Link href="/jobs">
+          <div className="flex items-center gap-2 cursor-pointer grou[">
+            <Icon
+              icon="iconamoon:arrow-left-2-bold"
+              style={{ color: "black" }}
+            />
+            <p className="font-semibold text-lighttext group-hover:text-black ease-in-out duration-300">
+              {" "}
+              Back
+            </p>
+          </div>
+        </Link>
         <div className="border-2 rounded-2xl lg:p-10 p-4 mt-2">
           <h2 className="md:text-xl text-md font-bold">{jobs.title}</h2>
           <section className="flex flex-wrap justify-between">
@@ -90,15 +91,42 @@ export default function Page({ params }: { params: { id: string } }) {
                 alt="vacanacy"
                 width={1000}
                 height={1000}
-                className="w-48 h-52"
+                className="w-48 h-60 cursor-pointer"
+                onClick={() => handleImageClick("/vacancy.png")}
               />
             </figure>
+
+
+            {/* Modal for larger image */}
+            {selectedImage && (
+              <div
+                className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-80 z-50"
+                onClick={closeModal} // Close on clicking outside the image
+              >
+                <div className="relative">
+                  <Image
+                    src={selectedImage}
+                    alt="Enlarged image"
+                    width={1000}
+                    height={1000}
+                    className=" md:w-[25em] w-[15em] h-[50vh] md:h-[70vh] "
+                  />
+                  {/* Close button */}
+                  <button
+                    className="absolute -top-8 -right-6 text-white text-2xl"
+                    onClick={closeModal}
+                  >
+                    &times;
+                  </button>
+                </div>
+              </div>
+            )}
           </section>
 
           <section className="space-y-8 mt-4">
             <div>
               <h2 className="font-bold">About Company</h2>
-              <p className="text-md font-medium p mt-3">
+              <p className="text-md font-mdium p mt-3">
                 We are a leading construction firm based in Dubai, UAE,
                 specializing in large-scale infrastructure projects. With a
                 commitment to quality and innovation, we pride ourselves on

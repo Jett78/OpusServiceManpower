@@ -28,22 +28,22 @@ const JobsContainer = () => {
                  <h2 className="md:text-lg font-semibold h-10">{item.title}</h2>
                  </div>
             </div>
-            <p className="font-regular  md:text-base text-sm py-6">{item.desc}</p>
+            <p className="font-regular  md:text-base text-sm py-8">{item.desc}</p>
 
             <div className="flex flex-col flex-wrap justify-between gap-2">
-              <div className="flex flex-wrap items-center sm:gap-8 gap-2">
-                <div className="flex gap-2 items-center border-tertiary border-2 rounded-full px-4 py-2 w-fit">
+              <div className="flex flex-wrap items-center sm:gap-4 gap-2">
+                <div className="flex gap-2 items-center ">
                   <Icon icon="mdi:location" style={{ color: "black" }} />
                   <h3 className="font-semibold md:text-base text-sm">{item.location}</h3>
                 </div>
-                <div className="flex gap-2 items-center border-tertiary border-2 rounded-full px-4 py-2 w-fit">
+                <div className="flex gap-2 items-center">
                   <Icon icon="mingcute:time-line" style={{ color: "black" }} />{" "}
                   <h3 className="font-semibold md:text-base text-sm">{item.type}</h3>
                 </div>
               </div>
               <Link href={`/jobs/${index}`}>
-              <div className="flex items-center gap-2 cursor-pointer">
-                <h2 className="font-semibold md:text-base text-sm text-tertiary">Apply Now</h2>
+              <div className="flex items-center gap-2 cursor-pointer mt-4 pl-2">
+                <h2 className="font-semibold md:text-base text-sm text-tertiary">Know More</h2>
                 <Icon icon="mingcute:arrow-right-line"  style={{color: "black"}} />
               </div></Link>
             </div>
