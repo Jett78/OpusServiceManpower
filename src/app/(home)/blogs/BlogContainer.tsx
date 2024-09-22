@@ -70,7 +70,7 @@ const BlogContainer: React.FC = () => {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentItems = blogdata.slice(startIndex, startIndex + itemsPerPage);
   return (
-    <div className=" lg:pt-24  pt-20">
+    <div className=" lg:pt-28  pt-20">
       <h2 className="font-extrabold text-3xl uppercase text-black w-fit mx-auto">
         Featured <span className="text-gradient">Blogs</span>
       </h2>
