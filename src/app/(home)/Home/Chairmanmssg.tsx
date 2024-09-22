@@ -38,26 +38,26 @@ const Chairmanmssg: React.FC = () => {
       },
     });
 
-    tl.from(
-      ".mssganimate",
-      {
-        x: 100,
-        opacity: 0,
-        stagger: 1,
-        duration: 2,
-      },
-      "<"
-    );
+    // tl.from(
+    //   ".mssganimate",
+    //   {
+    //     x: 100,
+    //     opacity: 0,
+    //     stagger: 1,
+    //     duration: 2,
+    //   },
+    //   "<"
+    // );
 
-    tl.from(
-      mssgSplit.chars,
-      {
-        duration: 2,
-        opacity: 0,
-        stagger: 0.2,
-      },
-      "<"
-    );
+    // tl.from(
+    //   mssgSplit.chars,
+    //   {
+    //     duration: 2,
+    //     opacity: 0,
+    //     stagger: 0.2,
+    //   },
+    //   "<"
+    // );
   });
 
   return (

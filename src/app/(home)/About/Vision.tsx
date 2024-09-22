@@ -44,7 +44,7 @@ const Vision = () => {
     })
   })
   return (
-    <main className="overflow-hidden mt-24">
+    <main className="overflow-hidden lg:mt-24 md:mt-16 mt-10">
       {/* <h2 className="text-black uppercase font-extrabold text-3xl w-fit mx-auto md:mb-10 ">
         <span className="text-gradient">About {""}</span> 
       </h2> */}

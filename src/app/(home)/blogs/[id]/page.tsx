@@ -67,8 +67,8 @@ export default async function Page({ params }: any) {
 
   return (
     <main className="">
-      <div className="lg:w-9/12 w-11/12 mx-auto md:pt-28 ">
-        <h1 className="font-extrabold lg:text-4xl md:text-3xl uppercase text-2xl md:text-left tracking-wide">
+      <div className="lg:w-9/12 w-11/12 mx-auto  lg:pt-24 pt-20">
+        <h1 className="font-extrabold lg:text-3xl md:text-3xl uppercase text-2xl md:text-left tracking-wide">
           {blog.Title}
         </h1>
         <p className="font-medium md:text-lg text-[12px] pt-8 ">{blog.Intro}</p>
@@ -79,7 +79,7 @@ export default async function Page({ params }: any) {
           height={1000}
           className=" max-h-[65vh] w-full object-cover mx-auto rounded-2xl my-6"
         />
-       <div className="flex justify-between items-center">
+       <div className="flex flex-wrap justify-between items-center">
         <div className="flex items-cente gap-2">
           <Image
             src="/avatar.jpg"
@@ -89,12 +89,12 @@ export default async function Page({ params }: any) {
             className=" h-12 w-12 rounded-full"
           />
           <div>
-            <p className="font-semibold">John Doe</p>
-            <p className="font-semibold">Marketting Officer</p>
+            <p className="font-semibold md:text-base text-sm">John Doe</p>
+            <p className="font-medium md:text-base text-xs">Marketting Officer</p>
           </div>
         </div>
 
-        <p className="font-semibold">{blog?.created_at?.slice(0, 10)}</p>
+        <p className="font-semibold md:text-base text-xs">{blog?.created_at?.slice(0, 10)}</p>
 
        </div>
         <div className="font-medium  md:text-lg text-[12px] md:py-6 py-2">
