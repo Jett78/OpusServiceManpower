@@ -24,24 +24,24 @@ const Certificates = () => {
   }, []);
   const certificateref = useRef<any>(null);
 
-  useGSAP(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".certificatecontainer",
-        start: "top bottom",
-        end: "50% 50%",
-        scrub: 1,
-        // markers: true,
-      },
-    });
+  // useGSAP(() => {
+  //   const tl = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: ".certificatecontainer",
+  //       start: "top bottom",
+  //       end: "50% 50%",
+  //       scrub: 1,
+  //       // markers: true,
+  //     },
+  //   });
 
-    tl.from(certificateref.current?.children, {
-      stagger: 0.5,
-      rotateX: "120deg",
-      duration: 1.5,
-      opacity: 0,
-    });
-  });
+  //   tl.from(certificateref.current?.children, {
+  //     stagger: 0.5,
+  //     rotateX: "120deg",
+  //     duration: 1.5,
+  //     opacity: 0,
+  //   });
+  // });
 
   return (
     <main className="certificatecontainer w-11/12 mx-auto md:my-3 my-10">
@@ -54,37 +54,48 @@ const Certificates = () => {
         clients.
       </p>
       <div
-        className="flex flex-wrap justify-center gap-8 my-20 "
+        className="flex flex-wrap justify-center gap-8 md:my-20 my-8 "
         ref={certificateref}
       >
-        <div className="relative">
-        <Image
-          
-            src="/frame3.jpg"
-            height={1000}
-            width={1000}
-            alt="certificate"
-            className="h-[35em] sm:max-w-[30em] w-[21em]"
-          />
-           {testimonial?.map((item: any, index: number) => (
-          <Image
-            key={index}
-            src={item?.url}
-            height={1000}
-            width={1000}
-            alt="certificate"
-            className="h-[30em] md:w-[18em] w-[12em] object-cover drop-shadow-lg absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
-          />
-        ))}
+        <div className="grid md:grid-cols-2 grid-cols-1 gap-2 lg:grid-cols-3">
+          {certificate.map((item: any, index: number) => (
+            <div key={index} className="relative">
+              <Image
+                src="/frame3.jpg"
+                height={1000}
+                width={1000}
+                alt="certificate"
+                className="h-[28em] sm:max-w-[30em] w-[21em]"
+              />
+              <Image
+                src={item.img}
+                height={1000}
+                width={1000}
+                alt="certificate"
+                className="h-[24em] md:w-[18em] w-[16em] object-cover drop-shadow-lg absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
+              />
+            </div>
+          ))}
         </div>
-       
       </div>
       <button className=" gap-2 w-[260px] mx-auto bg-black text-sm font-semibold h-[60px] my-16 flex items-center justify-center rounded-full cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-tertiary before:via-secondary before:to-[#00AFF0] before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 text-[#fff]">
         <AiOutlineDownload size={32} />
-       Download Company Profile
+        Download Company Profile
       </button>
     </main>
   );
 };
 
 export default Certificates;
+
+const certificate = [
+  {
+    img: "/certificate/certificate1.jpg",
+  },
+  {
+    img: "/certificate/certificate1.jpg",
+  },
+  {
+    img: "/certificate/certificate1.jpg",
+  },
+];

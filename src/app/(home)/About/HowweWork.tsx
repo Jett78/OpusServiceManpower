@@ -40,8 +40,8 @@ const steps = useRef<any>(null)
       <div className="lg:w-10/12 w-11/12 mx-auto flex flex-wrap justify-center gap-20">
         <div className="xl:w-[50%]">
           {/* Updated sticky section */}
-          <section className="textsection sticky top-20">
-            <h2 className="text-gradient uppercase font-bold text-xl w-fit my-4">
+          <section className="textsection sticky top-28">
+            <h2 className="text-tertiary uppercase font-bold text-xl w-fit my-4">
               How we work
             </h2>
             <h2 className="lg:text-4xl md:text-3xl text-3xl font-semibold leading-[1.1em]">
@@ -61,10 +61,10 @@ const steps = useRef<any>(null)
               <div className="gradient min-h-4 min-w-4 rounded-full relative z-10"></div>
               <div className="shadow-md p-3 rounded-lg">
                 <div className="flex gap-2">
-                  <h2 className="font-bold text-2xl font-sans text-gradient">
+                  <h2 className="font-bold text-2xl font-sans text-tertiary">
                     {item.num}.
                   </h2>
-                  <h2 className="font-bold text-2xl font-sans text-gradient">
+                  <h2 className="font-bold text-2xl font-sans text-tertiary">
                     {item.title}
                   </h2>
                 </div>

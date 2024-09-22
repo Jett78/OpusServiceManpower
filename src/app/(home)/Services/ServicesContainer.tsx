@@ -27,7 +27,7 @@ const ServiceContainer: React.FC = () => {
       { y: 0, opacity: 1, stagger: 0.3, scale: 1, ease: "power2.out" }
     );
 
-    tl.to(serviceContainer.current?.children, { scale: 0.5 });
+    // tl.to(serviceContainer.current?.children, { scale: 0.5 });
   });
 
   return (
@@ -55,7 +55,7 @@ const ServiceContainer: React.FC = () => {
                     <h2 className="font-extrabold lg:text-9xl md:text-6xl sm:text-4xl text-4xl font-sans text-gradient">
                       {item.num}
                     </h2>
-                    <h2 className="font-bold lg:text-5xl md:text-4xl text-2xl max-w-80 ">
+                    <h2 className="font-bold lg:text-4xl md:text-4xl text-2xl max-w-80 ">
                       {item.title}
                     </h2>
                   </div>

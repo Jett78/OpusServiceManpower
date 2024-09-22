@@ -73,7 +73,7 @@ const Chairmanmssg: React.FC = () => {
                 Honest Services for Sustained Results
               </h3>
             </div>
-            <p className="mssgdescanimate font-medium text-sm">
+            <p className=" font-medium text-sm">
               It is with great pride and gratitude that I welcome you to our
               company, a leading provider of comprehensive manpower solutions.
               At the heart of our operations lies a commitment to excellence,

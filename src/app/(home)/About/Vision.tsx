@@ -6,6 +6,8 @@ import Image from "next/image";
 import CountUp from 'react-countup'
 import { useInView } from 'react-intersection-observer';
 import { useGSAP } from "@gsap/react";
+import { FaHandsHelping } from "react-icons/fa";
+
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -153,17 +155,18 @@ const details = [
 ];
 
 const aboutdata = [
+
+  {
+    title: "Our Mission",
+    desc: "We seek to provide our clients with the flexibility they need to adapt to changing market conditions and business requirements. Our solutions are designed to be agile and scalable, ensuring that our clients can respond quickly to new opportunities and challenges..",
+    border: "#26538C",
+    img: <FaHandsHelping />    ,
+  },
   {
     title: "Our Vision",
     desc: "We envision a future where our clients can seamlessly access top-tier talent, cutting-edge technology, and strategic expertise, allowing them to focus on their core business objectives while we handle the complexities of workforce management.",
     border: "#CC1587",
     img: <TbDeviceVisionPro />,
-  },
-  {
-    title: "Our Mission",
-    desc: "We seek to provide our clients with the flexibility they need to adapt to changing market conditions and business requirements. Our solutions are designed to be agile and scalable, ensuring that our clients can respond quickly to new opportunities and challenges..",
-    border: "#26538C",
-    img: <GoGoal />,
   },
   {
     title: "Our Goals",

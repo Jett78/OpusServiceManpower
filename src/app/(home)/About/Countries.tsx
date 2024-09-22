@@ -89,12 +89,12 @@ const Countries = () => {
     
   };
   return (
-    <main className="countriescontainer md:my-28 my-10 bg-gray-50 py-16">
-      <h2 className="font-bold sm:text-2xl text-xl w-fit mx-auto uppercase text-center">
-        Our Operating <span className="text-gradient font-extrabold ">Countries</span>
+    <main className="countriescontainer md:my-28 my-10 bg-zinc-800 py-16">
+      <h2 className="font-bold sm:text-2xl text-xl w-fit mx-auto uppercase  text-white text-center">
+        Our Operating <span className="text-tertiary font-extrabold ">Countries</span>
       </h2>
 
-      <div className="bg-gray-50 mt-10">
+      <div className="bg-zinc-800 mt-10">
         <Slider {...settings}>
           {testimonial?.map((item:any, index:number) => (
             <div key={index}>

@@ -126,7 +126,7 @@ const TrustComponent = () => {
     ],
   };
   return (
-    <main className="trustcomponent md:my-28 my-10 bg-gray-50 py-16">
+    <main className="trustcomponent bg-gray-50 py-16">
       <h2 className="font-bold sm:text-2xl text-xl w-fit mx-auto uppercase text-center">
         <span className="text-gradient font-extrabold ">Trusted </span>by 1000+
         Companies
