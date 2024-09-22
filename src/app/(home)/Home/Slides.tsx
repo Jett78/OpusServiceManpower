@@ -64,23 +64,23 @@ const Slides = () => {
   };
 
   return (
-    <main className="md:my-28 my-6 max-w-screen bg-gray-50 py-14">
+    <main className="md:my-28 my-6 max-w-screen bg-zinc-800 py-14">
       <div className=" relative">
         {/* <div className="absolute left-0 top-0 w-[15rem] z-30 bg-gradient-to-r from-white via-white  to-transparent h-full"></div> */}
         {/* <div className="absolute right-0 top-0 w-[15rem] z-30 bg-gradient-to-l from-white via-white  to-transparent h-full"></div> */}
-        <h2 className="font-bold sm:text-2xl text-xl w-fit mx-auto uppercase text-center pb-10">
-        <span className="text-gradient font-extrabold ">Trusted </span>by 1000+
-        Companies
-      </h2>
+        <h2 className="font-bold sm:text-2xl text-xl w-fit mx-auto text-white uppercase text-center pb-10">
+          <span className="text-tertiary font-extrabold ">Trusted </span>by 100+
+          Companies
+        </h2>
         <Slider {...settings}>
-          {testimonial?.map((item: any, index: number) => (
+          {companies.map((item: any, index: number) => (
             <div key={index} className="">
               <Image
-                src={item?.url}
+                src={item.img}
                 alt="icons-company"
                 width={100}
                 height={100}
-                className=" object-cover rounded-lg"
+                className=" object-cover rounded-lg h-20"
               />
             </div>
           ))}
@@ -94,33 +94,21 @@ export default Slides;
 
 const companies = [
   {
-    img: "/companies/client_1.png",
+    img: "/companies/client10.png",
   },
   {
-    img: "/companies/client_2.png",
+    img: "/companies/client11.png",
   },
   {
-    img: "/companies/client_3.png",
+    img: "/companies/client12.png",
   },
   {
-    img: "/companies/client_4.png",
+    img: "/companies/client10.png",
   },
   {
-    img: "/companies/client_5.png",
+    img: "/companies/client11.png",
   },
   {
-    img: "/companies/client_6.png",
-  },
-  {
-    img: "/companies/client_7.png",
-  },
-  {
-    img: "/companies/client_8.png",
-  },
-  {
-    img: "/companies/client_9.png",
-  },
-  {
-    img: "/companies/client_10.png",
+    img: "/companies/client12.png",
   },
 ];

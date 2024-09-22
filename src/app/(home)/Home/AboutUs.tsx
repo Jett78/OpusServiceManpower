@@ -19,98 +19,98 @@ const AboutUs: React.FC = () => {
   const { ref, inView } = useInView({ triggerOnce: true });
 
 
-  useGSAP(() => {
-    const descSplit = new SplitType(".about-desc");
+  // useGSAP(() => {
+  //   const descSplit = new SplitType(".about-desc");
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: aboutContainer.current,
-        start: "top bottom",
-        end: "50% 50%",
-        scrub: 1,
-        // markers: true,
-      },
-    });
+  //   const tl = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: aboutContainer.current,
+  //       start: "top bottom",
+  //       end: "40% 40%",
+  //       scrub: 1,
+  //       // markers: true,
+  //     },
+  //   });
 
-    tl.from(".about", {
-      opacity: 1,
-      y: 24,
-      duration: 2,
-    });
-    tl.from(".header", {
-      opacity: 0,
-      x: 20,
-      duration: 2,
-    });
+  //   tl.from(".about", {
+  //     opacity: 1,
+  //     y: 24,
+  //     duration: 1,
+  //   });
+  //   tl.from(".header", {
+  //     opacity: 0,
+  //     x: -20,
+  //     duration: 1,
+  //   });
 
-    tl.from(
-      descSplit.chars,
-      {
-        duration: 2,
-        opacity: 0,
-        stagger: 0.2,
-      },
-      "<"
-    );
+  //   tl.from(
+  //     descSplit.chars,
+  //     {
+  //       duration: 1,
+  //       opacity: 0,
+  //       stagger: 0.2,
+  //     },
+  //     "<"
+  //   );
 
-    //img-reveal animation
-    gsap.fromTo(
-      ".about-img-animate",
-      {
-        clipPath: "inset(0 0 100% 0)",
-        opacity: 1,
-      },
-      {
-        clipPath: "inset(0 0 0% 0)",
-        opacity: 1,
-        duration: 4,
-        scrollTrigger: {
-          trigger: ".about-img-animate",
-          start: "top 70%",
-          end: "bottom bottom",
-          scrub: 1,
-          // markers: true,
-        },
-      }
-    );
+  //   //img-reveal animation
+  //   gsap.fromTo(
+  //     ".about-img-animate",
+  //     {
+  //       clipPath: "inset(0 0 100% 0)",
+  //       opacity: 1,
+  //     },
+  //     {
+  //       clipPath: "inset(0 0 0% 0)",
+  //       opacity: 1,
+  //       duration: 4,
+  //       scrollTrigger: {
+  //         trigger: ".about-img-animate",
+  //         start: "top 70%",
+  //         end: "bottom bottom",
+  //         scrub: 1,
+  //         // markers: true,
+  //       },
+  //     }
+  //   );
 
-    gsap.fromTo(
-      ".parallaxbg",
-      {
-        clipPath: "inset(0 0 100% 0)",
-        opacity: 1,
-      },
-      {
-        clipPath: "inset(0 0 0% 0)",
-        opacity: 1,
-        duration: 1,
-        scrollTrigger: {
-          trigger: ".parallaxbg",
-          start: "top bottom",
-          end: "50% 50%",
-          scrub: 1,
-          // markers: true,
-        },
-      }
-    );
-  });
+  //   // gsap.fromTo(
+  //   //   ".parallaxbg",
+  //   //   {
+  //   //     clipPath: "inset(0 0 100% 0)",
+  //   //     opacity: 1,
+  //   //   },
+  //   //   {
+  //   //     clipPath: "inset(0 0 0% 0)",
+  //   //     opacity: 1,
+  //   //     duration: 1,
+  //   //     scrollTrigger: {
+  //   //       trigger: ".parallaxbg",
+  //   //       start: "top bottom",
+  //   //       end: "50% 50%",
+  //   //       scrub: 1,
+  //   //       // markers: true,
+  //   //     },
+  //   //   }
+  //   // );
+  // });
 
   return (
-    <main>
-      <div className=" w-11/12 3xl:w-9/12 mx-auto md:my-20 my-8" ref={aboutContainer}>
+    <main className="bg-zinc-800">
+      <div className=" w-11/12 3xl:w-9/12 mx-auto md:py-20 p-8" ref={aboutContainer}>
         <section className="grid md:grid-cols-2 gap-4 justify-center items-start ">
           <div className=" md:sticky top-[5em]">
             <div className="h-[24px] overflow-hidden mb-2">
             </div>
-            <h1 className="header lg:text-4xl md:text-3xl text-3xl font-bold leading-[1.1em]">
+            <h1 className="header lg:text-4xl text-white md:text-3xl text-3xl font-bold leading-[1.1em]">
               Outsourcing and outstaffing solutions for sustainable
-              <span className="text-gradient"> Business Growth.</span>
+              <span className="text-tertiary"> Business Growth.</span>
             </h1>
           </div>
 
           <div className="about-img-animate ">
 
-            <p className="about-desc w-full font-medium md:text-lg text-sm text-lighttext my-6">
+            <p className=" font-medium md:text-lg text-sm text-gray-100 my-6">
               In todays rapidly evolving business landscape, companies are
               increasingly turning to outsourcing and outstaffing as strategic
               solutions to drive growth, optimize operations, and maintain a
@@ -121,7 +121,7 @@ const AboutUs: React.FC = () => {
             
             <button className="md:mt-4 font-semibold flex items-center animate-bounce">
               <Link href="/About">
-                <p className="text-gradient ">Read More</p>
+                <p className="text-tertiary ">Read More</p>
               </Link>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -135,7 +135,7 @@ const AboutUs: React.FC = () => {
                 />
               </svg>
             </button>
-            <div className="text-black grid grid-cols-2 items-center justify-center gap-10 py-10">
+            <div className="text-white grid grid-cols-2 items-center justify-center gap-10 py-10">
               {details.map((item:any, index) => (
                 <div key={index} className="grid place-items-center">
                   <h2
@@ -147,7 +147,7 @@ const AboutUs: React.FC = () => {
                   </h2>
 
 
-                  <h3 className="font-extrabold md:text-l text-[12px] uppercase pt-2 text-gradient">
+                  <h3 className="font-extrabold md:text-l text-[12px] uppercase pt-2 text-tertiary">
                     {item.text}
                   </h3>
 
@@ -159,7 +159,7 @@ const AboutUs: React.FC = () => {
       </div>
 
       {/* parallax background */}
-      <div className="parallaxbg bg-parallax2 bg-fixed h-[40vh] bg-cover bg-black bg-blend-overlay bg-opacity-50">
+      <div className="parallaxbg bg-parallax2 bg-fixed h-[40vh] bg-cover">
        
       </div>
     </main>
