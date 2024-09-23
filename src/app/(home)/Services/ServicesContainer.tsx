@@ -134,7 +134,7 @@ const servicesdata = [
   },
   {
     num: "08",
-    img: "/servicesimg/technology.png",
+    img: "/servicesimg/prosupport.webp",
     title: "Pro Support",
     desc: "Our Manpower Support Services provide businesses with access to skilled professionals tailored to meet your operational needs. Whether you're looking to fill short-term project gaps, require specialized expertise, or need to scale your team efficiently, we deliver flexible, reliable staffing solutions across various industries. Our services include.With a dedicated team of recruitment experts and a vast network of professionals, we ensure that your business operates smoothly and efficiently with the right talent at the right time.",
   },

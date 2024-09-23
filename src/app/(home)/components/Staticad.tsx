@@ -33,9 +33,9 @@ useEffect(() => {
     <>
     {showAd && (
       <div className="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-black/50 backdrop-filter backdrop-blur-sm bg-opacity-50 z-[200]">
-        <div className="relative  md:w-[25em] md:h-[30em] h-[20em] w-[18em]  p-4 rounded-md ">
+        <div className="relative  md:w-[25em] md:h-[30em] h-[20em] w-[18em]  p-2 rounded-md ">
           <button
-            className="absolute -top-10 -right-8 outline-none m-2 text-3xl"
+            className="absolute -top-10 -right-4 outline-none m-2 text-3xl"
             onClick={handleCloseAd}
           >
           <Icon icon="material-symbols:cancel"  style={{color: "#ffffff"}} />
@@ -45,7 +45,7 @@ useEffect(() => {
             alt="Ad"
             width={1000}
             height={1000}
-            className="object-cover"
+            className=" h-full"
           />
         </div>
       </div>
