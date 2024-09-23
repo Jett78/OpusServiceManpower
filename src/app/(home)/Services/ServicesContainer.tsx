@@ -38,7 +38,7 @@ const ServiceContainer: React.FC = () => {
         <h2 className="font-extrabold text-3xl uppercase text-black w-fit md:mx-auto ml-2">
           Our <span className="text-gradient">Services</span>
         </h2>
-        <p className="font-medium text-md md:max-w-[60em] max-w-full md:mx-auto mx-2 sm:text-l text-sm py-2 md:text-center">
+        <p className="font-medium text-md md:max-w-[50em] max-w-full md:mx-auto mx-2 sm:text-base text-xs py-2 md:text-center">
           Explore our comprehensive range of services designed to meet your
           diverse needs, from industrial and IT solutions to transportation and
           construction services.

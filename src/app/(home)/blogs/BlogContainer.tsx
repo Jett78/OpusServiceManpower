@@ -74,7 +74,7 @@ const BlogContainer: React.FC = () => {
       <h2 className="font-extrabold text-3xl uppercase text-black w-fit md:mx-auto ml-2">
         Featured <span className="text-gradient">Blogs</span>
       </h2>
-      <p className=" font-medium text-md max-w-[60em] md:mx-auto mx-2 sm:text-l text-sm py-2 md:text-center">
+      <p className=" font-medium text-md max-w-[60em] md:mx-auto mx-2 sm:text-base text-xs py-2 md:text-center">
         Stay updated with the latest insights and trends in the industry through
         our featured blogs. Our expert-written articles cover a wide array of
         topics, offering valuable information and practical advice to help you

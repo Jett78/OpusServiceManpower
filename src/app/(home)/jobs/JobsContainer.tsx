@@ -9,7 +9,7 @@ const JobsContainer = () => {
       <h2 className="font-extrabold text-3xl uppercase text-gradient w-fit md:mx-auto ml-2">
         Jobs Opening
       </h2>
-      <p className=" font-medium text-md md:max-w-[65em] max-w-full md:mx-auto mx-2 py-2 md:text-center sm:text-l text-sm">
+      <p className=" font-medium text-md md:max-w-[50em] max-w-full md:mx-auto mx-2 py-2 md:text-center sm:text-base text-xs">
         Explore a world of opportunities with our latest job openings. Whether
         you're looking to grow your career or take the next step, we have the
         perfect role waiting for you. Start your journey today!
@@ -28,7 +28,7 @@ const JobsContainer = () => {
                  <h2 className="md:text-2xl font-semibold text-primary h-10">{item.title}</h2>
                  </div>
             </div>
-            <p className="font-regular  md:text-base text-sm py-8">{item.desc}</p>
+            <p className="font-medium  md:text-base text-sm py-10">{item.desc}</p>
 
             <div className="flex flex-col flex-wrap justify-between gap-2">
               <div className="flex flex-wrap items-center sm:gap-4 gap-2">

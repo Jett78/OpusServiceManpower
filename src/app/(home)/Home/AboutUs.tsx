@@ -97,7 +97,7 @@ const AboutUs: React.FC = () => {
 
   return (
     <main className="bg-zinc-800">
-      <div className=" w-11/12 3xl:w-9/12 mx-auto md:py-20 " ref={aboutContainer}>
+      <div className=" w-11/12 3xl:w-9/12 mx-auto md:py-20 py-4 " ref={aboutContainer}>
         <section className="grid md:grid-cols-2 gap-4 justify-center items-start ">
           <div className=" md:sticky top-[5em]">
             <div className="h-[24px] overflow-hidden mb-2">
@@ -135,11 +135,11 @@ const AboutUs: React.FC = () => {
                 />
               </svg>
             </button>
-            <div className="text-white grid grid-cols-2 items-center justify-center gap-10 py-10">
+            <div className="text-white grid grid-cols-2 items-center justify-center gap-10 py-10  border-2 mt-4 border-gray-200 rounded-xl">
               {details.map((item:any, index) => (
                 <div key={index} className="grid place-items-center">
                   <h2
-                    className="font-extrabold lg:text-6xl md:text-5xl text-4xl"
+                    className="font-extrabold lg:text-6xl md:text-5xl text-3xl"
                     ref={ref}
                   >
                   {inView &&  <CountUp start={0} end={item.num} duration={2}/> }
@@ -147,7 +147,7 @@ const AboutUs: React.FC = () => {
                   </h2>
 
 
-                  <h3 className="font-extrabold md:text-l text-[12px] uppercase pt-2 text-tertiary">
+                  <h3 className="font-extrabold md:text-base text-[10px] uppercase pt-2 text-tertiary">
                     {item.text}
                   </h3>
 

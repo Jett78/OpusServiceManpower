@@ -31,7 +31,7 @@ export default function Page({ params }: { params: { id: string } }) {
   }
 
   return (
-    <main className="md:pt-24 pt-16">
+    <main className="md:pt-24 pt-20">
       {/* <h2 className="font-bold text-center text-2xl">Job Details</h2> */}
 
       <div className=" lg:w-7/12 w-11/12 mx-auto mb-4 ">
@@ -126,7 +126,7 @@ export default function Page({ params }: { params: { id: string } }) {
           <section className="space-y-8 mt-4">
             <div>
               <h2 className="font-bold">About Company</h2>
-              <p className="text-md font-mdium p mt-3">
+              <p className="text-md md:text-base text-sm font-medium p mt-3">
                 We are a leading construction firm based in Dubai, UAE,
                 specializing in large-scale infrastructure projects. With a
                 commitment to quality and innovation, we pride ourselves on
@@ -140,7 +140,7 @@ export default function Page({ params }: { params: { id: string } }) {
             </div>
             <div>
               <h2 className="font-bold">Job Details & Responsibilities</h2>
-              <p className="text-md font-medium  mt-3">
+              <p className="text-md md:text-base text-sm font-medium  mt-3">
                 We are a leading construction firm based in Dubai, UAE,
                 specializing in large-scale infrastructure projects. With a
                 commitment to quality and innovation, we pride ourselves on
@@ -154,7 +154,7 @@ export default function Page({ params }: { params: { id: string } }) {
             </div>
             <div>
               <h2 className="font-bold">Skills & Responsibilities</h2>
-              <p className="text-md font-medium mt-3">
+              <p className="text-md md:text-base text-sm font-medium mt-3">
                 As a Construction Laborer, you will be responsible for
                 supporting various construction projects by performing manual
                 tasks such as digging, lifting, and transporting materials.

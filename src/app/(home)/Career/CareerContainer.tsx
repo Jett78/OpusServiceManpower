@@ -225,7 +225,7 @@ const CareerContainer = () => {
         <h2 className="font-extrabold text-3xl uppercase text-gradient w-fit md:mx-auto ml-2">
           Career
         </h2>
-        <p className="font-medium text-md md:max-w-[60em] max-w-full md:mx-auto mx-2 py-2 md:text-center sm:text-l text-sm">
+        <p className="font-medium text-md md:max-w-[50em] max-w-full md:mx-auto mx-2 py-2 md:text-center sm:text-base text-xs">
           We find solutions for your manpower needs by thoroughly understanding
           your requirements and providing skilled professionals who meet your
           exact specifications. Our tailored strategies ensure you have the
