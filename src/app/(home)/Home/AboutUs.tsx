@@ -139,7 +139,7 @@ const AboutUs: React.FC = () => {
               {details.map((item:any, index) => (
                 <div key={index} className="grid place-items-center">
                   <h2
-                    className="font-extrabold lg:text-6xl md:text-5xl text-3xl"
+                    className="font-extrabold lg:text-6xl md:text-4xl text-3xl"
                     ref={ref}
                   >
                   {inView &&  <CountUp start={0} end={item.num} duration={2}/> }
@@ -147,7 +147,7 @@ const AboutUs: React.FC = () => {
                   </h2>
 
 
-                  <h3 className="font-extrabold md:text-base text-[10px] uppercase pt-2 text-tertiary">
+                  <h3 className="font-extrabold lg:text-base text-[10px] uppercase pt-2 text-tertiary">
                     {item.text}
                   </h3>
 

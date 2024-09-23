@@ -97,7 +97,7 @@ const HeroSection: React.FC = () => {
           </h2>
           <p
             className="desctext font-medium  md:text-[18px] text-gray-800 lg:py-8 md:py-6
-           py-4 md:max-w-[35em] min-w-[14em] leading-6"
+           py-4 lg:max-w-[35em] md:max-w-[24em] min-w-[14em] leading-6"
           >
             We have exciting career opportunities waiting for you across the
             Middle East. Whether you're looking to advance your career, explore
