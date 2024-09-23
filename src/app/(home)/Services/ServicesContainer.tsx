@@ -21,11 +21,13 @@ const ServiceContainer: React.FC = () => {
       },
     });
 
+    if(window.innerWidth >= 768){
     tl.fromTo(
       serviceContainer.current?.children,
       { y: 100, opacity: 0, scale: 0.5 },
       { y: 0, opacity: 1, stagger: 0.3, scale: 1, ease: "power2.out" }
     );
+  }
 
     // tl.to(serviceContainer.current?.children, { scale: 0.5 });
   });
@@ -43,7 +45,7 @@ const ServiceContainer: React.FC = () => {
         </p>
 
         <div className="md:my-16">
-          <div className="grid gap-20" ref={serviceContainer}>
+          <div className="grid md:gap-20 gap-10" ref={serviceContainer}>
             {servicesdata.map((item: any, index) => (
               <div key={index} className="grid gap-8">
                 <div

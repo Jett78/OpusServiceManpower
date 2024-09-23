@@ -97,7 +97,7 @@ const AboutUs: React.FC = () => {
 
   return (
     <main className="bg-zinc-800">
-      <div className=" w-11/12 3xl:w-9/12 mx-auto md:py-20 p-8" ref={aboutContainer}>
+      <div className=" w-11/12 3xl:w-9/12 mx-auto md:py-20 " ref={aboutContainer}>
         <section className="grid md:grid-cols-2 gap-4 justify-center items-start ">
           <div className=" md:sticky top-[5em]">
             <div className="h-[24px] overflow-hidden mb-2">
@@ -130,7 +130,7 @@ const AboutUs: React.FC = () => {
                 viewBox="0 0 24 24"
               >
                 <path
-                  fill="currentColor"
+                  fill="white"
                   d="M8 7a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v8a1 1 0 1 1-2 0V9.414l-8.293 8.293a1 1 0 0 1-1.414-1.414L14.586 8H9a1 1 0 0 1-1-1"
                 />
               </svg>

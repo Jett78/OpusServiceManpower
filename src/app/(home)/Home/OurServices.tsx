@@ -93,8 +93,8 @@ const OurServices: React.FC = () => {
                 transportation and construction services.
               </p>
             </div>
-            <button className="animate-button">
-              View More
+            <button className="animate-button ">
+              <Link href="/Services">View more</Link>
             </button>
           </section>
 
@@ -145,12 +145,10 @@ const OurServices: React.FC = () => {
             and construction services.
           </p>
         </div>
-        <button className="animate-button">
-          View More
-        </button>
+        <button className="animate-button !hidden">View More</button>
       </section>
 
-      <section className="md:hidden block mx-2 my-6">
+      <section className="md:hidden block my-6 px-4">
         <Slider {...settings}>
           {services.map((item, index) => (
             <div
@@ -176,7 +174,9 @@ const OurServices: React.FC = () => {
           ))}
         </Slider>
 
-        <button className="animate-button !my-6">View More</button>
+        <button className="animate-button !my-6 !w-fit !px-4 ">
+          <Link href="/Services">View more </Link>
+        </button>
       </section>
     </div>
   );

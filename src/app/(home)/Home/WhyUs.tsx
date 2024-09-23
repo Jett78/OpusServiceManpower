@@ -155,7 +155,7 @@ const WhyUs = () => {
           </div>
 
           <Link href="/Services" className="md:hidden block">
-              <button className=" animate-button !my-6">
+              <button className=" animate-button !w-fit !px-4 !my-6">
                 Know More
               </button>
             </Link>
