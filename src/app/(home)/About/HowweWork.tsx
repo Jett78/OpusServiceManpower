@@ -38,7 +38,7 @@ const steps = useRef<any>(null)
   return (
     <main className="content md:py-20 text-white py-10 bg-zinc-900">
       <div className="lg:w-10/12 w-11/12 mx-auto flex flex-wrap justify-center gap-20">
-        <div className="xl:w-[50%]">
+        <div className="xl:w-[50%] ">
           {/* Updated sticky section */}
           <section className="textsection sticky top-28">
             <h2 className="text-tertiary uppercase font-bold text-xl w-fit my-4">
