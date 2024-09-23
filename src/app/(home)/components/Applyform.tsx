@@ -8,20 +8,18 @@ const Applyform = ({closeDropdown}:any) => {
         <Icon icon="material-symbols:cancel"  style={{color: "red"}} />
         </div>
       <div>
-        <p className="italic lg:text-[0.8vw] xl:text-sm text-xs md:block hidden text-center w-[90%] mx-auto">
-          We specialize in providing skilled professionals across industries
-          like construction, oil and gas, hospitality, and more, we’re here to
-          help you find the right talent.
+        <p className=" lg:text-[1vw] xl:text-xl text-md font-bold   text-center w-[90%] mx-auto">
+         Apply Now
         </p>
-        <h3 className="font-medium lg:text-[1.2vw] xl:text-xl text-xs text-center md:py-4 py-2 ">
+        {/* <h3 className="font-medium lg:text-[1.2vw] xl:text-xl text-xs text-center md:py-4 py-2 ">
           Contact us today to access top talent for your business needs.
-        </h3>
+        </h3> */}
 
-        <div className="sm:w-[25em] bg-[#2088CA] mx-auto h-[1.2px]"> </div>
+        {/* <div className="sm:w-[25em] bg-[#2088CA] mx-auto h-[1.2px]"> </div> */}
       </div>
 
       
-      <form action="" className="col-span-3  md:py-5 py-2 md:mt-5  gap-x-14">
+      <form action="" className="col-span-3  md:py-4 py-2 md:mt-5  gap-x-14">
            <div className="grid md:grid-cols-2 gap-x-8 gap-y-2">
 
            <div className="flex flex-col md:gap-2 sm:w-full w-60 mx-auto">
