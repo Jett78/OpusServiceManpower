@@ -35,10 +35,10 @@ const ServiceContainer: React.FC = () => {
   return (
     <main>
       <div className="w-11/12  lg:mt-16 md:mt-14 mt-10 mx-auto" ref={mainContainer}>
-        <h2 className="font-extrabold text-3xl uppercase text-black w-fit mx-auto">
+        <h2 className="font-extrabold text-3xl uppercase text-black w-fit md:mx-auto ml-2">
           Our <span className="text-gradient">Services</span>
         </h2>
-        <p className="font-medium text-md max-w-[60em] md:mx-auto mx-2 sm:text-l text-sm py-2 text-center">
+        <p className="font-medium text-md md:max-w-[60em] max-w-full md:mx-auto mx-2 sm:text-l text-sm py-2 md:text-center">
           Explore our comprehensive range of services designed to meet your
           diverse needs, from industrial and IT solutions to transportation and
           construction services.

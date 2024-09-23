@@ -5,11 +5,11 @@ import Image from "next/image"
 
 const JobsContainer = () => {
   return (
-    <main className="md:pt-28 pt-20 md:w-10/12 w-10/12 mx-auto overflow-hidden">
-      <h2 className="font-extrabold text-3xl uppercase text-gradient w-fit mx-auto">
+    <main className="md:pt-28 pt-20 md:w-10/12 w-11/12 mx-auto overflow-hidden">
+      <h2 className="font-extrabold text-3xl uppercase text-gradient w-fit md:mx-auto ml-2">
         Jobs Opening
       </h2>
-      <p className=" font-medium text-md md:max-w-[65em] w-full md:mx-auto mx-2 py-2 text-center sm:text-l text-sm">
+      <p className=" font-medium text-md md:max-w-[65em] max-w-full md:mx-auto mx-2 py-2 md:text-center sm:text-l text-sm">
         Explore a world of opportunities with our latest job openings. Whether
         you're looking to grow your career or take the next step, we have the
         perfect role waiting for you. Start your journey today!

@@ -11,7 +11,7 @@ import Countries from './Countries'
 
 const ABoutContainer = () => {
   return (
-    <div className='pt-10'>
+    <div className='pt-10 overflow-hidden md:overflow-visible'>
       <Vision/>
       <HowweWork/>
       <TrustComponent/>
