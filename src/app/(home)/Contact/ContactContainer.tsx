@@ -6,7 +6,7 @@ import { IoCall } from "react-icons/io5";
 
 const ContactContainer = () => {
   return (
-    <div className="bg-gray-200 md:pt-14 pt-8">
+    <div className="bg-gray-200 pt-14">
      
       <Contactus />
 

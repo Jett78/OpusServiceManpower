@@ -67,7 +67,7 @@ const Footer: React.FC = () => {
     <main className="bg-zinc-900 text-white">
       <footer className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 md:gap-20  gap-10 py-14 lg:px-28 md:px-14 px-4 border-b border-gray-100">
         <section className="">
-          <figure className="">
+          <figure className="-ml-3">
             <Image
               src="/opusLogomain.png"
               alt="logo"

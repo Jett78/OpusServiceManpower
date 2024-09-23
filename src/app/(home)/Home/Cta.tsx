@@ -23,11 +23,11 @@ const Cta = () => {
 
     tl.from(".ctaanimateleft",{
       x:-40,
-      opacity:0,
+      opacity:0.5,
     })
     tl.from(".ctanimateright",{
       x:40,
-      opacity:0,
+      opacity:0.5,
     })
   
   })
