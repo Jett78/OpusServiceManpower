@@ -15,7 +15,7 @@ const JobsContainer = () => {
         perfect role waiting for you. Start your journey today!
       </p>
 
-      <div className="grid md:grid-cols-3 gap-10 md:my-20 my-10">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-10 md:my-20 my-10">
         {jobsdata.map((item, index) => (
           <div
             key={index}
