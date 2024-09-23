@@ -89,7 +89,7 @@ const Navbar = () => {
   return (
     <main>
       <div
-        className={`navcontainer shadow-md fixed bg-black overflow-hidden w-full z-[100] ease-in-out duration-500 ${
+        className={`navcontainer shadow-md fixed bg-black overflow-hidden w-full z-[200] ease-in-out duration-500 ${
           isScrolled ? "bg-zinc-800 text-white" : "bg-white"
         }`}
       >
@@ -100,7 +100,6 @@ const Navbar = () => {
             {isScrolled ? (
               <Image
                 src="/Logo-white.png"
-
                 alt="logo"
                 height={1000}
                 width={1000}
@@ -108,8 +107,8 @@ const Navbar = () => {
               />
             ) : (
               <Image
-              src="/blacklogo.png"
-              alt="logo"
+                src="/blacklogo.png"
+                alt="logo"
                 height={1000}
                 width={1000}
                 className="w-24 h-10 object-contain"
@@ -150,7 +149,7 @@ const Navbar = () => {
         </main>
 
         {/* Mobile menu */}
-        <div className="overflow-x-hidden md:hidden block">
+        <div className="overflow-x-hidden md:hidden block z-[50]">
           <div
             className={`${
               isMenuOpen ? "translate-y-0" : "-translate-y-full"
