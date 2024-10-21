@@ -100,7 +100,7 @@ const BlogContainer: React.FC = () => {
                 </figure>
 
                 <div className="bg-white p-4 sm:p-6">
-                  <h3 className="font-bold text-xl">{item?.Title}</h3>
+                  <h3 className="font-bold text-xl text-zinc-900">{item?.Title}</h3>
 
                   <p className="text-[14px] py-2 font-medium text-lighttext">
                     {item?.Intro.slice(0, 90)}

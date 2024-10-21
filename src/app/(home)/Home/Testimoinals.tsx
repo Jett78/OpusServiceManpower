@@ -20,7 +20,7 @@ const Testimoinals: React.FC = () => {
     const fetch = async () => {
       let { data, error } = await supabase.from("Testimonial").select("*");
       if (error) {
-        throw new Error("Failed to fetch blogs");
+        throw new Error("Failed to fetch testimonials");
       } else {
         setTestimonial(data || []);
       }
@@ -66,25 +66,25 @@ const Testimoinals: React.FC = () => {
         </h2>
         <div className=" sm:mx-40 mx-6 text-center mt-10 relative">
           <Slider {...settings}>
-            {testimonial?.map((item:any, index:number) => (
+            {testimonialdata.map((item:any, index:number) => (
               <div key={index}>
                 <div className="flex text-2xl text-orange-400 justify-center">
                   {[...Array(5)].map((_, index) => (
                     <RiStarSFill key={index} />
                   ))}
                 </div>
-                <h2 className="sm:text-l text-sm font-semibold my-4">
-                  {item.Message}
+                <h2 className="sm:text-l w-[80%] mx-auto text-sm font-semibold my-4">
+                  {item.desc}
                 </h2>
                 <Image
-                  src={item.Image}
-                  alt={item.Name}
+                  src={item.img}
+                  alt={item.name}
                   height={1000}
                   width={1000}
                   className="h-14 w-14  rounded-full mx-auto object-cover object-center"
                 />
                 <h2 className="sm:text-xl text-md font-bold py-4">
-                  {item.Name}
+                  {item.name}
                 </h2>
               </div>
             ))}
@@ -105,3 +105,18 @@ const Testimoinals: React.FC = () => {
 };
 
 export default Testimoinals;
+
+
+const testimonialdata = [
+  {
+    name:"John Doe",
+    desc:"Opus Manpower exceeded our expectations by delivering highly qualified candidates in record time. Their professionalism and attention to detail made our recruitment process smooth and efficient.",
+    img:"/avatar.jpg",
+  },
+  {
+    name:"John Doe",
+    desc:"We've partnered with Opus Manpower for years, and they've consistently provided top-tier talent. They understand our needs and ensure each hire is a perfect fit for our team.",
+    img:"/avatar.jpg",
+  },
+  
+]
