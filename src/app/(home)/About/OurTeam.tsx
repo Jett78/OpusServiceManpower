@@ -84,7 +84,7 @@ const OurTeam = () => {
       </p>
 
       <div className="highteam grid lg:grid-cols-2 grid-cols-1 place-items-center md:w-7/12 w-11/12 mx-auto justify-center gap-10 my-20 group cursor-pointer">
-        {testimonial?.slice(0,2).map((item:any, index:number) => (
+        {teamdata.slice(0,2).map((item:any, index:number) => (
           <div
             key={index}
             className="relative group"
@@ -93,7 +93,7 @@ const OurTeam = () => {
           >
             <div className="overflow-hidden rounded-xl">
               <Image
-                src={item.Image ||'/default.webp'}
+                src={item.img ||'/default.webp'}
                 alt="team"
                 width={700}
                 height={1000}
@@ -108,9 +108,9 @@ const OurTeam = () => {
               }`}
             >
               <div className="grid place-items-center whitespace-nowrap py-2 ">
-                <h2 className="font-bold text-xl">{item.Name}</h2>
+                <h2 className="font-bold text-xl">{item.name}</h2>
                 <h3 className="font-semibold  text-sm italic tracking-wide">
-                  {item.Position}
+                  {item.position}
                 </h3>
               </div>
             </div>
@@ -119,7 +119,7 @@ const OurTeam = () => {
       </div>
 
       <div className="lowteam md:grid hidden lg:grid-cols-4 grid-cols-2 place-items-center w-10/12 mx-auto justify-center gap-10 my-20 group cursor-pointer">
-        {testimonial?.slice(2).map((item:any, index:number) => (
+        {teamdata.slice(2).map((item:any, index:number) => (
           <div
             key={index}
             className="relative group"
@@ -128,7 +128,7 @@ const OurTeam = () => {
           >
             <div className="overflow-hidden rounded-xl">
               <Image
-                src={item.Image}
+                src={item.img}
                 alt="team"
                 width={1000}
                 height={1000}
@@ -143,9 +143,9 @@ const OurTeam = () => {
               }`}
             >
               <div className="grid place-items-center whitespace-nowrap py-2 ">
-                <h2 className="font-bold text-xl">{item.Name}</h2>
+                <h2 className="font-bold text-xl">{item.name}</h2>
                 <h3 className="font-semibold  text-sm italic tracking-wide">
-                  {item.Position}
+                  {item.position}
                 </h3>
               </div>
             </div>
@@ -195,3 +195,37 @@ const OurTeam = () => {
 };
 
 export default OurTeam;
+
+
+const teamdata = [
+  {
+    name:"John Doe",
+    position:"CEO",
+    img:"/team/team1.jpg",
+  },
+  {
+    name:"John Doe",
+    position:"CFO",
+    img:"/team/team2.jpg",
+  },
+  {
+    name:"John Doe",
+    position:"Developer",
+    img:"/team/team3.jpg",
+  },
+  {
+    name:"John Doe",
+    position:"Marketting Officer",
+    img:"/team/team4.jpg",
+  },
+  {
+    name:"John Doe",
+    position:"Supervisor",
+    img:"/team/team1.jpg",
+  },
+  {
+    name:"John Doe",
+    position:"Supervisor",
+    img:"/team/team3.jpg",
+  },
+]

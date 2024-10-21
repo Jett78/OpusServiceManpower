@@ -89,17 +89,17 @@ const Countries = () => {
     
   };
   return (
-    <main className="countriescontainer md:my-28 my-10 bg-zinc-800 py-16">
-      <h2 className="font-bold sm:text-2xl text-xl w-fit mx-auto uppercase  text-white text-center">
+    <main className="countriescontainer md:my-28 my-10 bg-zinc-100 py-16">
+      <h2 className="font-bold sm:text-2xl text-xl w-fit mx-auto uppercase  text-center">
         Our Operating <span className="text-tertiary font-extrabold ">Countries</span>
       </h2>
 
-      <div className="bg-zinc-800 mt-10">
+      <div className="bg-zinc-100 mt-10">
         <Slider {...settings}>
-          {testimonial?.map((item:any, index:number) => (
+          {countryflags.map((item:any, index:number) => (
             <div key={index}>
               <Image
-                src={item?.url}
+                src={item.img}
                 alt="icons-company"
                 width={100}
                 height={100}
